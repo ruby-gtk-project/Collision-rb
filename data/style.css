@@ -1,0 +1,51 @@
+/* Ported from upstream's data/css/style.css.
+ *
+ * Upstream gives the drop overlay container and the verification text view
+ * custom CSS names ("dropoverlay", "entry") from its UI file. css-name is
+ * construct-only and the Ruby bindings expose no constructor that sets it, so
+ * the port puts the same rules behind style classes the widgets add
+ * themselves: .dropoverlay on the window's Adwaita::Bin and .verify-entry on
+ * the text view. */
+
+.hash-row .subtitle {
+  font-family: monospace;
+}
+
+.card-like {
+  border-radius: 12px;
+}
+
+.compact-title {
+  font-size: 18pt;
+}
+
+.dropoverlay,
+.dropoverlay > overlay > :not(revealer) {
+  box-shadow: none;
+}
+
+.dropoverlay .status {
+  background-color: color-mix(in srgb, var(--accent-bg-color) 80%, transparent);
+  color: var(--accent-fg-color);
+}
+
+.no-drop:drop(active) {
+  box-shadow: none;
+}
+
+/* Stands in for upstream's css-name="entry" on the verification text view:
+ * the view's own background and a hairline border, so the field reads as an
+ * entry rather than as part of the page behind it. */
+.verify-entry {
+  background-color: var(--view-bg-color);
+  color: var(--view-fg-color);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, currentColor 15%, transparent);
+}
+
+.verify-entry.success {
+  box-shadow: inset 0 0 0 1px var(--success-color);
+}
+
+.verify-entry.error {
+  box-shadow: inset 0 0 0 1px var(--error-color);
+}
