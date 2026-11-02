@@ -15,7 +15,7 @@ Produced with the `component-identification` skill. Scan command:
 | | widget rows | distinct CSS classes | signal rows | action rows | controllers |
 |---|---:|---:|---:|---:|---:|
 | upstream (`origin/main`) | 41 | 13 (+5 in `data/css/style.css`) | 1 | 5 | 2 |
-| port (`ruby`) | 4 | 0 | 1 | 0 | 0 |
+| port (`ruby`) | 48 | 18 | 21 | 3 | 2 |
 
 The scan's declarative half is complete — upstream's whole widget tree is in
 three `.ui` files — but its `signal`/`action` streams are near-useless here,
@@ -23,8 +23,13 @@ because every signal connection and every `Gio::SimpleAction` name in Collision
 is written in Crystal (`connect do … end`, `SimpleAction.new("markdown", nil)`),
 not in the `.ui`. Those were read off the source and are recorded below.
 
-The port is a scaffold: one window, one `Adwaita::StatusPage` reading "The Ruby
-port has not been written yet." Nothing user-facing exists yet.
+The port is no longer a scaffold. As of `310cb33` ("Port the window, hash rows,
+actions, settings and checksums") all 17 UI and support components have a file
+under `lib/collision/`, and the port's widget stream now slightly exceeds
+upstream's — 48 rows against 41 — because the house style builds in Ruby what
+upstream declares in GtkBuilder, so wrapper boxes that `.ui` nests implicitly
+become explicit rows. The remaining hole is `po/`: the port has no catalogue,
+no `gettext` binding and no `_()` call sites.
 
 ## How upstream is laid out
 
@@ -55,7 +60,7 @@ widget accessors assembled in `.tap` blocks.
 
 ### 1. `src/collision.cr` → `lib/collision/application.rb` — application
 
-**kind:** application · **exists:** yes, as a stub (window + placeholder status page)
+**kind:** application · **exists:** yes — `lib/collision/application.rb`, 141 lines; installs the five actions, loads `data/style.css` through a `Gtk::CssProvider` and `data/icons` through `Gtk::IconTheme#add_search_path`
 
 Non-widget but holds the app's spine. Upstream: `Adw::Application.new("dev.geopjr.Collision",
 Gio::ApplicationFlags::HandlesOpen)` with `startup`, `activate` and `open`
@@ -86,7 +91,7 @@ needs `HandlesOpen` and the `open` signal, and the app id differs
 
 ### 2. `src/collision/actions.cr` → `lib/collision/action.rb` — action base class
 
-**kind:** support · **exists:** no
+**kind:** support · **exists:** yes
 
 Abstract base: builds a `Gio::SimpleAction`, connects `activate` to
 `on_activate`, optionally calls `app.set_accels_for_action("app.#{name}", accels)`,
@@ -95,7 +100,7 @@ of them because the name is a constructor argument, not a literal.
 
 ### 3. `src/collision/actions/about.cr` → `lib/collision/actions/about.rb` — About dialog
 
-**kind:** dialog · **exists:** no · action `app.about`, accel `F1`
+**kind:** dialog · **exists:** yes · action `app.about`, accel `F1`
 
 | Widget | × | CSS | Signals | Notes |
 |---|---:|---|---|---|
@@ -113,7 +118,7 @@ website `https://collision.geopjr.dev`, issue URL
 
 ### 4. `src/collision/actions/hashinfo.cr` → `lib/collision/actions/hash_info.rb`
 
-**kind:** action · **exists:** no · action `app.hashinfo`, no accel
+**kind:** action · **exists:** yes · action `app.hashinfo`, no accel
 
 Launches the default handler for `ARTICLE`
 (`https://en.wikipedia.org/wiki/Comparison_of_cryptographic_hash_functions`,
@@ -122,19 +127,19 @@ from the primary menu as "_Compare Hash Functions".
 
 ### 5. `src/collision/actions/new_window.cr` → `lib/collision/actions/new_window.rb`
 
-**kind:** action · **exists:** no · action `app.new-window`, accel `<Ctrl>N`
+**kind:** action · **exists:** yes · action `app.new-window`, accel `<Ctrl>N`
 
 Calls `app.activate`. Menu item "_New Window".
 
 ### 6. `src/collision/actions/quit.cr` → `lib/collision/actions/quit.rb`
 
-**kind:** action · **exists:** no · action `app.quit`, accel `<Ctrl>Q`
+**kind:** action · **exists:** yes · action `app.quit`, accel `<Ctrl>Q`
 
 Calls `app.quit`.
 
 ### 7. `data/ui/application.ui` (`<menu id="primary-menu">`) → `lib/collision/primary_menu.rb` — primary menu
 
-**kind:** menu · **exists:** no
+**kind:** menu · **exists:** yes — `lib/collision/primary_menu.rb`, all six items
 
 A `Gio::Menu` with six items and no sections. Produces **zero scan rows** —
 a GtkBuilder `<menu>` is all lowercase keywords.
@@ -150,7 +155,7 @@ a GtkBuilder `<menu>` is all lowercase keywords.
 
 ### 8. `src/collision/window.cr` + `data/ui/application.ui` → `lib/collision/window.rb` — main window
 
-**kind:** window · **exists:** no (the port's stub window is unrelated)
+**kind:** window · **exists:** yes — `lib/collision/window.rb`, 919 lines, 91 methods; breakpoint, both drop targets, all three main-stack pages, both results pages and all three window actions are present
 
 The whole app. 38 widget rows, three stack pages, an adaptive breakpoint, two
 drop targets. Biggest single unit by a wide margin; consider splitting the
@@ -247,7 +252,7 @@ itself.
 
 ### 9. `data/ui/shortcuts-dialog.ui` → `lib/collision/shortcuts_dialog.rb` — keyboard shortcuts
 
-**kind:** dialog · **exists:** no
+**kind:** dialog · **exists:** yes
 
 | Widget | × | Notes |
 |---|---:|---|
@@ -271,7 +276,7 @@ accels from the application or hard-codes the five above.
 
 ### 10. `src/collision/widgets/hash_row.cr` + `data/ui/hash_row.ui` → `lib/collision/hash_row.rb` — one hash row
 
-**kind:** row · **exists:** no
+**kind:** row · **exists:** yes — but the custom `clicked(hash_type)` GObject signal is not registered; a Ruby block carries the callback instead
 
 | Widget | × | CSS | Signals | Notes |
 |---|---:|---|---|---|
@@ -289,7 +294,7 @@ port uses a plain callback block instead — a decision for the build step.
 
 ### 11. `src/collision/widgets/toggle_hash_functions_dialog.cr` → `lib/collision/toggle_hash_functions_dialog.rb` — Toggle Hash Functions
 
-**kind:** preferences dialog · **exists:** no · action `win.toggle-hashes`
+**kind:** preferences dialog · **exists:** yes · action `win.toggle-hashes`
 
 | Widget | × | CSS | Signals | Notes |
 |---|---:|---|---|---|
@@ -306,7 +311,7 @@ stay open; otherwise persist the disabled list and `force_close`.
 
 ### 12. `src/collision/functions/settings.cr` + `data/dev.geopjr.Collision.gschema.xml` → `lib/collision/settings.rb`
 
-**kind:** support · **exists:** no
+**kind:** support · **exists:** yes — `Gio::Settings` when the schema is installed, a JSON file under `XDG_CONFIG_HOME` otherwise; `data/dev.geopjr.Collision.gschema.xml` is carried on `ruby`
 
 Four keys: `window-width` (600), `window-height` (460), `is-maximized`
 (false), `disabled-hash-functions` (`[]`). Upstream guards every access with
@@ -321,7 +326,7 @@ backed the identical keys with a JSON file under `XDG_CONFIG_HOME`
 
 ### 13. `src/collision/functions/feedback.cr` → `lib/collision/feedback.rb`
 
-**kind:** support · **exists:** no
+**kind:** support · **exists:** yes
 
 Three lookups shared by four call sites. `icon` → `test-pass-symbolic` /
 `cross-large-symbolic`; `class` → `{add:, remove:}` over `{"success", "error"}`;
@@ -330,7 +335,7 @@ source of every dynamic CSS class in the app.
 
 ### 14. `src/collision/functions/file_utils.cr` → `lib/collision/file_utils.rb`
 
-**kind:** support · **exists:** no
+**kind:** support · **exists:** yes
 
 `real_path` (returns nil for `/run/user/…` paths under Flatpak so the status
 page shows nothing rather than a portal path), `file?`, and `compare_content`,
@@ -339,7 +344,7 @@ which scans a file's lines for any known hash. Covered upstream by
 
 ### 15. `src/collision/functions/checksum.cr` → `lib/collision/checksum.rb`
 
-**kind:** support · **exists:** no
+**kind:** support · **exists:** yes — but only six of the seven digests. **Blake3 is dropped**: no Ruby gem provides it, and the verify placeholder string names it, so the omission is user-visible
 
 `calculate(type, filename)` for the seven digests (MD5, SHA1, SHA256, SHA512,
 Blake3, CRC32, Adler32 — Blake3 needs a gem or an extension in Ruby), and
@@ -350,7 +355,7 @@ steps the progress bar from the main loop and yields the result hash.
 
 ### 16. `data/css/style.css` → shipped asset + loader in `lib/collision/application.rb`
 
-**kind:** stylesheet · **exists:** no
+**kind:** stylesheet · **exists:** yes — `data/style.css`, loaded by `Collision::Application`
 
 Five rules the widget tree depends on and the scan cannot see from the source
 side: `.hash-row .subtitle` (monospace), `.card-like` (12 px radius),
@@ -362,7 +367,7 @@ dead. The port needs a `Gtk::CssProvider` since it has no GResource.
 
 ### 17. `data/icons/*.svg` → shipped assets
 
-**kind:** assets · **exists:** no
+**kind:** assets · **exists:** yes — `data/icons/` carries all 11 SVGs and the icon theme search path is added at startup
 
 Four app-local symbolics the UI names directly — `cross-large-symbolic`,
 `test-pass-symbolic`, `octothorp-symbolic`, `paper-symbolic` — plus the app
@@ -373,7 +378,7 @@ switcher tabs render blank. They must be installed into a
 
 ### 18. `po/` (41 locales + `.pot`) → translation parity
 
-**kind:** i18n · **exists:** no
+**kind:** i18n · **exists:** **no** — nothing on `ruby`
 
 41 languages in `po/LINGUAS`, domain `dev.geopjr.Collision`. Note `po/POTFILES`
 is **stale** — it still lists `data/ui/shortcuts_window.ui`, which no longer
@@ -397,28 +402,33 @@ Crystal-side `Gettext.gettext(…)` calls in the About dialog, the toggle dialog
 
 | # | Upstream | Port target | Kind | Exists |
 |---:|---|---|---|---|
-| 1 | `src/collision.cr` | `lib/collision/application.rb` | application | stub only |
-| 2 | `src/collision/actions.cr` | `lib/collision/action.rb` | support | no |
-| 3 | `src/collision/actions/about.cr` | `lib/collision/actions/about.rb` | dialog | no |
-| 4 | `src/collision/actions/hashinfo.cr` | `lib/collision/actions/hash_info.rb` | action | no |
-| 5 | `src/collision/actions/new_window.cr` | `lib/collision/actions/new_window.rb` | action | no |
-| 6 | `src/collision/actions/quit.cr` | `lib/collision/actions/quit.rb` | action | no |
-| 7 | `data/ui/application.ui` (`primary-menu`) | `lib/collision/primary_menu.rb` | menu | no |
-| 8 | `src/collision/window.cr` + `data/ui/application.ui` | `lib/collision/window.rb` | window | no |
-| 9 | `data/ui/shortcuts-dialog.ui` | `lib/collision/shortcuts_dialog.rb` | dialog | no |
-| 10 | `src/collision/widgets/hash_row.cr` + `data/ui/hash_row.ui` | `lib/collision/hash_row.rb` | row | no |
-| 11 | `src/collision/widgets/toggle_hash_functions_dialog.cr` | `lib/collision/toggle_hash_functions_dialog.rb` | preferences dialog | no |
-| 12 | `src/collision/functions/settings.cr` + gschema | `lib/collision/settings.rb` | support | no |
-| 13 | `src/collision/functions/feedback.cr` | `lib/collision/feedback.rb` | support | no |
-| 14 | `src/collision/functions/file_utils.cr` | `lib/collision/file_utils.rb` | support | no |
-| 15 | `src/collision/functions/checksum.cr` | `lib/collision/checksum.rb` | support | no |
-| 16 | `data/css/style.css` | `data/style.css` + loader | stylesheet | no |
-| 17 | `data/icons/*.svg` | `data/icons/` + icon-theme path | assets | no |
-| 18 | `po/` (41 locales) | `po/` | i18n | no |
+| 1 | `src/collision.cr` | `lib/collision/application.rb` | application | yes — but app id is `org.rubygtkproject.Collision`, not upstream's |
+| 2 | `src/collision/actions.cr` | `lib/collision/action.rb` | support | yes |
+| 3 | `src/collision/actions/about.cr` | `lib/collision/actions/about.rb` | dialog | yes |
+| 4 | `src/collision/actions/hashinfo.cr` | `lib/collision/actions/hash_info.rb` | action | yes |
+| 5 | `src/collision/actions/new_window.cr` | `lib/collision/actions/new_window.rb` | action | yes |
+| 6 | `src/collision/actions/quit.cr` | `lib/collision/actions/quit.rb` | action | yes |
+| 7 | `data/ui/application.ui` (`primary-menu`) | `lib/collision/primary_menu.rb` | menu | yes |
+| 8 | `src/collision/window.cr` + `data/ui/application.ui` | `lib/collision/window.rb` | window | yes |
+| 9 | `data/ui/shortcuts-dialog.ui` | `lib/collision/shortcuts_dialog.rb` | dialog | yes — plus a port-only `lib/collision/actions/shortcuts.rb` that registers the `app.shortcuts` upstream leaves dead |
+| 10 | `src/collision/widgets/hash_row.cr` + `data/ui/hash_row.ui` | `lib/collision/hash_row.rb` | row | yes — but no registered GObject signal; a Ruby block stands in for `clicked(hash_type)` |
+| 11 | `src/collision/widgets/toggle_hash_functions_dialog.cr` | `lib/collision/toggle_hash_functions_dialog.rb` | preferences dialog | yes |
+| 12 | `src/collision/functions/settings.cr` + gschema | `lib/collision/settings.rb` | support | yes — `Gio::Settings` when the schema is installed, JSON under `XDG_CONFIG_HOME` otherwise |
+| 13 | `src/collision/functions/feedback.cr` | `lib/collision/feedback.rb` | support | yes |
+| 14 | `src/collision/functions/file_utils.cr` | `lib/collision/file_utils.rb` | support | yes |
+| 15 | `src/collision/functions/checksum.cr` | `lib/collision/checksum.rb` | support | yes — six of seven digests; **Blake3 is dropped**, no gem available |
+| 16 | `data/css/style.css` | `data/style.css` + loader | stylesheet | yes — `data/style.css` |
+| 17 | `data/icons/*.svg` | `data/icons/` + icon-theme path | assets | yes — `data/icons/`, 11 SVGs |
+| 18 | `po/` (41 locales) | `po/` | i18n | **no** — no `po/` on `ruby`, no gettext binding, no `_()` call sites |
 
-Nothing in `lib/` on `ruby` corresponds to any upstream component yet; the one
-existing file is a placeholder whose status page has no upstream counterpart
-and should be replaced, not extended.
+Seventeen of the eighteen rows now have a port file; the placeholder status page
+that stood in for the window is gone. What is left for the parity steps is not
+missing files but missing detail inside them — the i18n row, Blake3, the
+`HashRow` signal, the app id, and whatever the `component-parity` pass finds
+when it diffs the two widget streams widget by widget. `spec/` on `ruby` holds
+only a `spec_helper.rb` and a README, so upstream's four Crystal specs
+(`compare_spec`, `feedback_spec`, `hash_generator_spec`) have no counterpart
+either — that belongs to `test-parity`.
 
 ## Open questions for the build step
 
@@ -439,3 +449,17 @@ and should be replaced, not extended.
 6. **App id.** The port currently uses `org.rubygtkproject.Collision`;
    upstream's is `dev.geopjr.Collision`, which is also the gettext domain, the
    GSettings path and the icon name.
+
+### How the build step answered them
+
+Re-surveyed after `310cb33`:
+
+| # | Resolution |
+|---:|---|
+| 1 | **Implemented.** `lib/collision/actions/shortcuts.rb` registers `app.shortcuts` with accel `<Ctrl>question` and presents `ShortcutsDialog`. Its own comment claims the action "comes from the Crystal binary's generated action set" — that is wrong, upstream never registers it; the comment should be corrected to say the port adds it |
+| 2 | **Dropped.** `lib/collision/checksum.rb` carries six digests and says so in a comment. Still open as a parity gap, because the verify placeholder names Blake3 |
+| 3 | **Not registered.** `HashRow` uses a Ruby block. Open for `component-parity` to rule on |
+| 4 | Ported inside `window.rb`; needs exercising under two windows before it can be called settled |
+| 5 | **Both.** `Gio::Settings` when the compiled schema is found, a JSON file under `XDG_CONFIG_HOME` otherwise |
+| 6 | **Still `org.rubygtkproject.Collision`.** Open |
+| 7 | **New.** No `po/` at all, so every string in the port is an untranslated literal. `translation-parity` owns this and it is the single largest remaining gap |
