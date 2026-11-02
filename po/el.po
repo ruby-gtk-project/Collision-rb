@@ -1,0 +1,276 @@
+# Greek translation for dev.geopjr.Collision.
+# Copyright (C) 2021 THE dev.geopjr.Collision'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the dev.geopjr.Collision package.
+# Evangelos Paterakis <evan@geopjr.dev>, 2021, 2023, 2024, 2026.
+msgid ""
+msgstr ""
+"Project-Id-Version: dev.geopjr.Collision\n"
+"Report-Msgid-Bugs-To: https://github.com/ruby-gtk-project/Collision-rb/"
+"issues\n"
+"POT-Creation-Date: 2026-11-02 23:11+0000\n"
+"PO-Revision-Date: 2026-03-26 21:14+0000\n"
+"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"Language-Team: Greek <https://hosted.weblate.org/projects/collision/"
+"collision/el/>\n"
+"Language: el\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.17-dev\n"
+
+#: ../lib/collision/actions/about.rb:23
+msgid "Archives"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:23
+msgid "Create and view web archives"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:24
+msgid "Calligraphy"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:24
+msgid "Turn text into ASCII banners"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:25
+msgid "Tuba"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:25
+msgid "Browse the Fediverse"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:26
+msgid "Turntable"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:26
+msgid "Scrobble your music"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:29
+msgid "translator-credits"
+msgstr "Evangelos Paterakis"
+
+#: ../lib/collision/actions/about.rb:49 ../lib/collision/window.rb:70
+#: ../lib/collision/window.rb:387
+msgid "Collision"
+msgstr "Σύγκρουση"
+
+#: ../lib/collision/actions/hash_info.rb:21
+msgid ""
+"https://en.wikipedia.org/wiki/Comparison_of_cryptographic_hash_functions"
+msgstr ""
+"https://en.wikipedia.org/wiki/Comparison_of_cryptographic_hash_functions"
+
+#: ../lib/collision/checksum.rb:55
+msgid "%d of %d hashes calculated"
+msgstr "Υπολογίστηκαν %d από τα %d hashes"
+
+#: ../lib/collision/feedback.rb:38
+msgid "They Match"
+msgstr "Ταιριάζουν"
+
+#: ../lib/collision/feedback.rb:40
+msgid "They Don't Match"
+msgstr "Δεν Ταιριάζουν"
+
+#: ../lib/collision/hash_row.rb:52
+msgid "Copy"
+msgstr "Αντιγραφή"
+
+#: ../lib/collision/primary_menu.rb:18
+msgid "_New Window"
+msgstr "_Νέο Παράθυρο"
+
+#: ../lib/collision/primary_menu.rb:19
+msgid "_Compare Hash Functions"
+msgstr "_Σύγκριση Συναρτήσεων Hash"
+
+#: ../lib/collision/primary_menu.rb:20
+msgid "Copy as _Markdown Table"
+msgstr ""
+
+#: ../lib/collision/primary_menu.rb:21
+#: ../lib/collision/toggle_hash_functions_dialog.rb:29
+msgid "_Toggle Hash Functions"
+msgstr ""
+
+#: ../lib/collision/primary_menu.rb:22 ../lib/collision/shortcuts_dialog.rb:33
+msgid "_Keyboard Shortcuts"
+msgstr "_Συντομεύσεις Πληκτρολογίου"
+
+#: ../lib/collision/primary_menu.rb:23
+msgid "_About Collision"
+msgstr "Σχετικά με το _Collision"
+
+#: ../lib/collision/shortcuts_dialog.rb:19
+msgid "General"
+msgstr "Γενικά"
+
+#: ../lib/collision/shortcuts_dialog.rb:20
+msgid "Open a File"
+msgstr "Ανοίξτε ένα Αρχείο"
+
+#: ../lib/collision/shortcuts_dialog.rb:21
+msgid "Show Keyboard Shortcuts"
+msgstr "Εμφάνιση Συντομεύσεων Πληκτρολογίου"
+
+#: ../lib/collision/shortcuts_dialog.rb:22
+msgid "New Window"
+msgstr "Νέο Παράθυρο"
+
+#: ../lib/collision/shortcuts_dialog.rb:23
+msgid "Close Window"
+msgstr "Κλείστε το Παράθυρο"
+
+#: ../lib/collision/shortcuts_dialog.rb:24
+msgid "Quit"
+msgstr "Έ_ξοδος"
+
+#: ../lib/collision/toggle_hash_functions_dialog.rb:21
+msgid "This hash function is used for file verification and cannot be disabled"
+msgstr ""
+
+#: ../lib/collision/toggle_hash_functions_dialog.rb:51
+msgid "Select which hash functions should be calculated."
+msgstr ""
+
+#: ../lib/collision/toggle_hash_functions_dialog.rb:79
+msgid "Wait for all ongoing operations to finish"
+msgstr ""
+
+#: ../lib/collision/window.rb:43
+#, fuzzy
+#| msgid "MD5,SHA-1,SHA-256,SHA-512,Blake3,CRC32 or Adler32 Hash"
+msgid "MD5,SHA-1,SHA-256,SHA-512,CRC32 or Adler32 Hash"
+msgstr "MD5,SHA-1,SHA-256,SHA-512,Blake3,CRC32 ή Adler32 Hash"
+
+#: ../lib/collision/window.rb:44
+#, fuzzy
+#| msgid "Insert a MD5/SHA-1/SHA-256/SHA-512/Blake3/CRC32/Adler32 Hash"
+msgid "Insert a MD5/SHA-1/SHA-256/SHA-512/CRC32/Adler32 Hash"
+msgstr "Εισάγετε ένα MD5/SHA-1/SHA-256/SHA-512/Blake3/CRC32/Adler32 Hash"
+
+#: ../lib/collision/window.rb:45
+msgid "Choose File…"
+msgstr "Επιλέξτε Αρχείο…"
+
+#: ../lib/collision/window.rb:130
+msgid "Hash"
+msgstr "Hash"
+
+#: ../lib/collision/window.rb:136
+msgid "Verify"
+msgstr "Επαληθεύστε"
+
+#: ../lib/collision/window.rb:224 ../lib/collision/window.rb:419
+msgid "Pending"
+msgstr ""
+
+#: ../lib/collision/window.rb:323
+msgid "Drop to hash"
+msgstr ""
+
+#: ../lib/collision/window.rb:348
+msgid "_Open"
+msgstr "_Ανοίξτε"
+
+#: ../lib/collision/window.rb:349
+msgid "Open…"
+msgstr "Ανοίξτε…"
+
+#: ../lib/collision/window.rb:364
+#, fuzzy
+#| msgid "Menu"
+msgid "Main Menu"
+msgstr "Μενού"
+
+#: ../lib/collision/window.rb:388
+msgid "Check hashes for your files"
+msgstr "Ελέγξτε hashes για τα αρχεία σας"
+
+#: ../lib/collision/window.rb:396
+msgid "_Open a File"
+msgstr "_Ανοίξτε ένα Αρχείο"
+
+#: ../lib/collision/window.rb:405
+msgid "Calculating Hashes"
+msgstr "Υπολογισμός Hashes"
+
+#: ../lib/collision/window.rb:406
+msgid "This might take a while"
+msgstr "Αυτό μπορεί να πάρει λίγη ώρα"
+
+#: ../lib/collision/window.rb:463
+msgid "Checksum"
+msgstr "Checksum"
+
+#: ../lib/collision/window.rb:464
+msgid "File"
+msgstr "Αρχείο"
+
+#: ../lib/collision/window.rb:530
+msgid "Select Another File to Check Against"
+msgstr "Επιλέξτε ένα Άλλο Αρχείο για Έλεγχο"
+
+#: ../lib/collision/window.rb:792
+msgid "Choose a File"
+msgstr "Επιλέξτε ένα Αρχείο"
+
+#~ msgid "Hash Generator"
+#~ msgstr "Γεννήτρια Hash"
+
+#~ msgid "md5;sha1;sha256;sha512;blake3;crc32;adler32;hash;"
+#~ msgstr "md5;sha1;sha256;sha512;blake3;crc32;adler32;hash;"
+
+#~ msgid ""
+#~ "Verifying that a file you downloaded or received is actually the one you "
+#~ "were expecting is often overlooked or too time-consuming to do. At the "
+#~ "same time, it has become very easy to get your hands on a file that has "
+#~ "been tampered with, due to the mass increase of malicious webpages and "
+#~ "other actors."
+#~ msgstr ""
+#~ "Η επαλήθευση ότι ένα αρχείο που κατεβάσατε ή παραλάβατε είναι πράγματι "
+#~ "αυτό που περιμένατε, συχνά παραβλέπεται ή είναι πολύ χρονοβόρα για να "
+#~ "γίνει. Ταυτόχρονα, έχει γίνει πολύ εύκολο να πέσει στα χέρια σας ένα "
+#~ "αρχείο που έχει αλλοιωθεί, λόγω της μαζικής αύξησης των κακόβουλων "
+#~ "ιστοσελίδων και άλλων φορέων."
+
+#~ msgid ""
+#~ "This tool aims to solve that. Collision comes with a simple &amp; clean "
+#~ "UI, allowing anyone, from any age and experience group, to generate, "
+#~ "compare and verify MD5, SHA-256, SHA-512, SHA-1, Blake3, CRC32 and "
+#~ "Adler32 hashes."
+#~ msgstr ""
+#~ "Αυτό το εργαλείο έχει ως στόχο να το λύσει. Το Collision έρχεται με ένα "
+#~ "απλό και καθαρό UI, επιτρέποντας σε οποιονδήποτε, από οποιαδήποτε "
+#~ "ηλικιακή ομάδα και ομάδα εμπειρίας, να δημιουργήσει, να συγκρίνει και να "
+#~ "επαληθεύσει MD5, SHA-256, SHA-512, SHA-1, Blake3, CRC32 και Adler32 "
+#~ "hashes."
+
+#~ msgid "Check Hashes"
+#~ msgstr "Ελέγξτε Hashes"
+
+#, fuzzy
+#~ msgid "md5;sha1;sha256;sha512;hash;"
+#~ msgstr "md5;sha1;sha256;sha512;hash;"
+
+#~ msgid ""
+#~ "This tool aims to solve that. Collision comes with a simple &amp; clean "
+#~ "UI, allowing anyone, from any age and experience group, to generate, "
+#~ "compare and verify MD5, SHA-256, SHA-512 and SHA-1 hashes."
+#~ msgstr ""
+#~ "Αυτό το εργαλείο έχει ως στόχο να το λύσει. Το Collision έρχεται με ένα "
+#~ "απλό και καθαρό UI, επιτρέποντας σε οποιονδήποτε, από οποιαδήποτε "
+#~ "ηλικιακή ομάδα και ομάδα εμπειρίας, να δημιουργήσει, να συγκρίνει και να "
+#~ "επαληθεύσει MD5, SHA-256, SHA-512 και SHA-1 hashes."
+
+#~ msgid "MD5,SHA-1,SHA-256 or SHA-512 Hash"
+#~ msgstr "MD5,SHA-1,SHA-256 ή SHA-512 Hash"
+
+#~ msgid "Insert a MD5/SHA-1/SHA-256/SHA-512 Hash"
+#~ msgstr "Εισάγετε ένα MD5/SHA-1/SHA-256/SHA-512 Hash"

@@ -1,0 +1,280 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Gabriel Cozma <me@gabs.eu.org>, 2023, 2026.
+# NicolaeFericitu <cni@disroot.org>, 2025.
+# Nicolae Fericitu <cni@disroot.org>, 2026.
+msgid ""
+msgstr ""
+"Project-Id-Version: dev.geopjr.Collision\n"
+"Report-Msgid-Bugs-To: https://github.com/ruby-gtk-project/Collision-rb/"
+"issues\n"
+"POT-Creation-Date: 2026-11-02 23:11+0000\n"
+"PO-Revision-Date: 2026-03-26 21:14+0000\n"
+"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"Language-Team: Romanian <https://hosted.weblate.org/projects/collision/"
+"collision/ro/>\n"
+"Language: ro\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
+"20)) ? 1 : 2;\n"
+"X-Generator: Weblate 5.17-dev\n"
+
+#: ../lib/collision/actions/about.rb:23
+msgid "Archives"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:23
+msgid "Create and view web archives"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:24
+msgid "Calligraphy"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:24
+msgid "Turn text into ASCII banners"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:25
+msgid "Tuba"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:25
+msgid "Browse the Fediverse"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:26
+msgid "Turntable"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:26
+msgid "Scrobble your music"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:29
+msgid "translator-credits"
+msgstr ""
+"Gabriel Cozma https://gabs.eu.org; NicolaeFericitu nicolaefericitu@duck.com"
+
+#: ../lib/collision/actions/about.rb:49 ../lib/collision/window.rb:70
+#: ../lib/collision/window.rb:387
+msgid "Collision"
+msgstr "Collision"
+
+#: ../lib/collision/actions/hash_info.rb:21
+msgid ""
+"https://en.wikipedia.org/wiki/Comparison_of_cryptographic_hash_functions"
+msgstr ""
+"https://en.wikipedia.org/wiki/Comparison_of_cryptographic_hash_functions"
+
+#: ../lib/collision/checksum.rb:55
+msgid "%d of %d hashes calculated"
+msgstr "%d din %d sume de control calculate"
+
+#: ../lib/collision/feedback.rb:38
+msgid "They Match"
+msgstr "Se potrivesc"
+
+#: ../lib/collision/feedback.rb:40
+msgid "They Don't Match"
+msgstr "Nu se potrivesc"
+
+#: ../lib/collision/hash_row.rb:52
+msgid "Copy"
+msgstr "Copiază"
+
+#: ../lib/collision/primary_menu.rb:18
+msgid "_New Window"
+msgstr "_Fereastră nouă"
+
+#: ../lib/collision/primary_menu.rb:19
+msgid "_Compare Hash Functions"
+msgstr "_Comparați funcțiile Hash"
+
+#: ../lib/collision/primary_menu.rb:20
+msgid "Copy as _Markdown Table"
+msgstr ""
+
+#: ../lib/collision/primary_menu.rb:21
+#: ../lib/collision/toggle_hash_functions_dialog.rb:29
+msgid "_Toggle Hash Functions"
+msgstr ""
+
+#: ../lib/collision/primary_menu.rb:22 ../lib/collision/shortcuts_dialog.rb:33
+msgid "_Keyboard Shortcuts"
+msgstr "_Comenzi rapide de la tastatură"
+
+#: ../lib/collision/primary_menu.rb:23
+msgid "_About Collision"
+msgstr "_Despre Collision"
+
+#: ../lib/collision/shortcuts_dialog.rb:19
+msgid "General"
+msgstr "General"
+
+#: ../lib/collision/shortcuts_dialog.rb:20
+msgid "Open a File"
+msgstr "Deschide un fișier"
+
+#: ../lib/collision/shortcuts_dialog.rb:21
+msgid "Show Keyboard Shortcuts"
+msgstr "Afișează comenzile rapide de la tastatură"
+
+#: ../lib/collision/shortcuts_dialog.rb:22
+msgid "New Window"
+msgstr "Fereastră nouă"
+
+#: ../lib/collision/shortcuts_dialog.rb:23
+msgid "Close Window"
+msgstr "Închide fereastra"
+
+#: ../lib/collision/shortcuts_dialog.rb:24
+msgid "Quit"
+msgstr "Închide"
+
+#: ../lib/collision/toggle_hash_functions_dialog.rb:21
+msgid "This hash function is used for file verification and cannot be disabled"
+msgstr ""
+
+#: ../lib/collision/toggle_hash_functions_dialog.rb:51
+msgid "Select which hash functions should be calculated."
+msgstr ""
+
+#: ../lib/collision/toggle_hash_functions_dialog.rb:79
+msgid "Wait for all ongoing operations to finish"
+msgstr ""
+
+#: ../lib/collision/window.rb:43
+#, fuzzy
+#| msgid "Insert a MD5/SHA-1/SHA-256/SHA-512/Blake3/CRC32/Adler32 Hash"
+msgid "MD5,SHA-1,SHA-256,SHA-512,CRC32 or Adler32 Hash"
+msgstr ""
+"Introduceți o sumă de control MD5/SHA-1/SHA-256/SHA-512/Blake3/CRC32/Adler32"
+
+#: ../lib/collision/window.rb:44
+#, fuzzy
+#| msgid "Insert a MD5/SHA-1/SHA-256/SHA-512/Blake3/CRC32/Adler32 Hash"
+msgid "Insert a MD5/SHA-1/SHA-256/SHA-512/CRC32/Adler32 Hash"
+msgstr ""
+"Introduceți o sumă de control MD5/SHA-1/SHA-256/SHA-512/Blake3/CRC32/Adler32"
+
+#: ../lib/collision/window.rb:45
+msgid "Choose File…"
+msgstr "Alege fișierul…"
+
+#: ../lib/collision/window.rb:130
+msgid "Hash"
+msgstr "Hash"
+
+#: ../lib/collision/window.rb:136
+msgid "Verify"
+msgstr "Verifică"
+
+#: ../lib/collision/window.rb:224 ../lib/collision/window.rb:419
+msgid "Pending"
+msgstr ""
+
+#: ../lib/collision/window.rb:323
+msgid "Drop to hash"
+msgstr ""
+
+#: ../lib/collision/window.rb:348
+msgid "_Open"
+msgstr "_Deschide"
+
+#: ../lib/collision/window.rb:349
+msgid "Open…"
+msgstr "Deschide…"
+
+#: ../lib/collision/window.rb:364
+#, fuzzy
+#| msgid "Menu"
+msgid "Main Menu"
+msgstr "Meniu"
+
+#: ../lib/collision/window.rb:388
+msgid "Check hashes for your files"
+msgstr "Verificați sumele de control pentru fișierele dvs."
+
+#: ../lib/collision/window.rb:396
+msgid "_Open a File"
+msgstr "_Deschideți un fișier"
+
+#: ../lib/collision/window.rb:405
+msgid "Calculating Hashes"
+msgstr "Calcularea sumelor de control"
+
+#: ../lib/collision/window.rb:406
+msgid "This might take a while"
+msgstr "Acest lucru ar putea dura ceva timp"
+
+#: ../lib/collision/window.rb:463
+msgid "Checksum"
+msgstr "Sumă de control"
+
+#: ../lib/collision/window.rb:464
+msgid "File"
+msgstr "Fișier"
+
+#: ../lib/collision/window.rb:530
+msgid "Select Another File to Check Against"
+msgstr "Selectați un alt fișier pentru a verifica"
+
+#: ../lib/collision/window.rb:792
+msgid "Choose a File"
+msgstr "Alege un fișier"
+
+#~ msgid "Hash Generator"
+#~ msgstr "Generator de sume de control"
+
+#~ msgid ""
+#~ "Verifying that a file you downloaded or received is actually the one you "
+#~ "were expecting is often overlooked or too time-consuming to do. At the "
+#~ "same time, it has become very easy to get your hands on a file that has "
+#~ "been tampered with, due to the mass increase of malicious webpages and "
+#~ "other actors."
+#~ msgstr ""
+#~ "Verificarea faptului că un fișier pe care l-ați descărcat sau primit este "
+#~ "într-adevăr cel pe care îl așteptați este adesea neglijată sau necesită "
+#~ "prea mult timp pentru a fi efectuată. În același timp, a devenit foarte "
+#~ "ușor să puneți mâna pe un fișier care a fost falsificat, datorită "
+#~ "creșterii în masă a paginilor web rău intenționate și a altor actori."
+
+#~ msgid ""
+#~ "This tool aims to solve that. Collision comes with a simple &amp; clean "
+#~ "UI, allowing anyone, from any age and experience group, to generate, "
+#~ "compare and verify MD5, SHA-256, SHA-512, SHA-1, Blake3, CRC32 and "
+#~ "Adler32 hashes."
+#~ msgstr ""
+#~ "Acest instrument își propune să rezolve acest lucru. Collision vine cu o "
+#~ "interfață simplă și curată, permițând oricui, de la orice vârstă și grup "
+#~ "de experiență, să genereze, să compare și să verifice hașuri MD5, "
+#~ "SHA-256, SHA-512, SHA-1, Blake3, CRC32 și Adler32."
+
+#~ msgid "Check Hashes"
+#~ msgstr "Verifică sumele de control"
+
+#~ msgid ""
+#~ "This tool aims to solve that. Collision comes with a simple &amp; clean "
+#~ "UI, allowing anyone, from any age and experience group, to generate, "
+#~ "compare and verify MD5, SHA-256, SHA-512 and SHA-1 hashes."
+#~ msgstr ""
+#~ "Acest instrument are ca scop asta. Coliziunea vine cu un simplu &amp; "
+#~ "interfață de utilizare curată, permițând oricui, de la orice vârstă și "
+#~ "grup de experiență, să genereze, să compare și să verifice hashuri MD5, "
+#~ "SHA-256, SHA-512 și SHA-1."
+
+#~ msgid "MD5,SHA-1,SHA-256 or SHA-512 Hash"
+#~ msgstr "MD5,SHA-1,SHA-256 or SHA-512 Hash"
+
+#~ msgid "Insert a MD5/SHA-1/SHA-256/SHA-512 Hash"
+#~ msgstr "Insertă un Hash MD5/SHA-1/SHA-256/SHA-512"
+
+#~ msgid "Choose File..."
+#~ msgstr "Alege fișierul..."
+
+#~ msgid "Open..."
+#~ msgstr "Deschide..."

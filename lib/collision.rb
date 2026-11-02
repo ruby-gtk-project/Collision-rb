@@ -3,6 +3,7 @@
 require_relative "collision/rb/version"
 require_relative "collision/checksum"
 require_relative "collision/feedback"
+require_relative "collision/i18n"
 require_relative "collision/file_utils"
 require_relative "collision/settings"
 require_relative "collision/action"

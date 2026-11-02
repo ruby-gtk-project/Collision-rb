@@ -1,0 +1,276 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# vikdevelop <super-vik1@protonmail.com>, 2022, 2023, 2024.
+# vikdevelop <vikdevelop@proton.me>, 2026.
+# Pavel Borecki <pavel.borecki@gmail.com>, 2026.
+msgid ""
+msgstr ""
+"Project-Id-Version: dev.geopjr.Collision\n"
+"Report-Msgid-Bugs-To: https://github.com/ruby-gtk-project/Collision-rb/"
+"issues\n"
+"POT-Creation-Date: 2026-11-02 23:11+0000\n"
+"PO-Revision-Date: 2026-03-26 21:15+0000\n"
+"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"Language-Team: Czech <https://hosted.weblate.org/projects/collision/"
+"collision/cs/>\n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"X-Generator: Weblate 5.17-dev\n"
+
+#: ../lib/collision/actions/about.rb:23
+msgid "Archives"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:23
+msgid "Create and view web archives"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:24
+msgid "Calligraphy"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:24
+msgid "Turn text into ASCII banners"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:25
+msgid "Tuba"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:25
+msgid "Browse the Fediverse"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:26
+msgid "Turntable"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:26
+msgid "Scrobble your music"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:29
+msgid "translator-credits"
+msgstr "vikdevelop <super-vik1@protonmail.com>"
+
+#: ../lib/collision/actions/about.rb:49 ../lib/collision/window.rb:70
+#: ../lib/collision/window.rb:387
+msgid "Collision"
+msgstr "Kolize"
+
+#: ../lib/collision/actions/hash_info.rb:21
+msgid ""
+"https://en.wikipedia.org/wiki/Comparison_of_cryptographic_hash_functions"
+msgstr "https://cs.wikipedia.org/wiki/Kryptografická_hašovací_funkce"
+
+#: ../lib/collision/checksum.rb:55
+msgid "%d of %d hashes calculated"
+msgstr "%d z %d vypočtených kontrolních součtů"
+
+#: ../lib/collision/feedback.rb:38
+msgid "They Match"
+msgstr "Shodují se"
+
+#: ../lib/collision/feedback.rb:40
+msgid "They Don't Match"
+msgstr "Neshodují se"
+
+#: ../lib/collision/hash_row.rb:52
+msgid "Copy"
+msgstr "Zkopírovat"
+
+#: ../lib/collision/primary_menu.rb:18
+msgid "_New Window"
+msgstr "_Nové okno"
+
+#: ../lib/collision/primary_menu.rb:19
+msgid "_Compare Hash Functions"
+msgstr "_Porovnat funkce kontrolního součtu"
+
+#: ../lib/collision/primary_menu.rb:20
+msgid "Copy as _Markdown Table"
+msgstr "Zkopírovat jako _Markdown tabulku"
+
+#: ../lib/collision/primary_menu.rb:21
+#: ../lib/collision/toggle_hash_functions_dialog.rb:29
+msgid "_Toggle Hash Functions"
+msgstr "_Přepnout funkce kontrolního součtu"
+
+#: ../lib/collision/primary_menu.rb:22 ../lib/collision/shortcuts_dialog.rb:33
+msgid "_Keyboard Shortcuts"
+msgstr "_Klávesové zkratky"
+
+#: ../lib/collision/primary_menu.rb:23
+msgid "_About Collision"
+msgstr "O _aplikaci"
+
+#: ../lib/collision/shortcuts_dialog.rb:19
+msgid "General"
+msgstr "Obecné"
+
+#: ../lib/collision/shortcuts_dialog.rb:20
+msgid "Open a File"
+msgstr "Otevřít soubor"
+
+#: ../lib/collision/shortcuts_dialog.rb:21
+msgid "Show Keyboard Shortcuts"
+msgstr "Zobrazit klávesové zkratky"
+
+#: ../lib/collision/shortcuts_dialog.rb:22
+msgid "New Window"
+msgstr "Nové okno"
+
+#: ../lib/collision/shortcuts_dialog.rb:23
+msgid "Close Window"
+msgstr "Zavřít okno"
+
+#: ../lib/collision/shortcuts_dialog.rb:24
+msgid "Quit"
+msgstr "Ukončit"
+
+#: ../lib/collision/toggle_hash_functions_dialog.rb:21
+msgid "This hash function is used for file verification and cannot be disabled"
+msgstr ""
+"Tahle funkce kontrolního součtu je používána pro ověření souboru a nelze ji "
+"vypnout"
+
+#: ../lib/collision/toggle_hash_functions_dialog.rb:51
+msgid "Select which hash functions should be calculated."
+msgstr "Vybrat které funkce kontrolního součtu budou vypočítávány."
+
+#: ../lib/collision/toggle_hash_functions_dialog.rb:79
+msgid "Wait for all ongoing operations to finish"
+msgstr "Čekat na dokončení všech operací"
+
+#: ../lib/collision/window.rb:43
+#, fuzzy
+#| msgid "MD5,SHA-1,SHA-256,SHA-512,Blake3,CRC32 or Adler32 Hash"
+msgid "MD5,SHA-1,SHA-256,SHA-512,CRC32 or Adler32 Hash"
+msgstr "Kontrolní součet MD5,SHA-1,SHA-256,SHA-512,Blake3,CRC32 nebo Adler32"
+
+#: ../lib/collision/window.rb:44
+#, fuzzy
+#| msgid "Insert a MD5/SHA-1/SHA-256/SHA-512/Blake3/CRC32/Adler32 Hash"
+msgid "Insert a MD5/SHA-1/SHA-256/SHA-512/CRC32/Adler32 Hash"
+msgstr "Vložte kontrolní součet MD5/SHA-1/SHA-256/SHA-512/Blake3/CRC32/Adler32"
+
+#: ../lib/collision/window.rb:45
+msgid "Choose File…"
+msgstr "Vyberte soubor…"
+
+#: ../lib/collision/window.rb:130
+msgid "Hash"
+msgstr "Kontrolní součet"
+
+#: ../lib/collision/window.rb:136
+msgid "Verify"
+msgstr "Ověřit"
+
+#: ../lib/collision/window.rb:224 ../lib/collision/window.rb:419
+msgid "Pending"
+msgstr "Čeká na vyřízení"
+
+#: ../lib/collision/window.rb:323
+msgid "Drop to hash"
+msgstr "Přejít ke kontrolnímu součtu"
+
+#: ../lib/collision/window.rb:348
+msgid "_Open"
+msgstr "_Otevřít"
+
+#: ../lib/collision/window.rb:349
+msgid "Open…"
+msgstr "Otevřít…"
+
+#: ../lib/collision/window.rb:364
+#, fuzzy
+#| msgid "Menu"
+msgid "Main Menu"
+msgstr "Nabídka"
+
+#: ../lib/collision/window.rb:388
+msgid "Check hashes for your files"
+msgstr "Zkontrolujte kontrolní součty svých souborů"
+
+#: ../lib/collision/window.rb:396
+msgid "_Open a File"
+msgstr "_Otevřít soubor"
+
+#: ../lib/collision/window.rb:405
+msgid "Calculating Hashes"
+msgstr "Výpočet kontrolních součtů"
+
+#: ../lib/collision/window.rb:406
+msgid "This might take a while"
+msgstr "Chvílí to potrvá"
+
+#: ../lib/collision/window.rb:463
+msgid "Checksum"
+msgstr "Kontrolní součet"
+
+#: ../lib/collision/window.rb:464
+msgid "File"
+msgstr "Soubor"
+
+#: ../lib/collision/window.rb:530
+msgid "Select Another File to Check Against"
+msgstr "Vyberte jiný soubor ke kontrole"
+
+#: ../lib/collision/window.rb:792
+msgid "Choose a File"
+msgstr "Vybrat soubor"
+
+#~ msgid "Hash Generator"
+#~ msgstr "Generátor kontrolních součtů"
+
+#~ msgid "md5;sha1;sha256;sha512;blake3;crc32;adler32;hash;"
+#~ msgstr "md5;sha1;sha256;sha512;blake3;crc32;adler32;hash;kontrolní součet;"
+
+#~ msgid ""
+#~ "Verifying that a file you downloaded or received is actually the one you "
+#~ "were expecting is often overlooked or too time-consuming to do. At the "
+#~ "same time, it has become very easy to get your hands on a file that has "
+#~ "been tampered with, due to the mass increase of malicious webpages and "
+#~ "other actors."
+#~ msgstr ""
+#~ "Ověření, že stažený nebo přijatý soubor je skutečně ten, který jste "
+#~ "očekávali, je často opomíjeno nebo je příliš časově náročné. Zároveň se "
+#~ "vinou masovému nárůstu škodlivých webových stránek a dalších aktérů stalo "
+#~ "velmi snadné dostat do rukou soubor, který byl zfalšován."
+
+#~ msgid ""
+#~ "This tool aims to solve that. Collision comes with a simple &amp; clean "
+#~ "UI, allowing anyone, from any age and experience group, to generate, "
+#~ "compare and verify MD5, SHA-256, SHA-512, SHA-1, Blake3, CRC32 and "
+#~ "Adler32 hashes."
+#~ msgstr ""
+#~ "Tento nástroj se to snaží vyřešit. Kolize přichází s jednoduchým a "
+#~ "přehledným uživatelským rozhraním, umožňujícím každému (nehledě na věk či "
+#~ "oblast odbornosti) nechat si vytvářet, porovnávat a ověřovat kontrolní "
+#~ "součty MD5, SHA-256, SHA-512, SHA-1, Blake3, CRC32 a Adler32."
+
+#~ msgid "Check Hashes"
+#~ msgstr "Zkontrolovat hashe"
+
+#~ msgid "md5;sha1;sha256;sha512;hash;"
+#~ msgstr "md5;sha1;sha256;sha512;hash;"
+
+#~ msgid ""
+#~ "This tool aims to solve that. Collision comes with a simple &amp; clean "
+#~ "UI, allowing anyone, from any age and experience group, to generate, "
+#~ "compare and verify MD5, SHA-256, SHA-512 and SHA-1 hashes."
+#~ msgstr ""
+#~ "Tento nástroj se to snaží vyřešit. Collision (Kolize) přichází s "
+#~ "jednoduchým &amp; čistým uživatelským rozhraním, které umožňuje komukoli "
+#~ "bez ohledu na věk a zkušenosti generovat, porovnávat a ověřovat hashe "
+#~ "MD5, SHA-256, SHA-512 a SHA-1."
+
+#~ msgid "MD5,SHA-1,SHA-256 or SHA-512 Hash"
+#~ msgstr "Kontrolní součet MD5, SHA-1, SHA-256 nebo SHA-512"
+
+#~ msgid "Insert a MD5/SHA-1/SHA-256/SHA-512 Hash"
+#~ msgstr "Vložte kontrolní součet MD5/SHA-1/SHA-256/SHA-512"

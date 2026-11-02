@@ -6,6 +6,7 @@ require_relative "checksum"
 require_relative "feedback"
 require_relative "file_utils"
 require_relative "hash_row"
+require_relative "i18n"
 require_relative "primary_menu"
 require_relative "settings"
 require_relative "toggle_hash_functions_dialog"
@@ -25,6 +26,8 @@ module Collision
   # closed while it is still hashing is hidden rather than destroyed so its
   # results can hand the queue on.
   class Window < Adwaita::ApplicationWindow
+    include I18n
+
     # Content below this size is also searched for any of the hashes, so a
     # dropped `SHA256SUMS` file verifies. Larger files are not read into
     # memory; upstream uses the same cutoff.
@@ -34,9 +37,12 @@ module Collision
     # instantly still reads as a result rather than a flicker.
     COMPARE_SETTLE_SECONDS = 0.5
 
-    VERIFY_HINT = "MD5,SHA-1,SHA-256,SHA-512,CRC32 or Adler32 Hash"
-    VERIFY_TOOLTIP = "Insert a MD5/SHA-1/SHA-256/SHA-512/CRC32/Adler32 Hash"
-    CHOOSE_FILE_LABEL = "Choose File…"
+    # Upstream names Blake3 in both of these; this port does not calculate
+    # it, so the strings differ from upstream's and carry no translation
+    # yet — they fall back to English until the catalogues catch up.
+    VERIFY_HINT = N_("MD5,SHA-1,SHA-256,SHA-512,CRC32 or Adler32 Hash")
+    VERIFY_TOOLTIP = N_("Insert a MD5/SHA-1/SHA-256/SHA-512/CRC32/Adler32 Hash")
+    CHOOSE_FILE_LABEL = N_("Choose File…")
 
     # Upstream keeps the count of in-flight hash runs in an atomic in
     # src/collision.cr, shared by every window and by the toggle dialog. The
@@ -61,7 +67,7 @@ module Collision
 
     def build
       tap do |win|
-        win.title = "Collision"
+        win.title = _("Collision")
         win.set_size_request(360, 360)
         win.content = drop_bin
         win.add_breakpoint(narrow_breakpoint)
@@ -121,13 +127,13 @@ module Collision
           stack.add_titled_with_icon(
             hash_row_container,
             "hashes",
-            "Hash",
+            _("Hash"),
             "octothorp-symbolic",
           )
           stack.add_titled_with_icon(
             tools_box,
             "verify",
-            "Verify",
+            _("Verify"),
             "test-pass-symbolic",
           )
 
@@ -215,7 +221,7 @@ module Collision
 
     # Switches to the progress page and clears the previous results.
     def loading
-      progressbar.text = "Pending"
+      progressbar.text = _("Pending")
       progressbar.fraction = 0.0
       main_stack.visible_child_name = "spinner"
       markdown_action.enabled = false
@@ -229,7 +235,7 @@ module Collision
     def reset_feedback
       verify_text_view.buffer.text = ""
       compare_button_stack.visible_child_name = "image"
-      compare_button_label.label = CHOOSE_FILE_LABEL
+      compare_button_label.label = _(CHOOSE_FILE_LABEL)
       compare_button.remove_css_class("success")
       compare_button.remove_css_class("error")
       compare_button_image.icon_name = "paper-symbolic"
@@ -314,7 +320,7 @@ module Collision
 
     def drop_status_page
       @drop_status_page ||= Adwaita::StatusPage.new.tap do |page|
-        page.title = "Drop to hash"
+        page.title = _("Drop to hash")
         page.icon_name = "paper-symbolic"
         page.add_css_class("status")
       end
@@ -339,8 +345,8 @@ module Collision
     def open_button_content
       @open_button_content ||= Adwaita::ButtonContent.new.tap do |content|
         content.icon_name = "document-open-symbolic"
-        content.label = "_Open"
-        content.tooltip_text = "Open…"
+        content.label = _("_Open")
+        content.tooltip_text = _("Open…")
         content.use_underline = true
       end
     end
@@ -355,7 +361,7 @@ module Collision
     def menu_button
       @menu_button ||= Gtk::MenuButton.new.tap do |button|
         button.icon_name = "open-menu-symbolic"
-        button.tooltip_text = "Main Menu"
+        button.tooltip_text = _("Main Menu")
         button.menu_model = PrimaryMenu.new.build
         button.primary = true
       end
@@ -378,8 +384,8 @@ module Collision
       @welcome_page ||= Adwaita::StatusPage.new.tap do |page|
         page.vexpand = true
         page.icon_name = "dev.geopjr.Collision"
-        page.title = "Collision"
-        page.description = "Check hashes for your files"
+        page.title = _("Collision")
+        page.description = _("Check hashes for your files")
         page.add_css_class("icon-dropshadow")
       end
     end
@@ -387,7 +393,7 @@ module Collision
     def welcome_button
       @welcome_button ||= Gtk::Button.new.tap do |button|
         button.halign = :center
-        button.label = "_Open a File"
+        button.label = _("_Open a File")
         button.use_underline = true
         button.add_css_class("suggested-action")
         button.add_css_class("pill")
@@ -396,8 +402,8 @@ module Collision
 
     def spinner_page
       @spinner_page ||= Adwaita::StatusPage.new.tap do |page|
-        page.title = "Calculating Hashes"
-        page.description = "This might take a while"
+        page.title = _("Calculating Hashes")
+        page.description = _("This might take a while")
       end
     end
 
@@ -410,7 +416,7 @@ module Collision
 
     def progressbar
       @progressbar ||= Gtk::ProgressBar.new.tap do |bar|
-        bar.text = "Pending"
+        bar.text = _("Pending")
         bar.show_text = true
         bar.valign = :center
         bar.hexpand = true
@@ -454,8 +460,8 @@ module Collision
     def checksum_box = @checksum_box ||= Gtk::Box.new(:vertical, 20)
     def file_box = @file_box ||= Gtk::Box.new(:vertical, 20)
 
-    def checksum_title = @checksum_title ||= column_title("Checksum")
-    def file_title = @file_title ||= column_title("File")
+    def checksum_title = @checksum_title ||= column_title(_("Checksum"))
+    def file_title = @file_title ||= column_title(_("File"))
 
     def verify_overlay
       @verify_overlay ||= Gtk::Overlay.new.tap do |over|
@@ -477,7 +483,7 @@ module Collision
     end
 
     def verify_overlay_label
-      @verify_overlay_label ||= Gtk::Label.new(VERIFY_HINT).tap do |label|
+      @verify_overlay_label ||= Gtk::Label.new(_(VERIFY_HINT)).tap do |label|
         label.halign = :start
         label.valign = :start
         label.justify = :fill
@@ -512,7 +518,7 @@ module Collision
         view.accepts_tab = false
         view.input_purpose = :free_form
         view.input_hints = [:no_spellcheck, :no_emoji]
-        view.tooltip_text = VERIFY_TOOLTIP
+        view.tooltip_text = _(VERIFY_TOOLTIP)
         view.add_css_class("verify-entry")
         view.add_css_class("card-like")
         view.add_css_class("monospace")
@@ -521,7 +527,7 @@ module Collision
 
     def compare_button
       @compare_button ||= Gtk::Button.new.tap do |button|
-        button.tooltip_text = "Select Another File to Check Against"
+        button.tooltip_text = _("Select Another File to Check Against")
         button.height_request = 125
         button.use_underline = true
         button.add_css_class("card-like")
@@ -556,7 +562,7 @@ module Collision
     end
 
     def compare_button_label
-      @compare_button_label ||= Gtk::Label.new(CHOOSE_FILE_LABEL).tap do |label|
+      @compare_button_label ||= Gtk::Label.new(_(CHOOSE_FILE_LABEL)).tap do |label|
         label.max_width_chars = 15
         label.ellipsize = :end
       end
@@ -783,7 +789,7 @@ module Collision
 
       def file_dialog
         Gtk::FileDialog.new.tap do |dialog|
-          dialog.title = "Choose a File"
+          dialog.title = _("Choose a File")
           dialog.modal = true
         end
       end

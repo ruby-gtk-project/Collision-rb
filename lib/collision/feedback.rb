@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require_relative "i18n"
+
 module Collision
   # Feedback names the icon, style classes and title that say whether a
   # comparison succeeded.
@@ -9,6 +11,7 @@ module Collision
   # shadow Object#class on the module itself, so it is `css_classes` here.
   module Feedback
     extend self
+    include I18n
 
     CLASSES = %w[success error].freeze
 
@@ -32,9 +35,9 @@ module Collision
 
     def title(success = false)
       if success
-        "They Match"
+        _("They Match")
       else
-        "They Don't Match"
+        _("They Don't Match")
       end
     end
   end

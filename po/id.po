@@ -1,0 +1,276 @@
+# Indonesian translations for Collision.
+# Copyright (C) 2021 Collision
+# This file is distributed under the same license as the PACKAGE package.
+# Kukuh Syafaat <kukuhsyafaat@gnome.org>, 2021.
+# Reza Almanda <rezaalmanda27@gmail.com>, 2022, 2023, 2024, 2026.
+# Evangelos Paterakis <evan@geopjr.dev>, 2022, 2026.
+msgid ""
+msgstr ""
+"Project-Id-Version: dev.geopjr.Collision\n"
+"Report-Msgid-Bugs-To: https://github.com/ruby-gtk-project/Collision-rb/"
+"issues\n"
+"POT-Creation-Date: 2026-11-02 23:11+0000\n"
+"PO-Revision-Date: 2026-03-26 21:13+0000\n"
+"Last-Translator: Evangelos Paterakis <evan@geopjr.dev>\n"
+"Language-Team: Indonesian <https://hosted.weblate.org/projects/collision/"
+"collision/id/>\n"
+"Language: id\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 5.17-dev\n"
+
+#: ../lib/collision/actions/about.rb:23
+msgid "Archives"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:23
+msgid "Create and view web archives"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:24
+msgid "Calligraphy"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:24
+msgid "Turn text into ASCII banners"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:25
+msgid "Tuba"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:25
+msgid "Browse the Fediverse"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:26
+msgid "Turntable"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:26
+msgid "Scrobble your music"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:29
+msgid "translator-credits"
+msgstr "Kukuh Syafaat"
+
+#: ../lib/collision/actions/about.rb:49 ../lib/collision/window.rb:70
+#: ../lib/collision/window.rb:387
+msgid "Collision"
+msgstr "Collision"
+
+#: ../lib/collision/actions/hash_info.rb:21
+msgid ""
+"https://en.wikipedia.org/wiki/Comparison_of_cryptographic_hash_functions"
+msgstr ""
+"https://en.wikipedia.org/wiki/Comparison_of_cryptographic_hash_functions"
+
+#: ../lib/collision/checksum.rb:55
+msgid "%d of %d hashes calculated"
+msgstr "%d dari %d hash yang dihitung"
+
+#: ../lib/collision/feedback.rb:38
+msgid "They Match"
+msgstr "Mereka Cocok"
+
+#: ../lib/collision/feedback.rb:40
+msgid "They Don't Match"
+msgstr "Mereka Tidak Cocok"
+
+#: ../lib/collision/hash_row.rb:52
+msgid "Copy"
+msgstr "Salin"
+
+#: ../lib/collision/primary_menu.rb:18
+msgid "_New Window"
+msgstr "_Jendela Baru"
+
+#: ../lib/collision/primary_menu.rb:19
+msgid "_Compare Hash Functions"
+msgstr "_Bandingkan Fungsi Hash"
+
+#: ../lib/collision/primary_menu.rb:20
+msgid "Copy as _Markdown Table"
+msgstr ""
+
+#: ../lib/collision/primary_menu.rb:21
+#: ../lib/collision/toggle_hash_functions_dialog.rb:29
+msgid "_Toggle Hash Functions"
+msgstr ""
+
+#: ../lib/collision/primary_menu.rb:22 ../lib/collision/shortcuts_dialog.rb:33
+msgid "_Keyboard Shortcuts"
+msgstr "_Pintasan Keyboard"
+
+#: ../lib/collision/primary_menu.rb:23
+msgid "_About Collision"
+msgstr "_Tentang Collision"
+
+#: ../lib/collision/shortcuts_dialog.rb:19
+msgid "General"
+msgstr "Umum"
+
+#: ../lib/collision/shortcuts_dialog.rb:20
+msgid "Open a File"
+msgstr "Buka Berkas"
+
+#: ../lib/collision/shortcuts_dialog.rb:21
+msgid "Show Keyboard Shortcuts"
+msgstr "Tampilkan pintasan keyboard"
+
+#: ../lib/collision/shortcuts_dialog.rb:22
+msgid "New Window"
+msgstr "Jendela Baru"
+
+#: ../lib/collision/shortcuts_dialog.rb:23
+msgid "Close Window"
+msgstr "Tutup Jendela"
+
+#: ../lib/collision/shortcuts_dialog.rb:24
+msgid "Quit"
+msgstr "Keluar"
+
+#: ../lib/collision/toggle_hash_functions_dialog.rb:21
+msgid "This hash function is used for file verification and cannot be disabled"
+msgstr ""
+
+#: ../lib/collision/toggle_hash_functions_dialog.rb:51
+msgid "Select which hash functions should be calculated."
+msgstr ""
+
+#: ../lib/collision/toggle_hash_functions_dialog.rb:79
+msgid "Wait for all ongoing operations to finish"
+msgstr ""
+
+#: ../lib/collision/window.rb:43
+#, fuzzy
+#| msgid "MD5,SHA-1,SHA-256,SHA-512,Blake3,CRC32 or Adler32 Hash"
+msgid "MD5,SHA-1,SHA-256,SHA-512,CRC32 or Adler32 Hash"
+msgstr "MD5,SHA-1,SHA-256,SHA-512,Blake3,CRC32 atau Adler32 Hash"
+
+#: ../lib/collision/window.rb:44
+#, fuzzy
+#| msgid "Insert a MD5/SHA-1/SHA-256/SHA-512/Blake3/CRC32/Adler32 Hash"
+msgid "Insert a MD5/SHA-1/SHA-256/SHA-512/CRC32/Adler32 Hash"
+msgstr "Masukkan MD5/SHA-1/SHA-256/SHA-512/Blake3/CRC32/Adler32 Hash"
+
+#: ../lib/collision/window.rb:45
+msgid "Choose File…"
+msgstr "Pilih File…"
+
+#: ../lib/collision/window.rb:130
+msgid "Hash"
+msgstr "Hash"
+
+#: ../lib/collision/window.rb:136
+msgid "Verify"
+msgstr "Verifikasi"
+
+#: ../lib/collision/window.rb:224 ../lib/collision/window.rb:419
+msgid "Pending"
+msgstr ""
+
+#: ../lib/collision/window.rb:323
+msgid "Drop to hash"
+msgstr ""
+
+#: ../lib/collision/window.rb:348
+msgid "_Open"
+msgstr "_Buka"
+
+#: ../lib/collision/window.rb:349
+msgid "Open…"
+msgstr "Buka…"
+
+#: ../lib/collision/window.rb:364
+#, fuzzy
+#| msgid "Menu"
+msgid "Main Menu"
+msgstr "Menu"
+
+#: ../lib/collision/window.rb:388
+msgid "Check hashes for your files"
+msgstr "Periksa hash untuk berkas Anda"
+
+#: ../lib/collision/window.rb:396
+msgid "_Open a File"
+msgstr "_Buka Berkas"
+
+#: ../lib/collision/window.rb:405
+msgid "Calculating Hashes"
+msgstr "Menghitung Hash"
+
+#: ../lib/collision/window.rb:406
+msgid "This might take a while"
+msgstr "Mohon tunggu"
+
+#: ../lib/collision/window.rb:463
+msgid "Checksum"
+msgstr "Checksum"
+
+#: ../lib/collision/window.rb:464
+msgid "File"
+msgstr "File"
+
+#: ../lib/collision/window.rb:530
+msgid "Select Another File to Check Against"
+msgstr "Pilih Berkas Lain untuk Diperiksa"
+
+#: ../lib/collision/window.rb:792
+msgid "Choose a File"
+msgstr "Pilih Berkas"
+
+#~ msgid "Hash Generator"
+#~ msgstr "Generator Hash"
+
+#~ msgid "md5;sha1;sha256;sha512;blake3;crc32;adler32;hash;"
+#~ msgstr "md5;sha1;sha256;sha512;blake3;crc32;adler32;hash;"
+
+#~ msgid ""
+#~ "Verifying that a file you downloaded or received is actually the one you "
+#~ "were expecting is often overlooked or too time-consuming to do. At the "
+#~ "same time, it has become very easy to get your hands on a file that has "
+#~ "been tampered with, due to the mass increase of malicious webpages and "
+#~ "other actors."
+#~ msgstr ""
+#~ "Memverifikasi bahwa file yang Anda unduh atau terima sebenarnya adalah "
+#~ "file yang Anda harapkan sering kali terabaikan atau terlalu memakan waktu "
+#~ "untuk dilakukan. Pada saat yang sama, menjadi sangat mudah untuk "
+#~ "mendapatkan file yang telah dirusak, karena peningkatan massal halaman "
+#~ "web berbahaya dan pelaku lainnya."
+
+#~ msgid ""
+#~ "This tool aims to solve that. Collision comes with a simple &amp; clean "
+#~ "UI, allowing anyone, from any age and experience group, to generate, "
+#~ "compare and verify MD5, SHA-256, SHA-512, SHA-1, Blake3, CRC32 and "
+#~ "Adler32 hashes."
+#~ msgstr ""
+#~ "Alat ini bertujuan untuk mengatasinya. Collision hadir dengan UI yang "
+#~ "sederhana dan bersih, memungkinkan siapa saja, dari berbagai usia dan "
+#~ "kelompok pengalaman, untuk menghasilkan, membandingkan, dan memverifikasi "
+#~ "hash MD5, SHA-256, SHA-512, SHA-1, Blake3, CRC32, dan Adler32."
+
+#~ msgid "Check Hashes"
+#~ msgstr "Cek Hashes"
+
+#~ msgid "md5;sha1;sha256;sha512;hash;"
+#~ msgstr "md5;sha1;sha256;sha512;hash;"
+
+#~ msgid ""
+#~ "This tool aims to solve that. Collision comes with a simple &amp; clean "
+#~ "UI, allowing anyone, from any age and experience group, to generate, "
+#~ "compare and verify MD5, SHA-256, SHA-512 and SHA-1 hashes."
+#~ msgstr ""
+#~ "Alat ini bisa menyelesaikannya. Collision hadir dengan UI yang sederhana "
+#~ "dan bersih, memungkinkan siapa saja, dari segala usia dan kelompok "
+#~ "pengalaman, untuk menghasilkan, membandingkan, dan memverifikasi hash "
+#~ "MD5, SHA-256, SHA-512, dan SHA-1."
+
+#~ msgid "MD5,SHA-1,SHA-256 or SHA-512 Hash"
+#~ msgstr "MD5,SHA-1,SHA-256 atau SHA-512 Hash"
+
+#~ msgid "Insert a MD5/SHA-1/SHA-256/SHA-512 Hash"
+#~ msgstr "Masukkan Hash MD5/SHA-1/SHA-256/SHA-512"

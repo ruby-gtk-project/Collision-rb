@@ -1,0 +1,213 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the collision-rb package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: collision-rb 0.1.0\n"
+"Report-Msgid-Bugs-To: https://github.com/ruby-gtk-project/Collision-rb/issues\n"
+"POT-Creation-Date: 2026-11-02 23:11+0000\n"
+"PO-Revision-Date: 2026-11-02 23:11+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: ../lib/collision/actions/about.rb:23
+msgid "Archives"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:23
+msgid "Create and view web archives"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:24
+msgid "Calligraphy"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:24
+msgid "Turn text into ASCII banners"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:25
+msgid "Tuba"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:25
+msgid "Browse the Fediverse"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:26
+msgid "Turntable"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:26
+msgid "Scrobble your music"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:29
+msgid "translator-credits"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:49 ../lib/collision/window.rb:70
+#: ../lib/collision/window.rb:387
+msgid "Collision"
+msgstr ""
+
+#: ../lib/collision/actions/hash_info.rb:21
+msgid "https://en.wikipedia.org/wiki/Comparison_of_cryptographic_hash_functions"
+msgstr ""
+
+#: ../lib/collision/checksum.rb:55
+msgid "%d of %d hashes calculated"
+msgstr ""
+
+#: ../lib/collision/feedback.rb:38
+msgid "They Match"
+msgstr ""
+
+#: ../lib/collision/feedback.rb:40
+msgid "They Don't Match"
+msgstr ""
+
+#: ../lib/collision/hash_row.rb:52
+msgid "Copy"
+msgstr ""
+
+#: ../lib/collision/primary_menu.rb:18
+msgid "_New Window"
+msgstr ""
+
+#: ../lib/collision/primary_menu.rb:19
+msgid "_Compare Hash Functions"
+msgstr ""
+
+#: ../lib/collision/primary_menu.rb:20
+msgid "Copy as _Markdown Table"
+msgstr ""
+
+#: ../lib/collision/primary_menu.rb:21
+#: ../lib/collision/toggle_hash_functions_dialog.rb:29
+msgid "_Toggle Hash Functions"
+msgstr ""
+
+#: ../lib/collision/primary_menu.rb:22 ../lib/collision/shortcuts_dialog.rb:33
+msgid "_Keyboard Shortcuts"
+msgstr ""
+
+#: ../lib/collision/primary_menu.rb:23
+msgid "_About Collision"
+msgstr ""
+
+#: ../lib/collision/shortcuts_dialog.rb:19
+msgid "General"
+msgstr ""
+
+#: ../lib/collision/shortcuts_dialog.rb:20
+msgid "Open a File"
+msgstr ""
+
+#: ../lib/collision/shortcuts_dialog.rb:21
+msgid "Show Keyboard Shortcuts"
+msgstr ""
+
+#: ../lib/collision/shortcuts_dialog.rb:22
+msgid "New Window"
+msgstr ""
+
+#: ../lib/collision/shortcuts_dialog.rb:23
+msgid "Close Window"
+msgstr ""
+
+#: ../lib/collision/shortcuts_dialog.rb:24
+msgid "Quit"
+msgstr ""
+
+#: ../lib/collision/toggle_hash_functions_dialog.rb:21
+msgid "This hash function is used for file verification and cannot be disabled"
+msgstr ""
+
+#: ../lib/collision/toggle_hash_functions_dialog.rb:51
+msgid "Select which hash functions should be calculated."
+msgstr ""
+
+#: ../lib/collision/toggle_hash_functions_dialog.rb:79
+msgid "Wait for all ongoing operations to finish"
+msgstr ""
+
+#: ../lib/collision/window.rb:43
+msgid "MD5,SHA-1,SHA-256,SHA-512,CRC32 or Adler32 Hash"
+msgstr ""
+
+#: ../lib/collision/window.rb:44
+msgid "Insert a MD5/SHA-1/SHA-256/SHA-512/CRC32/Adler32 Hash"
+msgstr ""
+
+#: ../lib/collision/window.rb:45
+msgid "Choose File…"
+msgstr ""
+
+#: ../lib/collision/window.rb:130
+msgid "Hash"
+msgstr ""
+
+#: ../lib/collision/window.rb:136
+msgid "Verify"
+msgstr ""
+
+#: ../lib/collision/window.rb:224 ../lib/collision/window.rb:419
+msgid "Pending"
+msgstr ""
+
+#: ../lib/collision/window.rb:323
+msgid "Drop to hash"
+msgstr ""
+
+#: ../lib/collision/window.rb:348
+msgid "_Open"
+msgstr ""
+
+#: ../lib/collision/window.rb:349
+msgid "Open…"
+msgstr ""
+
+#: ../lib/collision/window.rb:364
+msgid "Main Menu"
+msgstr ""
+
+#: ../lib/collision/window.rb:388
+msgid "Check hashes for your files"
+msgstr ""
+
+#: ../lib/collision/window.rb:396
+msgid "_Open a File"
+msgstr ""
+
+#: ../lib/collision/window.rb:405
+msgid "Calculating Hashes"
+msgstr ""
+
+#: ../lib/collision/window.rb:406
+msgid "This might take a while"
+msgstr ""
+
+#: ../lib/collision/window.rb:463
+msgid "Checksum"
+msgstr ""
+
+#: ../lib/collision/window.rb:464
+msgid "File"
+msgstr ""
+
+#: ../lib/collision/window.rb:530
+msgid "Select Another File to Check Against"
+msgstr ""
+
+#: ../lib/collision/window.rb:792
+msgid "Choose a File"
+msgstr ""

@@ -4,6 +4,7 @@ require "digest"
 require "zlib"
 require "adwaita"
 
+require_relative "i18n"
 require_relative "settings"
 
 module Collision
@@ -26,6 +27,8 @@ module Collision
   # this port depends on; it is left out of HASH_FUNCTIONS rather than listed
   # and left uncalculated.
   class Checksum
+    include I18n
+
     # The hash functions offered, in display order. The key is the settings
     # name and the internal identifier; the value is the label shown in the UI.
     HASH_FUNCTIONS = {
@@ -49,7 +52,7 @@ module Collision
     CHUNK_SIZE = 1 << 16
 
     # Progress-bar text while the hashes are being calculated.
-    PROGRESS_FORMAT = "%d of %d hashes calculated"
+    PROGRESS_FORMAT = N_("%d of %d hashes calculated")
 
     DIGESTS = {
       md5:    Digest::MD5,
@@ -137,7 +140,7 @@ module Collision
       def reset_progress(progressbar, amount)
         unless progressbar.nil?
           progressbar.fraction = 0.0
-          progressbar.text = format(PROGRESS_FORMAT, 0, amount)
+          progressbar.text = format(_(PROGRESS_FORMAT), 0, amount)
         end
       end
 
@@ -185,7 +188,7 @@ module Collision
         unless progressbar.nil?
           GLib::Idle.add do
             progressbar.fraction = [done.fdiv(amount), 1.0].min
-            progressbar.text = format(PROGRESS_FORMAT, done, amount)
+            progressbar.text = format(_(PROGRESS_FORMAT), done, amount)
             false
           end
         end

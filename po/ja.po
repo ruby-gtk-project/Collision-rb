@@ -1,0 +1,275 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Kaz Sibuya <sibuyakazokuu@gmail.com>, 2022.
+# Himmel <anonymous.colt330@aleeas.com>, 2024.
+# Ryo Nakano <ryonakaknock3@gmail.com>, 2024, 2026.
+# Himmel <Himmel@users.noreply.hosted.weblate.org>, 2024.
+# Himmel <himmel@users.noreply.hosted.weblate.org>, 2026.
+# Deleted User <noreply+36432@weblate.org>, 2026.
+msgid ""
+msgstr ""
+"Project-Id-Version: dev.geopjr.Collision\n"
+"Report-Msgid-Bugs-To: https://github.com/ruby-gtk-project/Collision-rb/"
+"issues\n"
+"POT-Creation-Date: 2026-11-02 23:11+0000\n"
+"PO-Revision-Date: 2026-03-26 21:13+0000\n"
+"Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
+"Language-Team: Japanese <https://hosted.weblate.org/projects/collision/"
+"collision/ja/>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 5.17-dev\n"
+
+#: ../lib/collision/actions/about.rb:23
+msgid "Archives"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:23
+msgid "Create and view web archives"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:24
+msgid "Calligraphy"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:24
+msgid "Turn text into ASCII banners"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:25
+msgid "Tuba"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:25
+msgid "Browse the Fediverse"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:26
+msgid "Turntable"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:26
+msgid "Scrobble your music"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:29
+msgid "translator-credits"
+msgstr ""
+"Himmel\n"
+"Sibuya Kaz <sibuyakazokuu@gmail.com>"
+
+#: ../lib/collision/actions/about.rb:49 ../lib/collision/window.rb:70
+#: ../lib/collision/window.rb:387
+msgid "Collision"
+msgstr "Collision"
+
+#: ../lib/collision/actions/hash_info.rb:21
+msgid ""
+"https://en.wikipedia.org/wiki/Comparison_of_cryptographic_hash_functions"
+msgstr ""
+"https://en.wikipedia.org/wiki/Comparison_of_cryptographic_hash_functions"
+
+#: ../lib/collision/checksum.rb:55
+msgid "%d of %d hashes calculated"
+msgstr "%d個のうち%d個のハッシュが計算されました"
+
+#: ../lib/collision/feedback.rb:38
+msgid "They Match"
+msgstr "一致します"
+
+#: ../lib/collision/feedback.rb:40
+msgid "They Don't Match"
+msgstr "一致しません"
+
+#: ../lib/collision/hash_row.rb:52
+msgid "Copy"
+msgstr "コピー"
+
+#: ../lib/collision/primary_menu.rb:18
+msgid "_New Window"
+msgstr "新しいウィンドウ(_N)"
+
+#: ../lib/collision/primary_menu.rb:19
+msgid "_Compare Hash Functions"
+msgstr "ハッシュ関数の比較(_C)"
+
+#: ../lib/collision/primary_menu.rb:20
+msgid "Copy as _Markdown Table"
+msgstr ""
+
+#: ../lib/collision/primary_menu.rb:21
+#: ../lib/collision/toggle_hash_functions_dialog.rb:29
+msgid "_Toggle Hash Functions"
+msgstr ""
+
+#: ../lib/collision/primary_menu.rb:22 ../lib/collision/shortcuts_dialog.rb:33
+msgid "_Keyboard Shortcuts"
+msgstr "キーボードショートカット(_K)"
+
+#: ../lib/collision/primary_menu.rb:23
+msgid "_About Collision"
+msgstr "Collision について(_A)"
+
+#: ../lib/collision/shortcuts_dialog.rb:19
+msgid "General"
+msgstr "一般"
+
+#: ../lib/collision/shortcuts_dialog.rb:20
+msgid "Open a File"
+msgstr "ファイルを開く"
+
+#: ../lib/collision/shortcuts_dialog.rb:21
+msgid "Show Keyboard Shortcuts"
+msgstr "キーボードショートカットを表示"
+
+#: ../lib/collision/shortcuts_dialog.rb:22
+msgid "New Window"
+msgstr "新しいウィンドウ"
+
+#: ../lib/collision/shortcuts_dialog.rb:23
+msgid "Close Window"
+msgstr "ウィンドウを閉じる"
+
+#: ../lib/collision/shortcuts_dialog.rb:24
+msgid "Quit"
+msgstr "終了"
+
+#: ../lib/collision/toggle_hash_functions_dialog.rb:21
+msgid "This hash function is used for file verification and cannot be disabled"
+msgstr ""
+
+#: ../lib/collision/toggle_hash_functions_dialog.rb:51
+msgid "Select which hash functions should be calculated."
+msgstr ""
+
+#: ../lib/collision/toggle_hash_functions_dialog.rb:79
+msgid "Wait for all ongoing operations to finish"
+msgstr ""
+
+#: ../lib/collision/window.rb:43
+#, fuzzy
+#| msgid "MD5,SHA-1,SHA-256,SHA-512,Blake3,CRC32 or Adler32 Hash"
+msgid "MD5,SHA-1,SHA-256,SHA-512,CRC32 or Adler32 Hash"
+msgstr "MD5、SHA-1、SHA-256、SHA-512、Blake3、CRC32 または Adler32 ハッシュ"
+
+#: ../lib/collision/window.rb:44
+#, fuzzy
+#| msgid "Insert a MD5/SHA-1/SHA-256/SHA-512/Blake3/CRC32/Adler32 Hash"
+msgid "Insert a MD5/SHA-1/SHA-256/SHA-512/CRC32/Adler32 Hash"
+msgstr "MD 5/SHA-1/SHA-256/SHA-512/Blake 3/CRC 32/Adler 32 ハッシュを挿入する"
+
+#: ../lib/collision/window.rb:45
+msgid "Choose File…"
+msgstr "ファイルを選択…"
+
+#: ../lib/collision/window.rb:130
+msgid "Hash"
+msgstr "ハッシュ"
+
+#: ../lib/collision/window.rb:136
+msgid "Verify"
+msgstr "検証"
+
+#: ../lib/collision/window.rb:224 ../lib/collision/window.rb:419
+msgid "Pending"
+msgstr "保留中"
+
+#: ../lib/collision/window.rb:323
+msgid "Drop to hash"
+msgstr "ハッシュにする"
+
+#: ../lib/collision/window.rb:348
+msgid "_Open"
+msgstr "開く(_O)"
+
+#: ../lib/collision/window.rb:349
+msgid "Open…"
+msgstr "開く…"
+
+#: ../lib/collision/window.rb:364
+#, fuzzy
+#| msgid "Menu"
+msgid "Main Menu"
+msgstr "メニュー"
+
+#: ../lib/collision/window.rb:388
+msgid "Check hashes for your files"
+msgstr "ファイルのハッシュを確認する"
+
+#: ../lib/collision/window.rb:396
+msgid "_Open a File"
+msgstr "ファイルを開く(_O)"
+
+#: ../lib/collision/window.rb:405
+msgid "Calculating Hashes"
+msgstr "ハッシュの計算"
+
+#: ../lib/collision/window.rb:406
+msgid "This might take a while"
+msgstr "いましばらくお待ち下さい"
+
+#: ../lib/collision/window.rb:463
+msgid "Checksum"
+msgstr "チェックサム"
+
+#: ../lib/collision/window.rb:464
+msgid "File"
+msgstr "ファイル"
+
+#: ../lib/collision/window.rb:530
+msgid "Select Another File to Check Against"
+msgstr "照合する他のファイルを選択"
+
+#: ../lib/collision/window.rb:792
+msgid "Choose a File"
+msgstr "ファイルを選択"
+
+#~ msgid "Hash Generator"
+#~ msgstr "ハッシュジェネレーター"
+
+#~ msgid "md5;sha1;sha256;sha512;blake3;crc32;adler32;hash;"
+#~ msgstr "md5;sha1;sha256;sha512;blake3;crc32;adler32;hash;"
+
+#~ msgid ""
+#~ "Verifying that a file you downloaded or received is actually the one you "
+#~ "were expecting is often overlooked or too time-consuming to do. At the "
+#~ "same time, it has become very easy to get your hands on a file that has "
+#~ "been tampered with, due to the mass increase of malicious webpages and "
+#~ "other actors."
+#~ msgstr ""
+#~ "あなたがダウンロードした、または受信したファイルが本当に意図したものである"
+#~ "かを検証するには、しばしば見逃してしまったり、時間がかかりすぎたりすること"
+#~ "があります。一方、悪意のあるウェブページや他の攻撃者の急増により、改竄され"
+#~ "たファイルを入手することは珍しくありません。"
+
+#~ msgid ""
+#~ "This tool aims to solve that. Collision comes with a simple &amp; clean "
+#~ "UI, allowing anyone, from any age and experience group, to generate, "
+#~ "compare and verify MD5, SHA-256, SHA-512, SHA-1, Blake3, CRC32 and "
+#~ "Adler32 hashes."
+#~ msgstr ""
+#~ "このツールはこうした問題を解決することを目的としています。Collision はシン"
+#~ "プル・クリーンな UI で、誰でも簡単に MD5、SHA-256、SHA-512、SHA-1、"
+#~ "Blake3、CRC32、Adler32 ハッシュを生成、比較、検証することができます。"
+
+#~ msgid "Check Hashes"
+#~ msgstr "ハッシュの確認"
+
+#~ msgid ""
+#~ "This tool aims to solve that. Collision comes with a simple &amp; clean "
+#~ "UI, allowing anyone, from any age and experience group, to generate, "
+#~ "compare and verify MD5, SHA-256, SHA-512 and SHA-1 hashes."
+#~ msgstr ""
+#~ "このツールはそれを解決することを目的としています。Collisionはシンプルかつ"
+#~ "クリーンなUIで、年齢や経験を問わず、誰でもMD5、SHA-256、SHA-512、SHA-1の"
+#~ "ハッシュを生成、比較、検証することができます。"
+
+#~ msgid "MD5,SHA-1,SHA-256 or SHA-512 Hash"
+#~ msgstr "MD5、SHA-1、SHA-256、SHA-512 ハッシュ"
+
+#~ msgid "Insert a MD5/SHA-1/SHA-256/SHA-512 Hash"
+#~ msgstr "MD5/SHA-1/SHA-256/SHA-512 のハッシュ値を入力"

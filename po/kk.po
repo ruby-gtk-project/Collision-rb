@@ -1,0 +1,256 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Baurzhan Muftakhidinov <baurthefirst@gmail.com>, 2026.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: https://github.com/ruby-gtk-project/Collision-rb/"
+"issues\n"
+"POT-Creation-Date: 2026-11-02 23:11+0000\n"
+"PO-Revision-Date: 2026-03-26 21:14+0000\n"
+"Last-Translator: Baurzhan Muftakhidinov <baurthefirst@gmail.com>\n"
+"Language-Team: Kazakh <https://hosted.weblate.org/projects/collision/"
+"collision/kk/>\n"
+"Language: kk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.17-dev\n"
+
+#: ../lib/collision/actions/about.rb:23
+msgid "Archives"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:23
+msgid "Create and view web archives"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:24
+msgid "Calligraphy"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:24
+msgid "Turn text into ASCII banners"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:25
+msgid "Tuba"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:25
+msgid "Browse the Fediverse"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:26
+msgid "Turntable"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:26
+msgid "Scrobble your music"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:29
+msgid "translator-credits"
+msgstr "Baurzhan Muftakhidinov <baurthefirst@gmail.com>"
+
+#: ../lib/collision/actions/about.rb:49 ../lib/collision/window.rb:70
+#: ../lib/collision/window.rb:387
+msgid "Collision"
+msgstr "Collision"
+
+#: ../lib/collision/actions/hash_info.rb:21
+msgid ""
+"https://en.wikipedia.org/wiki/Comparison_of_cryptographic_hash_functions"
+msgstr ""
+"https://en.wikipedia.org/wiki/Comparison_of_cryptographic_hash_functions"
+
+#: ../lib/collision/checksum.rb:55
+msgid "%d of %d hashes calculated"
+msgstr "%d / %d хэш есептелді"
+
+#: ../lib/collision/feedback.rb:38
+msgid "They Match"
+msgstr "Олар сәйкес келеді"
+
+#: ../lib/collision/feedback.rb:40
+msgid "They Don't Match"
+msgstr "Олар сәйкес келмейді"
+
+#: ../lib/collision/hash_row.rb:52
+msgid "Copy"
+msgstr "Көшіру"
+
+#: ../lib/collision/primary_menu.rb:18
+msgid "_New Window"
+msgstr "_Жаңа терезе"
+
+#: ../lib/collision/primary_menu.rb:19
+msgid "_Compare Hash Functions"
+msgstr "Хэш функцияларын _салыстыру"
+
+#: ../lib/collision/primary_menu.rb:20
+msgid "Copy as _Markdown Table"
+msgstr "Markdown _кестесі ретінде көшіріп алу"
+
+#: ../lib/collision/primary_menu.rb:21
+#: ../lib/collision/toggle_hash_functions_dialog.rb:29
+msgid "_Toggle Hash Functions"
+msgstr "Хэш фунцкцияларын ауыс_тырып, қосу"
+
+#: ../lib/collision/primary_menu.rb:22 ../lib/collision/shortcuts_dialog.rb:33
+msgid "_Keyboard Shortcuts"
+msgstr "Пернетақта _жарлықтары"
+
+#: ../lib/collision/primary_menu.rb:23
+msgid "_About Collision"
+msgstr "Collision _туралы"
+
+#: ../lib/collision/shortcuts_dialog.rb:19
+msgid "General"
+msgstr "Жалпы"
+
+#: ../lib/collision/shortcuts_dialog.rb:20
+msgid "Open a File"
+msgstr "Файлды ашу"
+
+#: ../lib/collision/shortcuts_dialog.rb:21
+msgid "Show Keyboard Shortcuts"
+msgstr "Пернетақта жарлықтарын көрсету"
+
+#: ../lib/collision/shortcuts_dialog.rb:22
+msgid "New Window"
+msgstr "Жаңа терезе"
+
+#: ../lib/collision/shortcuts_dialog.rb:23
+msgid "Close Window"
+msgstr "Терезені жабу"
+
+#: ../lib/collision/shortcuts_dialog.rb:24
+msgid "Quit"
+msgstr "Шығу"
+
+#: ../lib/collision/toggle_hash_functions_dialog.rb:21
+msgid "This hash function is used for file verification and cannot be disabled"
+msgstr ""
+"Бұл хэш функциясы файлды растау үшін қолданылған және оны сөндіру мүмкін емес"
+
+#: ../lib/collision/toggle_hash_functions_dialog.rb:51
+msgid "Select which hash functions should be calculated."
+msgstr "Қай хэш функция есептелетінін таңдаңыз."
+
+#: ../lib/collision/toggle_hash_functions_dialog.rb:79
+msgid "Wait for all ongoing operations to finish"
+msgstr "Барлық орындалып тұрған әрекеттердің аяқталуын күту"
+
+#: ../lib/collision/window.rb:43
+#, fuzzy
+#| msgid "MD5,SHA-1,SHA-256,SHA-512,Blake3,CRC32 or Adler32 Hash"
+msgid "MD5,SHA-1,SHA-256,SHA-512,CRC32 or Adler32 Hash"
+msgstr "MD5, SHA-1, SHA-256, SHA-512, Blake3, CRC32 немесе Adler32 хэші"
+
+#: ../lib/collision/window.rb:44
+#, fuzzy
+#| msgid "Insert a MD5/SHA-1/SHA-256/SHA-512/Blake3/CRC32/Adler32 Hash"
+msgid "Insert a MD5/SHA-1/SHA-256/SHA-512/CRC32/Adler32 Hash"
+msgstr "MD5/SHA-1/SHA-256/SHA-512/Blake3/CRC32/Adler32 хэшін кірістіру"
+
+#: ../lib/collision/window.rb:45
+msgid "Choose File…"
+msgstr "Файлды таңдау…"
+
+#: ../lib/collision/window.rb:130
+msgid "Hash"
+msgstr "Хэш"
+
+#: ../lib/collision/window.rb:136
+msgid "Verify"
+msgstr "Тексеру"
+
+#: ../lib/collision/window.rb:224 ../lib/collision/window.rb:419
+msgid "Pending"
+msgstr "Күтілуде"
+
+#: ../lib/collision/window.rb:323
+msgid "Drop to hash"
+msgstr "Хэштеу үшін осында тастаңыз"
+
+#: ../lib/collision/window.rb:348
+msgid "_Open"
+msgstr "_Ашу"
+
+#: ../lib/collision/window.rb:349
+msgid "Open…"
+msgstr "Ашу…"
+
+#: ../lib/collision/window.rb:364
+#, fuzzy
+#| msgid "Menu"
+msgid "Main Menu"
+msgstr "Мәзір"
+
+#: ../lib/collision/window.rb:388
+msgid "Check hashes for your files"
+msgstr "Файлдарыңыздың хэштерін тексеру"
+
+#: ../lib/collision/window.rb:396
+msgid "_Open a File"
+msgstr "Файлды _ашу"
+
+#: ../lib/collision/window.rb:405
+msgid "Calculating Hashes"
+msgstr "Хэштерді есептеу"
+
+#: ../lib/collision/window.rb:406
+msgid "This might take a while"
+msgstr "Бұл біраз уақыт алуы мүмкін"
+
+#: ../lib/collision/window.rb:463
+msgid "Checksum"
+msgstr "Бақылау сомасы"
+
+#: ../lib/collision/window.rb:464
+msgid "File"
+msgstr "Файл"
+
+#: ../lib/collision/window.rb:530
+msgid "Select Another File to Check Against"
+msgstr "Салыстыру үшін басқа файлды таңдау"
+
+#: ../lib/collision/window.rb:792
+msgid "Choose a File"
+msgstr "Файлды таңдау"
+
+#~ msgid "Hash Generator"
+#~ msgstr "Хэш генераторы"
+
+#~ msgid "md5;sha1;sha256;sha512;blake3;crc32;adler32;hash;"
+#~ msgstr "md5;sha1;sha256;sha512;blake3;crc32;adler32;hash;хэш;"
+
+#~ msgid ""
+#~ "Verifying that a file you downloaded or received is actually the one you "
+#~ "were expecting is often overlooked or too time-consuming to do. At the "
+#~ "same time, it has become very easy to get your hands on a file that has "
+#~ "been tampered with, due to the mass increase of malicious webpages and "
+#~ "other actors."
+#~ msgstr ""
+#~ "Жүктеп алынған немесе алынған файлдың шын мәнінде сіз күткен файл екенін "
+#~ "тексеру жиі ескерілмейді немесе тым көп уақытты алады. Сонымен қатар, "
+#~ "зиянды веб-беттер мен басқа да факторлардың жаппай көбеюіне байланысты "
+#~ "өзгертілген файлды алу өте оңай болды."
+
+#~ msgid ""
+#~ "This tool aims to solve that. Collision comes with a simple &amp; clean "
+#~ "UI, allowing anyone, from any age and experience group, to generate, "
+#~ "compare and verify MD5, SHA-256, SHA-512, SHA-1, Blake3, CRC32 and "
+#~ "Adler32 hashes."
+#~ msgstr ""
+#~ "Бұл сайман осы мәселені шешуге бағытталған. Collision қарапайым және таза "
+#~ "интерфейспен жабдықталған, бұл кез келген адамға, кез келген жастағы және "
+#~ "тәжірибе деңгейіндегі адамдарға MD5, SHA-256, SHA-512, SHA-1, Blake3, "
+#~ "CRC32 және Adler32 хэштерін жасауға, салыстыруға және тексеруге мүмкіндік "
+#~ "береді."
+
+#~ msgid "Check Hashes"
+#~ msgstr "Хэштерді тексеру"

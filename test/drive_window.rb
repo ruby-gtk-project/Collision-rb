@@ -16,6 +16,13 @@ EXPECTED = {
   sha256: "c03905fcdab297513a620ec81ed46ca44ddb62d41cbbd83eb4a5a3592be26a69",
 }.freeze
 
+# How often the results page is looked for, and how long it is waited for.
+# Hashing happens on worker threads, so the wait has to be a poll rather than
+# a fixed pause: a cold machine took longer than a one-and-a-half second sleep
+# allowed, and the checks then ran against the spinner page.
+POLL_INTERVAL = 100
+DEADLINE_SECONDS = 30
+
 failures = []
 
 def check(failures, label)
@@ -24,6 +31,59 @@ def check(failures, label)
   else
     puts "FAIL #{label}"
     failures << label
+  end
+end
+
+def monotonic = Process.clock_gettime(Process::CLOCK_MONOTONIC)
+
+# Everything that needs the hashes to have landed.
+def check_results(failures, window)
+  check(failures, "results page is shown") { window.main_stack.visible_child_name == "results" }
+  check(failures, "markdown action is enabled") { window.markdown_action.enabled? }
+  check(failures, "file name in the status page") { window.file_info.title == File.basename(FIXTURE) }
+
+  EXPECTED.each do |type, value|
+    check(failures, "#{type} subtitle") do
+      window.hash_rows[type].subtitle.delete(" ") == value
+    end
+  end
+
+  window.handle_input_change(EXPECTED[:sha256])
+  check(failures, "matching hash reads as a match") do
+    window.verify_text_view.css_classes.include?("success")
+  end
+
+  window.handle_input_change("deadbeef")
+  check(failures, "wrong hash reads as a mismatch") do
+    window.verify_text_view.css_classes.include?("error")
+  end
+
+  window.handle_input_change("")
+  check(failures, "empty field clears the feedback") do
+    window.verify_overlay_label.visible? && !window.verify_feedback.visible?
+  end
+
+  check(failures, "markdown table lists the hashes") do
+    window.markdown_table.include?("|MD5") && window.markdown_table.include?("`#{EXPECTED[:md5]}`")
+  end
+end
+
+# Everything that stands on its own.
+def check_components(failures)
+  check(failures, "toggle dialog builds with a row per function") do
+    Collision::ToggleHashFunctionsDialog.new { false }.build.is_a?(Adwaita::PreferencesDialog)
+  end
+
+  check(failures, "shortcuts dialog builds") do
+    Collision::ShortcutsDialog.new.build.is_a?(Adwaita::ShortcutsDialog)
+  end
+
+  check(failures, "primary menu has six items") do
+    Collision::PrimaryMenu.new.build.n_items == 6
+  end
+
+  check(failures, "collision icon is in the theme") do
+    Gtk::IconTheme.get_for_display(Gdk::Display.default).has_icon?("dev.geopjr.Collision")
   end
 end
 
@@ -47,54 +107,17 @@ app.signal_connect("activate") do
 
   window.file = FIXTURE
 
-  GLib::Timeout.add(1500) do
-    check(failures, "results page is shown") { window.main_stack.visible_child_name == "results" }
-    check(failures, "markdown action is enabled") { window.markdown_action.enabled? }
-    check(failures, "file name in the status page") { window.file_info.title == File.basename(FIXTURE) }
+  deadline = monotonic + DEADLINE_SECONDS
 
-    EXPECTED.each do |type, value|
-      check(failures, "#{type} subtitle") do
-        window.hash_rows[type].subtitle.delete(" ") == value
-      end
+  GLib::Timeout.add(POLL_INTERVAL) do
+    if window.main_stack.visible_child_name == "results" || monotonic > deadline
+      check_results(failures, window)
+      check_components(failures)
+      app.quit
+      false
+    else
+      true
     end
-
-    window.handle_input_change(EXPECTED[:sha256])
-    check(failures, "matching hash reads as a match") do
-      window.verify_text_view.css_classes.include?("success")
-    end
-
-    window.handle_input_change("deadbeef")
-    check(failures, "wrong hash reads as a mismatch") do
-      window.verify_text_view.css_classes.include?("error")
-    end
-
-    window.handle_input_change("")
-    check(failures, "empty field clears the feedback") do
-      window.verify_overlay_label.visible? && !window.verify_feedback.visible?
-    end
-
-    check(failures, "markdown table lists the hashes") do
-      window.markdown_table.include?("|MD5") && window.markdown_table.include?("`#{EXPECTED[:md5]}`")
-    end
-
-    check(failures, "toggle dialog builds with a row per function") do
-      Collision::ToggleHashFunctionsDialog.new { false }.build.is_a?(Adwaita::PreferencesDialog)
-    end
-
-    check(failures, "shortcuts dialog builds") do
-      Collision::ShortcutsDialog.new.build.is_a?(Adwaita::ShortcutsDialog)
-    end
-
-    check(failures, "primary menu has six items") do
-      Collision::PrimaryMenu.new.build.n_items == 6
-    end
-
-    check(failures, "collision icon is in the theme") do
-      Gtk::IconTheme.get_for_display(Gdk::Display.default).has_icon?("dev.geopjr.Collision")
-    end
-
-    app.quit
-    false
   end
 end
 

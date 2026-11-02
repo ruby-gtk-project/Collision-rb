@@ -1,0 +1,280 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Ibrahim Muhammad <ebraheem010@gmail.com>, 2022, 2026.
+# bonbonboi <hamzah.abusamak@gmail.com>, 2022.
+# Ali Aljishi <ahj696@hotmail.com>, 2023.
+# Ahmed Najmawi <iramosu@protonmail.com>, 2025, 2026.
+# Muhammed Al-Basha <mu7basha@users.noreply.hosted.weblate.org>, 2026.
+# Deleted User <noreply+51493@weblate.org>, 2026.
+# jonnysemon <jonnysemon@users.noreply.hosted.weblate.org>, 2026.
+msgid ""
+msgstr ""
+"Project-Id-Version: dev.geopjr.Collision\n"
+"Report-Msgid-Bugs-To: https://github.com/ruby-gtk-project/Collision-rb/"
+"issues\n"
+"POT-Creation-Date: 2026-11-02 23:11+0000\n"
+"PO-Revision-Date: 2026-03-26 21:14+0000\n"
+"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"Language-Team: Arabic <https://hosted.weblate.org/projects/collision/"
+"collision/ar/>\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+"X-Generator: Weblate 5.17-dev\n"
+
+#: ../lib/collision/actions/about.rb:23
+msgid "Archives"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:23
+msgid "Create and view web archives"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:24
+msgid "Calligraphy"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:24
+msgid "Turn text into ASCII banners"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:25
+msgid "Tuba"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:25
+msgid "Browse the Fediverse"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:26
+msgid "Turntable"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:26
+msgid "Scrobble your music"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:29
+msgid "translator-credits"
+msgstr ""
+"Ibrahim Muhammad <ibrahim.muhammad.mu@outlook.com>\n"
+"Ali Aljishi <ahj696@hotmail.com>\n"
+"أحمد النجماوي <iramosu@protonmail.com>"
+
+#: ../lib/collision/actions/about.rb:49 ../lib/collision/window.rb:70
+#: ../lib/collision/window.rb:387
+msgid "Collision"
+msgstr "تصادم"
+
+#: ../lib/collision/actions/hash_info.rb:21
+msgid ""
+"https://en.wikipedia.org/wiki/Comparison_of_cryptographic_hash_functions"
+msgstr ""
+"https://en.wikipedia.org/wiki/Comparison_of_cryptographic_hash_functions"
+
+#: ../lib/collision/checksum.rb:55
+msgid "%d of %d hashes calculated"
+msgstr "حُسِب %d من أصل %d تلبيد"
+
+#: ../lib/collision/feedback.rb:38
+msgid "They Match"
+msgstr "يتطابقان"
+
+#: ../lib/collision/feedback.rb:40
+msgid "They Don't Match"
+msgstr "لا يتطابقان"
+
+#: ../lib/collision/hash_row.rb:52
+msgid "Copy"
+msgstr "انسخ"
+
+#: ../lib/collision/primary_menu.rb:18
+msgid "_New Window"
+msgstr "نافذة _جديدة"
+
+#: ../lib/collision/primary_menu.rb:19
+msgid "_Compare Hash Functions"
+msgstr "_قارن وظائف التلبيد"
+
+#: ../lib/collision/primary_menu.rb:20
+msgid "Copy as _Markdown Table"
+msgstr "انسخ _كجدول ماركداون"
+
+#: ../lib/collision/primary_menu.rb:21
+#: ../lib/collision/toggle_hash_functions_dialog.rb:29
+msgid "_Toggle Hash Functions"
+msgstr "_بدّل دوال التبليد"
+
+#: ../lib/collision/primary_menu.rb:22 ../lib/collision/shortcuts_dialog.rb:33
+msgid "_Keyboard Shortcuts"
+msgstr "ا_ختصارات لوح المفاتيح"
+
+#: ../lib/collision/primary_menu.rb:23
+msgid "_About Collision"
+msgstr "_عَنْ «تصادم»"
+
+#: ../lib/collision/shortcuts_dialog.rb:19
+msgid "General"
+msgstr "عام"
+
+#: ../lib/collision/shortcuts_dialog.rb:20
+msgid "Open a File"
+msgstr "افتح ملفًا"
+
+#: ../lib/collision/shortcuts_dialog.rb:21
+msgid "Show Keyboard Shortcuts"
+msgstr "أظهِر اختصارات لوحة المفاتيح"
+
+#: ../lib/collision/shortcuts_dialog.rb:22
+msgid "New Window"
+msgstr "نافذة جديدة"
+
+#: ../lib/collision/shortcuts_dialog.rb:23
+msgid "Close Window"
+msgstr "أغلِق النافذة"
+
+#: ../lib/collision/shortcuts_dialog.rb:24
+msgid "Quit"
+msgstr "غادِر"
+
+#: ../lib/collision/toggle_hash_functions_dialog.rb:21
+msgid "This hash function is used for file verification and cannot be disabled"
+msgstr "تُستخدم دالة التبليد هذه للتحقق من الملفات ولا يمكن تعطيلها"
+
+#: ../lib/collision/toggle_hash_functions_dialog.rb:51
+msgid "Select which hash functions should be calculated."
+msgstr "حدّد دوال التبليد التي يجب حسابها."
+
+#: ../lib/collision/toggle_hash_functions_dialog.rb:79
+msgid "Wait for all ongoing operations to finish"
+msgstr "انتظر حتى تنتهي جميع العمليات الجارية"
+
+#: ../lib/collision/window.rb:43
+#, fuzzy
+#| msgid "MD5,SHA-1,SHA-256,SHA-512,Blake3,CRC32 or Adler32 Hash"
+msgid "MD5,SHA-1,SHA-256,SHA-512,CRC32 or Adler32 Hash"
+msgstr "تلبيد MD5، وSHA-1، وSHA-256، وSHA-512، وBlake3، وCRC32، وAdler32"
+
+#: ../lib/collision/window.rb:44
+#, fuzzy
+#| msgid "Insert a MD5/SHA-1/SHA-256/SHA-512/Blake3/CRC32/Adler32 Hash"
+msgid "Insert a MD5/SHA-1/SHA-256/SHA-512/CRC32/Adler32 Hash"
+msgstr "أدرِج تلبيد MD5/SHA-1/SHA-256/SHA-512/Blake3/CRC32/Adler32"
+
+#: ../lib/collision/window.rb:45
+msgid "Choose File…"
+msgstr "اختر ملفًا…"
+
+#: ../lib/collision/window.rb:130
+msgid "Hash"
+msgstr "التلبيد"
+
+#: ../lib/collision/window.rb:136
+msgid "Verify"
+msgstr "تحقَّق"
+
+#: ../lib/collision/window.rb:224 ../lib/collision/window.rb:419
+msgid "Pending"
+msgstr "قيد الانتظار"
+
+#: ../lib/collision/window.rb:323
+msgid "Drop to hash"
+msgstr "افلت للتبليد"
+
+#: ../lib/collision/window.rb:348
+msgid "_Open"
+msgstr "ا_فتح"
+
+#: ../lib/collision/window.rb:349
+msgid "Open…"
+msgstr "افتح…"
+
+#: ../lib/collision/window.rb:364
+#, fuzzy
+#| msgid "Menu"
+msgid "Main Menu"
+msgstr "القائمة"
+
+#: ../lib/collision/window.rb:388
+msgid "Check hashes for your files"
+msgstr "تحقَّق من تلبيد ملفَّاتك"
+
+#: ../lib/collision/window.rb:396
+msgid "_Open a File"
+msgstr "ا_فتح ملفًا"
+
+#: ../lib/collision/window.rb:405
+msgid "Calculating Hashes"
+msgstr "يحسب التلبيدات"
+
+#: ../lib/collision/window.rb:406
+msgid "This might take a while"
+msgstr "سيستغرق هذا فترة"
+
+#: ../lib/collision/window.rb:463
+msgid "Checksum"
+msgstr "تدقيق المجموع"
+
+#: ../lib/collision/window.rb:464
+msgid "File"
+msgstr "ملف"
+
+#: ../lib/collision/window.rb:530
+msgid "Select Another File to Check Against"
+msgstr "اختر ملفًا آخر لتقارنه"
+
+#: ../lib/collision/window.rb:792
+msgid "Choose a File"
+msgstr "اختر ملفًّا"
+
+#~ msgid "Hash Generator"
+#~ msgstr "مولِّد تلبيد"
+
+#~ msgid "md5;sha1;sha256;sha512;blake3;crc32;adler32;hash;"
+#~ msgstr "md5;sha1;sha256;sha512;blake3;crc32;adler32;hash;تلبيد;"
+
+#~ msgid ""
+#~ "Verifying that a file you downloaded or received is actually the one you "
+#~ "were expecting is often overlooked or too time-consuming to do. At the "
+#~ "same time, it has become very easy to get your hands on a file that has "
+#~ "been tampered with, due to the mass increase of malicious webpages and "
+#~ "other actors."
+#~ msgstr ""
+#~ "يشيع التغافل عن التحقق من أن الملفات التي نزَّلتها هي حقًا ما تريد، ولعل سبب "
+#~ "ذلك هو استغراقه وقتًا كثيرًا، ويتزامن هذا مع سهولة الحصول على ملفات معدلة، "
+#~ "وذلك لأن أعداد الصفحات الخبيثة وغيرهم من جهات يزداد تزايدًا."
+
+#~ msgid ""
+#~ "This tool aims to solve that. Collision comes with a simple &amp; clean "
+#~ "UI, allowing anyone, from any age and experience group, to generate, "
+#~ "compare and verify MD5, SHA-256, SHA-512, SHA-1, Blake3, CRC32 and "
+#~ "Adler32 hashes."
+#~ msgstr ""
+#~ "تهدف هذه الأداة لإصلاح هذا. يأتي «تصادم» مع واجهة واضحة وبسيطة، مما يتيح "
+#~ "لأي أحد بغض النظر عن عمره أو خبرته توليد ومقارنة تلبيدات MD5، وSHA-256، "
+#~ "وSHA-512، وSHA-1، وBlake3، وCRC32، وAdler32."
+
+#~ msgid "Check Hashes"
+#~ msgstr "تحقَّق من التلبيدات"
+
+#~ msgid "md5;sha1;sha256;sha512;hash;"
+#~ msgstr "md5;sha1;sha256;sha512;هاش;"
+
+#~ msgid ""
+#~ "This tool aims to solve that. Collision comes with a simple &amp; clean "
+#~ "UI, allowing anyone, from any age and experience group, to generate, "
+#~ "compare and verify MD5, SHA-256, SHA-512 and SHA-1 hashes."
+#~ msgstr ""
+#~ "هدف هذه الأداة حلُّ ذلك. واجهة «تصادم» سهلة ومرتَّبة، وهذا يتيح لأيِّ أحد أكان "
+#~ "خبيرًا أم مبتدئًا، كبيرًا أم صغيرًا، بأن يولِّد ويقارن هاشات إم‌دي٥ وإس‌إتش‌أي-٢٥٦ "
+#~ "وإس‌إتش‌أي-٥١٢ وإس‌إتش‌أي-١."
+
+#~ msgid "MD5,SHA-1,SHA-256 or SHA-512 Hash"
+#~ msgstr "هاش إم‌دي٥ أو إس‌إتش‌أي-٢٥٦ أو إس‌إتش‌أي-٥١٢ أو إس‌إتش‌أي-١"
+
+#~ msgid "Insert a MD5/SHA-1/SHA-256/SHA-512 Hash"
+#~ msgstr "أدرج هاش إم‌دي٥\\إس‌إتش‌أي-٢٥٦\\إس‌إتش‌أي-٥١٢\\إس‌إتش‌أي-١"

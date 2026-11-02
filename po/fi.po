@@ -1,0 +1,277 @@
+# Finnish translation for dev.geopjr.Collision.
+# Copyright (C) 2021 THE dev.geopjjr.Collision'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the dev.geopjr.Collision package.
+# Jiri Grönroos <jiri.gronroos@iki.fi>, 2021, 2022, 2023, 2024, 2026.
+# artnay <artnay@noreply.codeberg.org>, 2026.
+msgid ""
+msgstr ""
+"Project-Id-Version: dev.geopjr.Collision\n"
+"Report-Msgid-Bugs-To: https://github.com/ruby-gtk-project/Collision-rb/"
+"issues\n"
+"POT-Creation-Date: 2026-11-02 23:11+0000\n"
+"PO-Revision-Date: 2026-03-28 04:57+0000\n"
+"Last-Translator: artnay <artnay@noreply.codeberg.org>\n"
+"Language-Team: Finnish <https://translate.codeberg.org/projects/collision/"
+"collision/fi/>\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.16.2\n"
+
+#: ../lib/collision/actions/about.rb:23
+msgid "Archives"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:23
+msgid "Create and view web archives"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:24
+msgid "Calligraphy"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:24
+msgid "Turn text into ASCII banners"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:25
+msgid "Tuba"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:25
+msgid "Browse the Fediverse"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:26
+msgid "Turntable"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:26
+msgid "Scrobble your music"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:29
+msgid "translator-credits"
+msgstr "Jiri Grönroos"
+
+#: ../lib/collision/actions/about.rb:49 ../lib/collision/window.rb:70
+#: ../lib/collision/window.rb:387
+msgid "Collision"
+msgstr "Collision"
+
+#: ../lib/collision/actions/hash_info.rb:21
+msgid ""
+"https://en.wikipedia.org/wiki/Comparison_of_cryptographic_hash_functions"
+msgstr ""
+"https://en.wikipedia.org/wiki/Comparison_of_cryptographic_hash_functions"
+
+#: ../lib/collision/checksum.rb:55
+msgid "%d of %d hashes calculated"
+msgstr "%d/%d tiivistettä laskettu"
+
+#: ../lib/collision/feedback.rb:38
+msgid "They Match"
+msgstr "Ne vastaavat toisiaan"
+
+#: ../lib/collision/feedback.rb:40
+msgid "They Don't Match"
+msgstr "Ne eivät vastaa toisiaan"
+
+#: ../lib/collision/hash_row.rb:52
+msgid "Copy"
+msgstr "Kopioi"
+
+#: ../lib/collision/primary_menu.rb:18
+msgid "_New Window"
+msgstr "_Uusi ikkuna"
+
+#: ../lib/collision/primary_menu.rb:19
+msgid "_Compare Hash Functions"
+msgstr "_Vertaa tiivistefunktioita"
+
+#: ../lib/collision/primary_menu.rb:20
+msgid "Copy as _Markdown Table"
+msgstr "Kopioi _Markdown-tauluna"
+
+#: ../lib/collision/primary_menu.rb:21
+#: ../lib/collision/toggle_hash_functions_dialog.rb:29
+msgid "_Toggle Hash Functions"
+msgstr "_Näytä/piilota tiivistefunktiot"
+
+#: ../lib/collision/primary_menu.rb:22 ../lib/collision/shortcuts_dialog.rb:33
+msgid "_Keyboard Shortcuts"
+msgstr "_Pikanäppäimet"
+
+#: ../lib/collision/primary_menu.rb:23
+msgid "_About Collision"
+msgstr "_Tietoja - Collision"
+
+#: ../lib/collision/shortcuts_dialog.rb:19
+msgid "General"
+msgstr "Yleiset"
+
+#: ../lib/collision/shortcuts_dialog.rb:20
+msgid "Open a File"
+msgstr "Avaa tiedosto"
+
+#: ../lib/collision/shortcuts_dialog.rb:21
+msgid "Show Keyboard Shortcuts"
+msgstr "Näytä pikanäppäimet"
+
+#: ../lib/collision/shortcuts_dialog.rb:22
+msgid "New Window"
+msgstr "Uusi ikkuna"
+
+#: ../lib/collision/shortcuts_dialog.rb:23
+msgid "Close Window"
+msgstr "Sulje ikkuna"
+
+#: ../lib/collision/shortcuts_dialog.rb:24
+msgid "Quit"
+msgstr "Lopeta"
+
+#: ../lib/collision/toggle_hash_functions_dialog.rb:21
+msgid "This hash function is used for file verification and cannot be disabled"
+msgstr ""
+"Tätä tiivistefunktiota käytetään tiedostojen vahvistamiseen, eikä sitä voi "
+"poistaa käytöstä"
+
+#: ../lib/collision/toggle_hash_functions_dialog.rb:51
+msgid "Select which hash functions should be calculated."
+msgstr "Valitse mikä tiivistefunktio lasketaan."
+
+#: ../lib/collision/toggle_hash_functions_dialog.rb:79
+msgid "Wait for all ongoing operations to finish"
+msgstr "Odota kunnes kaikki käynnissä olevat toimenpiteet valmistuvat"
+
+#: ../lib/collision/window.rb:43
+#, fuzzy
+#| msgid "MD5,SHA-1,SHA-256,SHA-512,Blake3,CRC32 or Adler32 Hash"
+msgid "MD5,SHA-1,SHA-256,SHA-512,CRC32 or Adler32 Hash"
+msgstr "MD5-, SHA-1-, SHA-256-, SHA-512-, Blake3-, CRC32- tai Adler32-tiiviste"
+
+#: ../lib/collision/window.rb:44
+#, fuzzy
+#| msgid "Insert a MD5/SHA-1/SHA-256/SHA-512/Blake3/CRC32/Adler32 Hash"
+msgid "Insert a MD5/SHA-1/SHA-256/SHA-512/CRC32/Adler32 Hash"
+msgstr "Syötä MD5-/SHA-1-/SHA-256-/SHA-512-/Blake3-/CRC32-/Adler32-tiiviste"
+
+#: ../lib/collision/window.rb:45
+msgid "Choose File…"
+msgstr "Valitse tiedosto…"
+
+#: ../lib/collision/window.rb:130
+msgid "Hash"
+msgstr "Tiiviste"
+
+#: ../lib/collision/window.rb:136
+msgid "Verify"
+msgstr "Vahvista"
+
+#: ../lib/collision/window.rb:224 ../lib/collision/window.rb:419
+msgid "Pending"
+msgstr "Odottaa"
+
+#: ../lib/collision/window.rb:323
+msgid "Drop to hash"
+msgstr "Pudota laskeaksesi tiivisteen"
+
+#: ../lib/collision/window.rb:348
+msgid "_Open"
+msgstr "_Avaa"
+
+#: ../lib/collision/window.rb:349
+msgid "Open…"
+msgstr "Avaa…"
+
+#: ../lib/collision/window.rb:364
+#, fuzzy
+#| msgid "Menu"
+msgid "Main Menu"
+msgstr "Valikko"
+
+#: ../lib/collision/window.rb:388
+msgid "Check hashes for your files"
+msgstr "Tarkista tiedostojesi tiivisteet"
+
+#: ../lib/collision/window.rb:396
+msgid "_Open a File"
+msgstr "_Avaa tiedosto"
+
+#: ../lib/collision/window.rb:405
+msgid "Calculating Hashes"
+msgstr "Lasketaan tiivisteitä"
+
+#: ../lib/collision/window.rb:406
+msgid "This might take a while"
+msgstr "Tämä saattaa kestää hetken"
+
+#: ../lib/collision/window.rb:463
+msgid "Checksum"
+msgstr "Tarkistussumma"
+
+#: ../lib/collision/window.rb:464
+msgid "File"
+msgstr "Tiedosto"
+
+#: ../lib/collision/window.rb:530
+msgid "Select Another File to Check Against"
+msgstr "Valitse toinen tiedosto vertailtavaksi"
+
+#: ../lib/collision/window.rb:792
+msgid "Choose a File"
+msgstr "Valitse tiedosto"
+
+#~ msgid "Hash Generator"
+#~ msgstr "Tiivisteen muodostaja"
+
+#~ msgid "md5;sha1;sha256;sha512;blake3;crc32;adler32;hash;"
+#~ msgstr "md5;sha1;sha256;sha512;blake3;crc32;adler32;hash;tiiviste;tarkistussumma;"
+
+#~ msgid ""
+#~ "Verifying that a file you downloaded or received is actually the one you "
+#~ "were expecting is often overlooked or too time-consuming to do. At the "
+#~ "same time, it has become very easy to get your hands on a file that has "
+#~ "been tampered with, due to the mass increase of malicious webpages and "
+#~ "other actors."
+#~ msgstr ""
+#~ "Lataamasi tai vastaanottamasi tiedoston vahvistaminen, että se todella on "
+#~ "mitä sen oletat olevan, jää usein huomiotta tai vie liian paljon aikaa. "
+#~ "Samanaikaisesti peukaloitujen tiedostojen leviäminen haitallisten "
+#~ "verkkosivustojen ja muiden pahantahtoisten toimijoiden toimesta on "
+#~ "aiempaa yleisempää."
+
+#~ msgid ""
+#~ "This tool aims to solve that. Collision comes with a simple &amp; clean "
+#~ "UI, allowing anyone, from any age and experience group, to generate, "
+#~ "compare and verify MD5, SHA-256, SHA-512, SHA-1, Blake3, CRC32 and "
+#~ "Adler32 hashes."
+#~ msgstr ""
+#~ "Tämän työnkalun on tarkoitus vastata haasteeseen. Collision tarjoaa "
+#~ "yksinkertaisen ja selkeän käyttöliittymän, joka mahdollistaa kenen "
+#~ "tahansa ikään tai kokemukseen katsomatta, vertailla ja vahvistaa MD5-, "
+#~ "SHA-256-, SHA-512-, SHA-1-, Blake3-, CRC32- ja Adler32-tiivisteitä."
+
+#~ msgid "Check Hashes"
+#~ msgstr "Tarkista tiivisteet"
+
+#~ msgid "md5;sha1;sha256;sha512;hash;"
+#~ msgstr "md5;sha1;sha256;sha512;hash;tiiviste;tarkistussumma;"
+
+#~ msgid ""
+#~ "This tool aims to solve that. Collision comes with a simple &amp; clean "
+#~ "UI, allowing anyone, from any age and experience group, to generate, "
+#~ "compare and verify MD5, SHA-256, SHA-512 and SHA-1 hashes."
+#~ msgstr ""
+#~ "Tämä työkalu pyrkii vastaamaan haasteeseen. Collisionissa on "
+#~ "yksinkertainen ja helppokäyttöinen käyttöliittymä, joka mahdollista kenen "
+#~ "tahansa ikään tai kokemukseen katsomatta luoda, vertailla ja vahvistaa "
+#~ "MD5-, SHA-256-, SHA-512- ja SHA-1-tiivisteitä."
+
+#~ msgid "MD5,SHA-1,SHA-256 or SHA-512 Hash"
+#~ msgstr "MD5- , SHA-1- , SHA-256- tai SHA-512-tiiviste"
+
+#~ msgid "Insert a MD5/SHA-1/SHA-256/SHA-512 Hash"
+#~ msgstr "Syötä MD5/SHA-1/SHA-256/SHA-512-tiiviste"

@@ -61,7 +61,7 @@ RSpec.describe Collision::Checksum do
       run_generate(path, progressbar)
 
       expect([progressbar.fraction, progressbar.text]).to eq(
-        [1.0, format(described_class::PROGRESS_FORMAT, expected.size, expected.size)],
+        [1.0, format(Collision::I18n._(described_class::PROGRESS_FORMAT), expected.size, expected.size)],
       )
     end
   end

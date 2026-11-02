@@ -1,0 +1,275 @@
+# Polish translations for Collision.
+# Copyright (C) 2021 Collision'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the Collision package.
+# Nikki <nikkehtine@int.pl>, 2021.
+# gnu-ewm <gnu.ewm@protonmail.com>, 2023.
+# polswert1 <igorpopowicz12@gmail.com>, 2024.
+# polswert1 <polswert1@users.noreply.hosted.weblate.org>, 2024, 2026.
+# Eryk Michalak <gnu.ewm@protonmail.com>, 2026.
+msgid ""
+msgstr ""
+"Project-Id-Version: dev.geopjr.Collision\n"
+"Report-Msgid-Bugs-To: https://github.com/ruby-gtk-project/Collision-rb/"
+"issues\n"
+"POT-Creation-Date: 2026-11-02 23:11+0000\n"
+"PO-Revision-Date: 2026-03-26 21:13+0000\n"
+"Last-Translator: Eryk Michalak <gnu.ewm@protonmail.com>\n"
+"Language-Team: Polish <https://hosted.weblate.org/projects/collision/"
+"collision/pl/>\n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+"X-Generator: Weblate 5.17-dev\n"
+
+#: ../lib/collision/actions/about.rb:23
+msgid "Archives"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:23
+msgid "Create and view web archives"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:24
+msgid "Calligraphy"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:24
+msgid "Turn text into ASCII banners"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:25
+msgid "Tuba"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:25
+msgid "Browse the Fediverse"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:26
+msgid "Turntable"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:26
+msgid "Scrobble your music"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:29
+msgid "translator-credits"
+msgstr "Nikki"
+
+#: ../lib/collision/actions/about.rb:49 ../lib/collision/window.rb:70
+#: ../lib/collision/window.rb:387
+msgid "Collision"
+msgstr "Collision"
+
+#: ../lib/collision/actions/hash_info.rb:21
+msgid ""
+"https://en.wikipedia.org/wiki/Comparison_of_cryptographic_hash_functions"
+msgstr ""
+"https://en.wikipedia.org/wiki/Comparison_of_cryptographic_hash_functions"
+
+#: ../lib/collision/checksum.rb:55
+msgid "%d of %d hashes calculated"
+msgstr "%d z %d haszów przekalkulowane"
+
+#: ../lib/collision/feedback.rb:38
+msgid "They Match"
+msgstr "Zgadzają się"
+
+#: ../lib/collision/feedback.rb:40
+msgid "They Don't Match"
+msgstr "Nie zgadzają się"
+
+#: ../lib/collision/hash_row.rb:52
+msgid "Copy"
+msgstr "Kopiuj"
+
+#: ../lib/collision/primary_menu.rb:18
+msgid "_New Window"
+msgstr "_Nowe Okno"
+
+#: ../lib/collision/primary_menu.rb:19
+msgid "_Compare Hash Functions"
+msgstr "_Porównanie algorytmów haszujących"
+
+#: ../lib/collision/primary_menu.rb:20
+msgid "Copy as _Markdown Table"
+msgstr ""
+
+#: ../lib/collision/primary_menu.rb:21
+#: ../lib/collision/toggle_hash_functions_dialog.rb:29
+msgid "_Toggle Hash Functions"
+msgstr ""
+
+#: ../lib/collision/primary_menu.rb:22 ../lib/collision/shortcuts_dialog.rb:33
+msgid "_Keyboard Shortcuts"
+msgstr "_Skróty klawiszowe"
+
+#: ../lib/collision/primary_menu.rb:23
+msgid "_About Collision"
+msgstr "_O programie Collision"
+
+#: ../lib/collision/shortcuts_dialog.rb:19
+msgid "General"
+msgstr "Ogólne"
+
+#: ../lib/collision/shortcuts_dialog.rb:20
+msgid "Open a File"
+msgstr "Otwórz plik"
+
+#: ../lib/collision/shortcuts_dialog.rb:21
+msgid "Show Keyboard Shortcuts"
+msgstr "Pokaż skróty klawiszowe"
+
+#: ../lib/collision/shortcuts_dialog.rb:22
+msgid "New Window"
+msgstr "Nowe Okno"
+
+#: ../lib/collision/shortcuts_dialog.rb:23
+msgid "Close Window"
+msgstr "Zamknij Okno"
+
+#: ../lib/collision/shortcuts_dialog.rb:24
+msgid "Quit"
+msgstr "Wyjdź"
+
+#: ../lib/collision/toggle_hash_functions_dialog.rb:21
+msgid "This hash function is used for file verification and cannot be disabled"
+msgstr ""
+
+#: ../lib/collision/toggle_hash_functions_dialog.rb:51
+msgid "Select which hash functions should be calculated."
+msgstr ""
+
+#: ../lib/collision/toggle_hash_functions_dialog.rb:79
+msgid "Wait for all ongoing operations to finish"
+msgstr ""
+
+#: ../lib/collision/window.rb:43
+#, fuzzy
+#| msgid "MD5,SHA-1,SHA-256,SHA-512,Blake3,CRC32 or Adler32 Hash"
+msgid "MD5,SHA-1,SHA-256,SHA-512,CRC32 or Adler32 Hash"
+msgstr "Hasz MD5,SHA-1,SHA-256,SHA-512,Blake3,CRC32 albo Adler32"
+
+#: ../lib/collision/window.rb:44
+#, fuzzy
+#| msgid "Insert a MD5/SHA-1/SHA-256/SHA-512/Blake3/CRC32/Adler32 Hash"
+msgid "Insert a MD5/SHA-1/SHA-256/SHA-512/CRC32/Adler32 Hash"
+msgstr "Wstaw Hasz MD5/SHA-1/SHA-256/SHA-512/Blake3/CRC32/Adler32"
+
+#: ../lib/collision/window.rb:45
+msgid "Choose File…"
+msgstr "Wybierz plik…"
+
+#: ../lib/collision/window.rb:130
+msgid "Hash"
+msgstr "Hasz"
+
+#: ../lib/collision/window.rb:136
+msgid "Verify"
+msgstr "Zweryfikuj"
+
+#: ../lib/collision/window.rb:224 ../lib/collision/window.rb:419
+msgid "Pending"
+msgstr ""
+
+#: ../lib/collision/window.rb:323
+msgid "Drop to hash"
+msgstr ""
+
+#: ../lib/collision/window.rb:348
+msgid "_Open"
+msgstr "_Otwórz"
+
+#: ../lib/collision/window.rb:349
+msgid "Open…"
+msgstr "Otwórz…"
+
+#: ../lib/collision/window.rb:364
+#, fuzzy
+#| msgid "Menu"
+msgid "Main Menu"
+msgstr "Menu"
+
+#: ../lib/collision/window.rb:388
+msgid "Check hashes for your files"
+msgstr "Sprawdź sumy kontrolne swoich plików"
+
+#: ../lib/collision/window.rb:396
+msgid "_Open a File"
+msgstr "_Otwórz plik"
+
+#: ../lib/collision/window.rb:405
+msgid "Calculating Hashes"
+msgstr "Kalkulowanie Haszów"
+
+#: ../lib/collision/window.rb:406
+msgid "This might take a while"
+msgstr "To może chwilę potrwać"
+
+#: ../lib/collision/window.rb:463
+msgid "Checksum"
+msgstr "Suma kontrolna"
+
+#: ../lib/collision/window.rb:464
+msgid "File"
+msgstr "Plik"
+
+#: ../lib/collision/window.rb:530
+msgid "Select Another File to Check Against"
+msgstr "Wybierz drugi plik do porównania"
+
+#: ../lib/collision/window.rb:792
+msgid "Choose a File"
+msgstr "Wybierz plik"
+
+#~ msgid "Hash Generator"
+#~ msgstr "Generator haszy"
+
+#~ msgid "md5;sha1;sha256;sha512;blake3;crc32;adler32;hash;"
+#~ msgstr "md5;sha1;sha256;sha512;blake3;crc32;adler32;hash;"
+
+#~ msgid ""
+#~ "Verifying that a file you downloaded or received is actually the one you "
+#~ "were expecting is often overlooked or too time-consuming to do. At the "
+#~ "same time, it has become very easy to get your hands on a file that has "
+#~ "been tampered with, due to the mass increase of malicious webpages and "
+#~ "other actors."
+#~ msgstr ""
+#~ "Sprawdzenie, czy pobrany lub otrzymany plik jest rzeczywiście tym, "
+#~ "którego się spodziewaliśmy, jest często pomijane lub zbyt czasochłonne, "
+#~ "aby to zrobić. Jednocześnie, z powodu masowego wzrostu liczby złośliwych "
+#~ "stron internetowych i innych podmiotów, bardzo łatwo jest dostać w swoje "
+#~ "ręce plik, który został podmieniony."
+
+#~ msgid ""
+#~ "This tool aims to solve that. Collision comes with a simple &amp; clean "
+#~ "UI, allowing anyone, from any age and experience group, to generate, "
+#~ "compare and verify MD5, SHA-256, SHA-512, SHA-1, Blake3, CRC32 and "
+#~ "Adler32 hashes."
+#~ msgstr ""
+#~ "To narzędzie może to rozwiązać. Collision ma czysty interfejs, prosty do "
+#~ "zrozumienia dla każdego, może generować, porównywać i weryfikować hasze "
+#~ "MD5, SHA-256, SHA-512, SHA-1, Blake3, CRC32 oraz Adler32."
+
+#~ msgid "Check Hashes"
+#~ msgstr "Sprawdź hasze"
+
+#~ msgid ""
+#~ "This tool aims to solve that. Collision comes with a simple &amp; clean "
+#~ "UI, allowing anyone, from any age and experience group, to generate, "
+#~ "compare and verify MD5, SHA-256, SHA-512 and SHA-1 hashes."
+#~ msgstr ""
+#~ "To narzędzie ma na celu rozwiązanie tego problemu. Collision przychodzi z "
+#~ "prostym i czystym UI, pozwalając każdemu, z każdej grupy wiekowej i "
+#~ "doświadczenia, do generowania, porównywania i weryfikacji haszy MD5, "
+#~ "SHA-256, SHA-512 i SHA-1."
+
+#~ msgid "MD5,SHA-1,SHA-256 or SHA-512 Hash"
+#~ msgstr "Hasz MD5,SHA-1,SHA-256 or SHA-512"
+
+#~ msgid "Insert a MD5/SHA-1/SHA-256/SHA-512 Hash"
+#~ msgstr "Wklej sumę kontrolną MD5/SHA-1/SHA-256/SHA-512"

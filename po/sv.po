@@ -1,0 +1,275 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Gustav Hagland <gustav.hagland@gmail.com>, 2022, 2026.
+# Luna Jernberg <droidbittin@gmail.com>, 2023, 2026.
+# bittin1ddc447d824349b2 <bittin@reimu.nl>, 2023, 2024, 2026.
+msgid ""
+msgstr ""
+"Project-Id-Version: dev.geopjr.Collision\n"
+"Report-Msgid-Bugs-To: https://github.com/ruby-gtk-project/Collision-rb/"
+"issues\n"
+"POT-Creation-Date: 2026-11-02 23:11+0000\n"
+"PO-Revision-Date: 2026-03-26 21:14+0000\n"
+"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"Language-Team: Swedish <https://hosted.weblate.org/projects/collision/"
+"collision/sv/>\n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.17-dev\n"
+
+#: ../lib/collision/actions/about.rb:23
+msgid "Archives"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:23
+msgid "Create and view web archives"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:24
+msgid "Calligraphy"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:24
+msgid "Turn text into ASCII banners"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:25
+msgid "Tuba"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:25
+msgid "Browse the Fediverse"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:26
+msgid "Turntable"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:26
+msgid "Scrobble your music"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:29
+msgid "translator-credits"
+msgstr "Gustav Hagland <gustav.hagland@gmail.com>"
+
+#: ../lib/collision/actions/about.rb:49 ../lib/collision/window.rb:70
+#: ../lib/collision/window.rb:387
+msgid "Collision"
+msgstr "Kollision"
+
+#: ../lib/collision/actions/hash_info.rb:21
+msgid ""
+"https://en.wikipedia.org/wiki/Comparison_of_cryptographic_hash_functions"
+msgstr ""
+"https://en.wikipedia.org/wiki/Comparison_of_cryptographic_hash_functions"
+
+#: ../lib/collision/checksum.rb:55
+msgid "%d of %d hashes calculated"
+msgstr "%d av %d hashar beräknade"
+
+#: ../lib/collision/feedback.rb:38
+msgid "They Match"
+msgstr "Dom matchar"
+
+#: ../lib/collision/feedback.rb:40
+msgid "They Don't Match"
+msgstr "Dom matchar inte"
+
+#: ../lib/collision/hash_row.rb:52
+msgid "Copy"
+msgstr "Kopiera"
+
+#: ../lib/collision/primary_menu.rb:18
+msgid "_New Window"
+msgstr "_Nytt fönster"
+
+#: ../lib/collision/primary_menu.rb:19
+msgid "_Compare Hash Functions"
+msgstr "_Jämför Hashfunktioner"
+
+#: ../lib/collision/primary_menu.rb:20
+msgid "Copy as _Markdown Table"
+msgstr "Kopiera som _Markdown tabell"
+
+#: ../lib/collision/primary_menu.rb:21
+#: ../lib/collision/toggle_hash_functions_dialog.rb:29
+msgid "_Toggle Hash Functions"
+msgstr "_Växla hashfunktioner"
+
+#: ../lib/collision/primary_menu.rb:22 ../lib/collision/shortcuts_dialog.rb:33
+msgid "_Keyboard Shortcuts"
+msgstr "_Tangentbordsgenvägar"
+
+#: ../lib/collision/primary_menu.rb:23
+msgid "_About Collision"
+msgstr "_Om Kollision"
+
+#: ../lib/collision/shortcuts_dialog.rb:19
+msgid "General"
+msgstr "Allmänt"
+
+#: ../lib/collision/shortcuts_dialog.rb:20
+msgid "Open a File"
+msgstr "Öppna en fil"
+
+#: ../lib/collision/shortcuts_dialog.rb:21
+msgid "Show Keyboard Shortcuts"
+msgstr "Visa Tangentbordsgenvägar"
+
+#: ../lib/collision/shortcuts_dialog.rb:22
+msgid "New Window"
+msgstr "Nytt fönster"
+
+#: ../lib/collision/shortcuts_dialog.rb:23
+msgid "Close Window"
+msgstr "Stäng fönster"
+
+#: ../lib/collision/shortcuts_dialog.rb:24
+msgid "Quit"
+msgstr "Avsluta"
+
+#: ../lib/collision/toggle_hash_functions_dialog.rb:21
+msgid "This hash function is used for file verification and cannot be disabled"
+msgstr "Denna hashfunktion används för filverifiering och kan inte inaktiveras"
+
+#: ../lib/collision/toggle_hash_functions_dialog.rb:51
+msgid "Select which hash functions should be calculated."
+msgstr "Välj vilka hashfunktioner som ska beräknas."
+
+#: ../lib/collision/toggle_hash_functions_dialog.rb:79
+msgid "Wait for all ongoing operations to finish"
+msgstr "Vänta tills alla pågående operationer är klara"
+
+#: ../lib/collision/window.rb:43
+#, fuzzy
+#| msgid "MD5,SHA-1,SHA-256,SHA-512,Blake3,CRC32 or Adler32 Hash"
+msgid "MD5,SHA-1,SHA-256,SHA-512,CRC32 or Adler32 Hash"
+msgstr "MD5,SHA-1,SHA-256,SHA-512,Blake3,CRC32 eller Adler32 Hash"
+
+#: ../lib/collision/window.rb:44
+#, fuzzy
+#| msgid "Insert a MD5/SHA-1/SHA-256/SHA-512/Blake3/CRC32/Adler32 Hash"
+msgid "Insert a MD5/SHA-1/SHA-256/SHA-512/CRC32/Adler32 Hash"
+msgstr "Infoga en MD5/SHA-1/SHA-256/SHA-512/Blake3/CRC32/Adler32 Hash"
+
+#: ../lib/collision/window.rb:45
+msgid "Choose File…"
+msgstr "Välj en fil…"
+
+#: ../lib/collision/window.rb:130
+msgid "Hash"
+msgstr "Hash-värde"
+
+#: ../lib/collision/window.rb:136
+msgid "Verify"
+msgstr "Verifiera"
+
+#: ../lib/collision/window.rb:224 ../lib/collision/window.rb:419
+msgid "Pending"
+msgstr "Väntar"
+
+#: ../lib/collision/window.rb:323
+msgid "Drop to hash"
+msgstr "Släpp till hash"
+
+#: ../lib/collision/window.rb:348
+msgid "_Open"
+msgstr "_Öppna"
+
+#: ../lib/collision/window.rb:349
+msgid "Open…"
+msgstr "Öppna…"
+
+#: ../lib/collision/window.rb:364
+#, fuzzy
+#| msgid "Menu"
+msgid "Main Menu"
+msgstr "Meny"
+
+#: ../lib/collision/window.rb:388
+msgid "Check hashes for your files"
+msgstr "Kontrollera hash-värden för dina filer"
+
+#: ../lib/collision/window.rb:396
+msgid "_Open a File"
+msgstr "_Öppna en fil"
+
+#: ../lib/collision/window.rb:405
+msgid "Calculating Hashes"
+msgstr "Beräknar hashar"
+
+#: ../lib/collision/window.rb:406
+msgid "This might take a while"
+msgstr "Det här kan ta ett tag"
+
+#: ../lib/collision/window.rb:463
+msgid "Checksum"
+msgstr "Kontrollsumma"
+
+#: ../lib/collision/window.rb:464
+msgid "File"
+msgstr "Fil"
+
+#: ../lib/collision/window.rb:530
+msgid "Select Another File to Check Against"
+msgstr "Välj En Annan Fil Att Jämföra Mot"
+
+#: ../lib/collision/window.rb:792
+msgid "Choose a File"
+msgstr "Välj en fil"
+
+#~ msgid "Hash Generator"
+#~ msgstr "Hash-generator"
+
+#~ msgid "md5;sha1;sha256;sha512;blake3;crc32;adler32;hash;"
+#~ msgstr "md5;sha1;sha256;sha512;blake3;crc32;adler32;hash;"
+
+#~ msgid ""
+#~ "Verifying that a file you downloaded or received is actually the one you "
+#~ "were expecting is often overlooked or too time-consuming to do. At the "
+#~ "same time, it has become very easy to get your hands on a file that has "
+#~ "been tampered with, due to the mass increase of malicious webpages and "
+#~ "other actors."
+#~ msgstr ""
+#~ "Att verifiera en fil som du laddat ner eller tagit emot faktiskt är den "
+#~ "filen du förväntade dig förbises ofta eller tar för lång tid. Samtidigt "
+#~ "har den massiva ökningen av skadliga hemsidor och andra aktörer gjort att "
+#~ "det blivit väldigt enkelt att få tag på en fil som manipulerats."
+
+#~ msgid ""
+#~ "This tool aims to solve that. Collision comes with a simple &amp; clean "
+#~ "UI, allowing anyone, from any age and experience group, to generate, "
+#~ "compare and verify MD5, SHA-256, SHA-512, SHA-1, Blake3, CRC32 and "
+#~ "Adler32 hashes."
+#~ msgstr ""
+#~ "Detta verktyg syftar till att lösa det. Kollision kommer med ett enkelt "
+#~ "&amp; rent användargränssnitt, så att alla, från alla åldrar och "
+#~ "erfarenhetsgrupper, kan generera, jämföra och verifiera MD5, SHA-256, "
+#~ "SHA-512, SHA-1, Blake3, CRC32 och Adler32 hashar."
+
+#~ msgid "Check Hashes"
+#~ msgstr "Kontrollera hashar"
+
+#~ msgid "md5;sha1;sha256;sha512;hash;"
+#~ msgstr "md5;sha1;sha256;sha512;hash;"
+
+#~ msgid ""
+#~ "This tool aims to solve that. Collision comes with a simple &amp; clean "
+#~ "UI, allowing anyone, from any age and experience group, to generate, "
+#~ "compare and verify MD5, SHA-256, SHA-512 and SHA-1 hashes."
+#~ msgstr ""
+#~ "Detta program strävar efter att lösa det. Kollision har ett enkelt och "
+#~ "rent användargränssnitt vilket låter vem som helst med vilken ålder och "
+#~ "erfarenhet som helst generera, jämföra och verifiera hash-värden för MD5, "
+#~ "SHA-256, SHA-512 och SHA-1."
+
+#~ msgid "MD5,SHA-1,SHA-256 or SHA-512 Hash"
+#~ msgstr "MD5,SHA-1,SHA-256 eller SHA-512 Hash-värde"
+
+#~ msgid "Insert a MD5/SHA-1/SHA-256/SHA-512 Hash"
+#~ msgstr "Skriv in ett MD5/SHA-1/SHA-256/SHA-512 Hash-värde"

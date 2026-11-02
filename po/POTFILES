@@ -1,0 +1,9 @@
+lib/collision/actions/about.rb
+lib/collision/actions/hash_info.rb
+lib/collision/checksum.rb
+lib/collision/feedback.rb
+lib/collision/hash_row.rb
+lib/collision/primary_menu.rb
+lib/collision/shortcuts_dialog.rb
+lib/collision/toggle_hash_functions_dialog.rb
+lib/collision/window.rb

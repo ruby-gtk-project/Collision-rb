@@ -3,6 +3,7 @@
 require "adwaita"
 
 require_relative "checksum"
+require_relative "i18n"
 require_relative "settings"
 
 module Collision
@@ -14,8 +15,10 @@ module Collision
   # while hashes are still being calculated, because the window would then
   # display rows for functions it is no longer calculating.
   class ToggleHashFunctionsDialog < Adwaita::PreferencesDialog
+    include I18n
+
     VERIFICATION_SUBTITLE =
-      "This hash function is used for file verification and cannot be disabled"
+      N_("This hash function is used for file verification and cannot be disabled")
 
     # Asked before the dialog closes; a truthy answer refuses the close.
     def initialize(&busy)
@@ -23,7 +26,7 @@ module Collision
       @busy = busy
       @rows = {}
       self.can_close = false
-      self.title = "Toggle Hash Functions"
+      self.title = _("_Toggle Hash Functions").delete("_")
     end
 
     def build
@@ -45,7 +48,7 @@ module Collision
 
     def page
       @page ||= Adwaita::PreferencesPage.new.tap do |group_page|
-        group_page.description = "Select which hash functions should be calculated."
+        group_page.description = _("Select which hash functions should be calculated.")
       end
     end
 
@@ -61,7 +64,7 @@ module Collision
           if type == Checksum::VERIFICATION_HASH_FUNCTION
             switch.sensitive = false
             switch.active = true
-            switch.subtitle = VERIFICATION_SUBTITLE
+            switch.subtitle = _(VERIFICATION_SUBTITLE)
           end
 
           @rows[type] = switch
@@ -73,7 +76,7 @@ module Collision
           if selection.sort == Settings.safe_disabled_hash_functions.sort
             force_close
           elsif @busy&.call
-            add_toast(Adwaita::Toast.new("Wait for all ongoing operations to finish"))
+            add_toast(Adwaita::Toast.new(_("Wait for all ongoing operations to finish")))
           else
             Settings.update_disabled_hash_functions(selection.map(&:to_s))
             force_close

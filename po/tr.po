@@ -1,0 +1,279 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# ugurcansayan <uxurcansayan@gmail.com>, 2022, 2026.
+# Evangelos Paterakis <evan@geopjr.dev>, 2022.
+# Sabri Ünal <libreajans@gmail.com>, 2022, 2023.
+# Ramazan SANCAR <ramazansancar4545@gmail.com>, 2022.
+# Oğuz Ersen <oguz@ersen.moe>, 2022, 2024, 2026.
+# Deleted User <noreply+13144@weblate.org>, 2026.
+msgid ""
+msgstr ""
+"Project-Id-Version: dev.geopjr.Collision\n"
+"Report-Msgid-Bugs-To: https://github.com/ruby-gtk-project/Collision-rb/"
+"issues\n"
+"POT-Creation-Date: 2026-11-02 23:11+0000\n"
+"PO-Revision-Date: 2026-03-26 21:13+0000\n"
+"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"Language-Team: Turkish <https://hosted.weblate.org/projects/collision/"
+"collision/tr/>\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.17-dev\n"
+
+#: ../lib/collision/actions/about.rb:23
+msgid "Archives"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:23
+msgid "Create and view web archives"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:24
+msgid "Calligraphy"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:24
+msgid "Turn text into ASCII banners"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:25
+msgid "Tuba"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:25
+msgid "Browse the Fediverse"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:26
+msgid "Turntable"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:26
+msgid "Scrobble your music"
+msgstr ""
+
+#: ../lib/collision/actions/about.rb:29
+msgid "translator-credits"
+msgstr ""
+"Uğurcan SAYAN <ugurcansayan@proton.me>\n"
+"Oğuz Ersen <oguz@ersen.moe>"
+
+#: ../lib/collision/actions/about.rb:49 ../lib/collision/window.rb:70
+#: ../lib/collision/window.rb:387
+msgid "Collision"
+msgstr "Collision"
+
+#: ../lib/collision/actions/hash_info.rb:21
+msgid ""
+"https://en.wikipedia.org/wiki/Comparison_of_cryptographic_hash_functions"
+msgstr ""
+"https://en.wikipedia.org/wiki/Comparison_of_cryptographic_hash_functions"
+
+#: ../lib/collision/checksum.rb:55
+msgid "%d of %d hashes calculated"
+msgstr "%d / %d özet hesaplandı"
+
+#: ../lib/collision/feedback.rb:38
+msgid "They Match"
+msgstr "Eşleşiyorlar"
+
+#: ../lib/collision/feedback.rb:40
+msgid "They Don't Match"
+msgstr "Eşleşmiyorlar"
+
+#: ../lib/collision/hash_row.rb:52
+msgid "Copy"
+msgstr "Kopyala"
+
+#: ../lib/collision/primary_menu.rb:18
+msgid "_New Window"
+msgstr "_Yeni Pencere"
+
+#: ../lib/collision/primary_menu.rb:19
+msgid "_Compare Hash Functions"
+msgstr "Özet Fonksiyonlarını _Karşılaştır"
+
+#: ../lib/collision/primary_menu.rb:20
+msgid "Copy as _Markdown Table"
+msgstr ""
+
+#: ../lib/collision/primary_menu.rb:21
+#: ../lib/collision/toggle_hash_functions_dialog.rb:29
+msgid "_Toggle Hash Functions"
+msgstr ""
+
+#: ../lib/collision/primary_menu.rb:22 ../lib/collision/shortcuts_dialog.rb:33
+msgid "_Keyboard Shortcuts"
+msgstr "_Klavye Kısayolları"
+
+#: ../lib/collision/primary_menu.rb:23
+msgid "_About Collision"
+msgstr "Collision _Hakkında"
+
+#: ../lib/collision/shortcuts_dialog.rb:19
+msgid "General"
+msgstr "Genel"
+
+#: ../lib/collision/shortcuts_dialog.rb:20
+msgid "Open a File"
+msgstr "Dosya Aç"
+
+#: ../lib/collision/shortcuts_dialog.rb:21
+msgid "Show Keyboard Shortcuts"
+msgstr "Klavye Kısayollarını Göster"
+
+#: ../lib/collision/shortcuts_dialog.rb:22
+msgid "New Window"
+msgstr "Yeni Pencere"
+
+#: ../lib/collision/shortcuts_dialog.rb:23
+msgid "Close Window"
+msgstr "Pencereyi Kapat"
+
+#: ../lib/collision/shortcuts_dialog.rb:24
+msgid "Quit"
+msgstr "Çık"
+
+#: ../lib/collision/toggle_hash_functions_dialog.rb:21
+msgid "This hash function is used for file verification and cannot be disabled"
+msgstr ""
+
+#: ../lib/collision/toggle_hash_functions_dialog.rb:51
+msgid "Select which hash functions should be calculated."
+msgstr ""
+
+#: ../lib/collision/toggle_hash_functions_dialog.rb:79
+msgid "Wait for all ongoing operations to finish"
+msgstr ""
+
+#: ../lib/collision/window.rb:43
+#, fuzzy
+#| msgid "MD5,SHA-1,SHA-256,SHA-512,Blake3,CRC32 or Adler32 Hash"
+msgid "MD5,SHA-1,SHA-256,SHA-512,CRC32 or Adler32 Hash"
+msgstr "MD5,SHA-1,SHA-256,SHA-512,Blake3,CRC32 ya da Adler32 Özeti"
+
+#: ../lib/collision/window.rb:44
+#, fuzzy
+#| msgid "Insert a MD5/SHA-1/SHA-256/SHA-512/Blake3/CRC32/Adler32 Hash"
+msgid "Insert a MD5/SHA-1/SHA-256/SHA-512/CRC32/Adler32 Hash"
+msgstr "MD5/SHA-1/SHA-256/SHA-512/Blake3/CRC32/Adler32 Özeti Ekle"
+
+#: ../lib/collision/window.rb:45
+msgid "Choose File…"
+msgstr "Dosya Seç…"
+
+#: ../lib/collision/window.rb:130
+msgid "Hash"
+msgstr "Özet"
+
+#: ../lib/collision/window.rb:136
+msgid "Verify"
+msgstr "Doğrula"
+
+#: ../lib/collision/window.rb:224 ../lib/collision/window.rb:419
+msgid "Pending"
+msgstr ""
+
+#: ../lib/collision/window.rb:323
+msgid "Drop to hash"
+msgstr ""
+
+#: ../lib/collision/window.rb:348
+msgid "_Open"
+msgstr "_Aç"
+
+#: ../lib/collision/window.rb:349
+msgid "Open…"
+msgstr "Aç…"
+
+#: ../lib/collision/window.rb:364
+#, fuzzy
+#| msgid "Menu"
+msgid "Main Menu"
+msgstr "Menü"
+
+#: ../lib/collision/window.rb:388
+msgid "Check hashes for your files"
+msgstr "Dosyalarınızın özet değerlerini denetleyin"
+
+#: ../lib/collision/window.rb:396
+msgid "_Open a File"
+msgstr "Dosya _Aç"
+
+#: ../lib/collision/window.rb:405
+msgid "Calculating Hashes"
+msgstr "Özetler Hesaplanıyor"
+
+#: ../lib/collision/window.rb:406
+msgid "This might take a while"
+msgstr "Biraz zaman alabilir"
+
+#: ../lib/collision/window.rb:463
+msgid "Checksum"
+msgstr "Sağlama Toplamı"
+
+#: ../lib/collision/window.rb:464
+msgid "File"
+msgstr "Dosya"
+
+#: ../lib/collision/window.rb:530
+msgid "Select Another File to Check Against"
+msgstr "Denetlenecek Başka Bir Dosya Seç"
+
+#: ../lib/collision/window.rb:792
+msgid "Choose a File"
+msgstr "Dosya Seç"
+
+#~ msgid "Hash Generator"
+#~ msgstr "Özet Oluşturucu"
+
+#~ msgid "md5;sha1;sha256;sha512;blake3;crc32;adler32;hash;"
+#~ msgstr "md5;sha1;sha256;sha512;blake3;crc32;adler32;hash;"
+
+#~ msgid ""
+#~ "Verifying that a file you downloaded or received is actually the one you "
+#~ "were expecting is often overlooked or too time-consuming to do. At the "
+#~ "same time, it has become very easy to get your hands on a file that has "
+#~ "been tampered with, due to the mass increase of malicious webpages and "
+#~ "other actors."
+#~ msgstr ""
+#~ "İndirdiğiniz veya edindiğiniz bir dosyanın, olması gerektiği gibi "
+#~ "olduğunu denetlemek bazen göz ardı edilir veya uzun zaman alır. Aynı "
+#~ "zamanda, zararlı web sayfaları gibi kötü niyetlilerin artan sayısı "
+#~ "sebebiyle, oynanmış dosyalara temas etmeniz çok olasıdır."
+
+#~ msgid ""
+#~ "This tool aims to solve that. Collision comes with a simple &amp; clean "
+#~ "UI, allowing anyone, from any age and experience group, to generate, "
+#~ "compare and verify MD5, SHA-256, SHA-512, SHA-1, Blake3, CRC32 and "
+#~ "Adler32 hashes."
+#~ msgstr ""
+#~ "Bu araç bunu çözmeyi amaçlamaktadır. Collision, her yaş ve deneyim "
+#~ "grubundan herkesin MD5, SHA-256, SHA-512, SHA-1, Blake3, CRC32 ve Adler32 "
+#~ "özetleri oluşturmasına, karşılaştırmasına ve doğrulamasını sağlayan basit "
+#~ "ve temiz kullanıcı arayüzü ile birlikte gelir."
+
+#~ msgid "Check Hashes"
+#~ msgstr "Özetleri Denetle"
+
+#~ msgid "md5;sha1;sha256;sha512;hash;"
+#~ msgstr "md5;sha1;sha256;sha512;hash;özet;sağlama;"
+
+#~ msgid ""
+#~ "This tool aims to solve that. Collision comes with a simple &amp; clean "
+#~ "UI, allowing anyone, from any age and experience group, to generate, "
+#~ "compare and verify MD5, SHA-256, SHA-512 and SHA-1 hashes."
+#~ msgstr ""
+#~ "Bu araç bu sorunu çözmeyi amaçlıyor. Collision; temiz ve sade arayüzü "
+#~ "sayesinde, her kesimden kullanıcının MD5, SHA-256 SHA-512 ve SHA-1 "
+#~ "özetlerini oluşturup karşılaştırmasını ve doğrulamasını sağlar."
+
+#~ msgid "MD5,SHA-1,SHA-256 or SHA-512 Hash"
+#~ msgstr "MD5, SHA-1, SHA-256 veya SHA-512 Özeti"
+
+#~ msgid "Insert a MD5/SHA-1/SHA-256/SHA-512 Hash"
+#~ msgstr "Bir MD5/SHA-1/SHA-256/SHA-512 Özeti Girin"

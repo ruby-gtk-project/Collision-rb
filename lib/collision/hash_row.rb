@@ -3,6 +3,7 @@
 require "adwaita"
 
 require_relative "feedback"
+require_relative "i18n"
 
 module Collision
   # HashRow shows one hash function's name and its value, with a button that
@@ -13,6 +14,8 @@ module Collision
   # the window connects to; the port takes the same callback as a block on the
   # constructor.
   class HashRow < Adwaita::ActionRow
+    include I18n
+
     # Long enough that the copy feedback registers, short enough that the
     # button is usable again straight away — upstream's comment reads "1 feels
     # fast, 1.5 feels slow".
@@ -46,7 +49,7 @@ module Collision
     def copy_button
       @copy_button ||= Gtk::Button.new.tap do |button|
         button.icon_name = COPY_ICON
-        button.tooltip_text = "Copy"
+        button.tooltip_text = _("Copy")
         button.valign = :center
         button.add_css_class("circular")
       end
