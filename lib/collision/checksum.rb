@@ -58,9 +58,14 @@ module Collision
       sha512: Digest::SHA512,
     }.freeze
 
+    # The rolling checksums, each with the value it has to start from when a
+    # file is fed through it in chunks. CRC-32 starts at zero; Adler-32 starts
+    # at one, which is what Zlib.adler32 substitutes when it is called with no
+    # running value, and seeding it with zero yields a different digest for
+    # every input.
     ZLIB_CHECKSUMS = {
-      crc32:   Zlib.method(:crc32),
-      adler32: Zlib.method(:adler32),
+      crc32:   {function: Zlib.method(:crc32), seed: 0},
+      adler32: {function: Zlib.method(:adler32), seed: 1},
     }.freeze
 
     # Groups a hash into blocks of four characters so a long hex string wraps
@@ -116,11 +121,12 @@ module Collision
 
       def zlib_checksum(type, filename)
         ZLIB_CHECKSUMS.fetch(type).then do |checksum|
-          accumulator = 0
+          accumulator = checksum.fetch(:seed)
+          function = checksum.fetch(:function)
 
           File.open(filename, "rb") do |io|
             while (chunk = io.read(CHUNK_SIZE))
-              accumulator = checksum.call(chunk, accumulator)
+              accumulator = function.call(chunk, accumulator)
             end
           end
 

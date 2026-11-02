@@ -214,7 +214,7 @@
             echo "Collision devshell — ruby $(ruby -e 'print RUBY_VERSION')"
             echo "run the app:   xvfb-run ruby exe/collision"
             echo "drive the app: xvfb-run ruby test/drive_*.rb"
-            echo "run the specs: ruby -e 'require \"rspec/core\"; exit RSpec::Core::Runner.run([\"--format\", \"progress\", \"--require\", \"spec_helper\", \"spec\"])'"
+            echo "run the specs: xvfb-run -a ruby -e 'require \"rspec/core\"; exit RSpec::Core::Runner.run([\"--format\", \"progress\", \"--require\", \"spec_helper\", \"spec\"])'"
           '';
         };
       });
