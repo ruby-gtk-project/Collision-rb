@@ -140,12 +140,12 @@ msgstr ""
 msgid "Wait for all ongoing operations to finish"
 msgstr ""
 
-#: ../lib/collision/window.rb:43
-msgid "MD5,SHA-1,SHA-256,SHA-512,CRC32 or Adler32 Hash"
+#: ../lib/collision/window.rb:40
+msgid "MD5,SHA-1,SHA-256,SHA-512,Blake3,CRC32 or Adler32 Hash"
 msgstr ""
 
-#: ../lib/collision/window.rb:44
-msgid "Insert a MD5/SHA-1/SHA-256/SHA-512/CRC32/Adler32 Hash"
+#: ../lib/collision/window.rb:41
+msgid "Insert a MD5/SHA-1/SHA-256/SHA-512/Blake3/CRC32/Adler32 Hash"
 msgstr ""
 
 #: ../lib/collision/window.rb:45

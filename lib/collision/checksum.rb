@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require "digest"
+require "digest/blake3"
 require "zlib"
 require "adwaita"
 
@@ -22,10 +23,6 @@ module Collision
   # concurrently, and the progress bar and the completion callback are handed
   # back to the main loop with GLib::Idle.add rather than touched from a
   # worker.
-  #
-  # Upstream's list includes Blake3, which has no implementation in the gems
-  # this port depends on; it is left out of HASH_FUNCTIONS rather than listed
-  # and left uncalculated.
   class Checksum
     include I18n
 
@@ -36,6 +33,7 @@ module Collision
       sha1:    "SHA1",
       sha256:  "SHA256",
       sha512:  "SHA512",
+      blake3:  "Blake3",
       crc32:   "CRC32",
       adler32: "Adler32",
     }.freeze
@@ -59,6 +57,7 @@ module Collision
       sha1:   Digest::SHA1,
       sha256: Digest::SHA256,
       sha512: Digest::SHA512,
+      blake3: Digest::BLAKE3,
     }.freeze
 
     # The rolling checksums, each with the value it has to start from when a

@@ -19,9 +19,8 @@ widget/CSS/signal table for each file (that level of detail belongs to a
   actions, 1 GSettings schema, 44 translated `.po` catalogues + `.pot`.
 - `ruby` branch `lib/`: all of the above already exist, file-for-file, plus a
   `shortcuts` action class upstream does not have (see note below). The port
-  is at full structural parity; the one known behavioural gap is the Blake3
-  hash function, left out because the gems available to the port have no
-  Blake3 implementation (documented in `lib/collision/checksum.rb`).
+  is at full structural parity, including Blake3 (via the `digest-blake3` gem,
+  wired into `lib/collision/checksum.rb`'s `HASH_FUNCTIONS`/`DIGESTS`).
 
 ## Components
 
@@ -87,7 +86,7 @@ attribute), Toggle Hash Functions, Keyboard Shortcuts, About Collision.
 |---|---|
 | Upstream | `src/collision/widgets/hash_row.cr` + template `data/ui/hash_row.ui` |
 | Port | `lib/collision/hash_row.rb` — `Collision::HashRow` |
-| Kind | `Adw.ActionRow` template, repeated once per entry in `HASH_FUNCTIONS` (6 on the port, 7 upstream — see Blake3 gap) |
+| Kind | `Adw.ActionRow` template, repeated once per entry in `HASH_FUNCTIONS` (7 on the port, matching upstream) |
 | Exists on `ruby`? | **Yes** |
 
 Copy button with timed success-icon feedback (`Feedback.icon`/`css_classes`),
@@ -169,7 +168,7 @@ component.
 
 | Upstream | Port | Exists? |
 |---|---|---|
-| `src/collision/functions/checksum.cr` (+ `HASH_FUNCTIONS`/`VERIFICATION_HASH_FUNCTION` from `src/collision.cr`) | `lib/collision/checksum.rb` | **Yes** — Blake3 omitted (gap, documented) |
+| `src/collision/functions/checksum.cr` (+ `HASH_FUNCTIONS`/`VERIFICATION_HASH_FUNCTION` from `src/collision.cr`) | `lib/collision/checksum.rb` | **Yes** — Blake3 included via the `digest-blake3` gem |
 | `src/collision/functions/feedback.cr` | `lib/collision/feedback.rb` | **Yes** |
 | `src/collision/functions/file_utils.cr` | `lib/collision/file_utils.rb` | **Yes** |
 | `src/collision/functions/settings.cr` | `lib/collision/settings.rb` | **Yes** |
@@ -202,7 +201,7 @@ component.
 | | |
 |---|---|
 | Upstream | `po/*.po` (44 locales) + `po/dev.geopjr.Collision.pot` + `po/LINGUAS` + `po/POTFILES` |
-| Port | `po/` present on `ruby` with the same catalogue files | **Yes** — a `translation-parity` pass (there is a dedicated skill for this) should confirm message IDs still match the port's `N_()`/`_()` call sites, since the port's own English strings already differ in a couple of places (Blake3-less `VERIFY_HINT`/`VERIFY_TOOLTIP` in `window.rb`). |
+| Port | `po/` present on `ruby` with the same catalogue files | **Yes** — a `translation-parity` pass (there is a dedicated skill for this) should confirm message IDs still match the port's `N_()`/`_()` call sites; `VERIFY_HINT`/`VERIFY_TOOLTIP` in `window.rb` now read Blake3-inclusive, matching upstream, but the `.po` catalogues were not re-translated for the new wording this round, so those two strings fall back to English until a translation pass catches up. |
 
 ### 14. Packaging-only files (not user-facing components; no port file expected)
 
@@ -227,18 +226,13 @@ from `lib/` for a gap.
 
 ## Gaps / flags for a future parity pass
 
-1. **Blake3 hash function is not calculated.** Upstream lists it in
-   `HASH_FUNCTIONS` (7 entries); the port's `Checksum::HASH_FUNCTIONS` has 6.
-   Documented in `lib/collision/checksum.rb` and `lib/collision/window.rb`
-   (`VERIFY_HINT`/`VERIFY_TOOLTIP` strings differ from upstream's as a result).
-   This is the one real functional gap found in this survey.
-2. **`app.shortcuts` origin differs** (libadwaita auto-install upstream vs. an
+1. **`app.shortcuts` origin differs** (libadwaita auto-install upstream vs. an
    explicit `Action` subclass on the port) — behaviourally equivalent today,
    but worth a side-by-side check (does it get the same `F1`-style treatment,
    does `app.set_accels_for_action` need to run for it the way it does for the
    others) rather than assuming the outcome stays matched as libadwaita
    versions move.
-3. **About dialog's `debug_info`** is a static snapshot on the port vs. an
+2. **About dialog's `debug_info`** is a static snapshot on the port vs. an
    accumulating redacted log upstream — not a missing component, but a
    behavioural difference worth a conscious decision rather than letting it
    default to "simpler is fine."

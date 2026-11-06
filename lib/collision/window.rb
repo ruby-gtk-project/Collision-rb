@@ -37,11 +37,8 @@ module Collision
     # instantly still reads as a result rather than a flicker.
     COMPARE_SETTLE_SECONDS = 0.5
 
-    # Upstream names Blake3 in both of these; this port does not calculate
-    # it, so the strings differ from upstream's and carry no translation
-    # yet — they fall back to English until the catalogues catch up.
-    VERIFY_HINT = N_("MD5,SHA-1,SHA-256,SHA-512,CRC32 or Adler32 Hash")
-    VERIFY_TOOLTIP = N_("Insert a MD5/SHA-1/SHA-256/SHA-512/CRC32/Adler32 Hash")
+    VERIFY_HINT = N_("MD5,SHA-1,SHA-256,SHA-512,Blake3,CRC32 or Adler32 Hash")
+    VERIFY_TOOLTIP = N_("Insert a MD5/SHA-1/SHA-256/SHA-512/Blake3/CRC32/Adler32 Hash")
     CHOOSE_FILE_LABEL = N_("Choose File…")
 
     # Upstream keeps the count of in-flight hash runs in an atomic in

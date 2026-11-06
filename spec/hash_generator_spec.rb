@@ -28,8 +28,8 @@ RSpec.describe Collision::Checksum do
     end
 
     it "refuses a hash function it has no digest for" do
-      expect { described_class.new.calculate(:blake3, path) }
-        .to raise_error(ArgumentError, /blake3/)
+      expect { described_class.new.calculate(:does_not_exist, path) }
+        .to raise_error(ArgumentError, /does_not_exist/)
     end
   end
 
