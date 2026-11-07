@@ -50,3 +50,10 @@ Appraisal.*.gemfile.lock
 # nix/ is the runtime gemdir for flake.nix: bundlerEnv needs its lock and
 # gemset committed or the app cannot be built reproducibly.
 !nix/Gemfile.lock
+
+# Rendered from the .in templates by `rake desktop:build` / `rake
+# metainfo:build` (see rakelib/packaging.rake) — build artifacts, not source,
+# same as upstream.
+data/*.desktop
+data/*.metainfo.xml
+nautilus-extension/__pycache__/

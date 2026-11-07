@@ -111,9 +111,18 @@ module Collision
       end
 
       # The translated, non-fuzzy entries of a PO file, as msgid => msgstr.
+      #
+      # Read with an explicit UTF-8 encoding: every catalogue under po/ is
+      # UTF-8 regardless of the process locale, but File.read with no
+      # encoding argument tags the string with Encoding.default_external,
+      # which falls back to US-ASCII when LANG/LC_ALL/LC_MESSAGES are all
+      # unset. An ASCII-tagged string holding non-ASCII bytes blows up the
+      # very first line-oriented String method called on it
+      # (Encoding::CompatibilityError), which would crash catalogue loading
+      # instead of the graceful "fall back to English" this module promises.
       def parse(path)
         {}.tap do |translations|
-          entries(File.read(path)).each do |entry|
+          entries(File.read(path, encoding: "UTF-8")).each do |entry|
             msgid = entry.fetch("msgid", "")
             msgstr = entry.fetch("msgstr", "")
 
