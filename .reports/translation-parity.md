@@ -1,131 +1,160 @@
-# Translation parity — Collision
+# Translation parity — Collision (re-audit)
 
 | | |
 |---|---|
 | Upstream | `main` @ `9d35ba0` |
-| Port | `ruby` @ `1c70cce` |
+| Port | `ruby` @ `aab6951` |
 | Domain | `dev.geopjr.Collision` |
-| Upstream languages | 41 `.po` files, `LINGUAS` matches exactly |
-| Languages shipped by the port | 41/41 — confirmed byte-identical file list (`diff` of both `basename` listings is empty) |
+| Languages | 41/41 — file lists still identical |
 
-## The committed `.pot` is stale — do not trust it directly
+This supersedes the prior `translation-parity.md`. That pass found 3 msgid
+gaps (`Hash Generator`, the desktop `Keywords` string, `Check Hashes`) — all
+from files the port didn't ship — and one correctness bug (a catalogue-load
+crash under an unset locale). Commit `aab6951` added the three missing files
+and fixed the crash. Re-checked every claim live rather than trusting the
+commit message.
 
-Upstream's `po/dev.geopjr.Collision.pot` says `POT-Creation-Date: 2023-12-26`.
-The source it is supposed to describe last changed `2026-05-07` (two years
-later). Per the skill's warning, it is a lead, not ground truth. Scanning
-current upstream source directly instead of the committed `.pot`:
-
-```
-comm -23 <(upstream .pot msgids, sorted)  <(port .pot msgids, sorted)
-comm -13 <(upstream .pot msgids, sorted)  <(port .pot msgids, sorted)
-```
-
-The stale `.pot`'s own extra row, `"Menu"` (cited at `application.ui:98`), no
-longer exists anywhere in current `application.ui` — the string there today is
-`"Main Menu"` (`application.ui:102`), which the port correctly carries. That
-row is a scanner/pot-staleness artifact, not a gap, and is excluded below.
-
-## Real gaps — 3 messages, all from files the port does not ship at all
-
-| msgid | Upstream source | Port site | State |
-|---|---|---|---|
-| `Hash Generator` | `data/dev.geopjr.Collision.desktop.in:7` (`GenericName`) | none — no `.desktop(.in)` file anywhere in the port | **gap** |
-| `md5;sha1;sha256;sha512;blake3;crc32;adler32;hash;` | `data/dev.geopjr.Collision.desktop.in:12` (`Keywords`) | none | **gap** |
-| `Check Hashes` | `nautilus-extension/collision-extension.py:54` (`Nautilus.MenuItem` label) | none — no port file for the Nautilus extension at all, see `component-identification.md` §16 | **gap** |
-
-A fourth, `Check hashes for your files` (the desktop `Comment` / metainfo
-`<summary>`), is **not** a gap — the identical string is already in the port's
-catalogue via `window.rb:385`'s status-page description, which is the same
-msgid reused. It is counted `ported` here and the missing desktop/metainfo
-*files* are tracked as component gaps instead (`component-parity.md`), per the
-skill's instruction not to double-count a moved string as both ported and
-missing.
-
-The stale `.pot` has 43 distinct ids; after dropping its own stale `"Menu"`
-row, current upstream *source* (verified by hand against `about.cr`,
-`collision.cr`, `application.ui`) carries **10 more** distinct messages the
-2023 `.pot` never captured: the 8 "other app" name/summary pairs in
-`about.cr`, the Wikipedia-article URL in `collision.cr`, and `"Main Menu"`
-(the string that replaced the stale pot's `"Menu"`). All 10 are confirmed
-present, byte-identical, in the port. True upstream total: **52**. Port
-total: **49**.
+## The crash fix: verified true
 
 ```
-49/52 messages. 3 gaps, 0 reworded, 0 unmarked, 0 kind_mismatch, 41/41 languages.
+nix develop --command xvfb-run -a env LANGUAGE=fr LC_ALL= LC_MESSAGES= LANG= \
+  ruby -e 'require_relative "lib/collision/i18n"; puts Collision::I18n._("Pending")'
 ```
 
-## Occurrences — a finding, not a pass condition
+Now prints `En attente`. `lib/collision/i18n.rb:125` reads catalogues with
+explicit `encoding: "UTF-8"`. `spec/i18n_encoding_spec.rb` (2 examples,
+re-run live) covers this with a fresh process boot. **Closed, confirmed.**
 
-`Check Hashes` (upstream, 1 site) vs. the port's 0 is the only use-count
-mismatch, and it is the same gap as above (the file doesn't exist), not an
-independent finding.
+## The 3 msgid gaps: files exist now, but the strings still do not reach a user — new finding this round
 
-## Extra — port messages with no upstream counterpart
+The prior pass's gap was "no file, so no msgid, so no translation." The file
+now exists for all three. The translation still does not reach a non-English
+user, for a different, more structural reason: **the translations already
+existed in all 41 `po/*.po` files, and they have been marked obsolete.**
 
-None marked. The six "other app" strings (`Archives`, `Create and view web
-archives`, `Calligraphy`, `Turn text into ASCII banners`, `Tuba`, `Browse the
-Fediverse`, `Turntable`, `Scrobble your music`) and the Wikipedia-article URL
-are **not** extra — they are upstream's own `about.cr`/`collision.cr` strings
-that the stale `.pot` simply never captured (see above); both are present,
-byte-identical, in the port's `about.rb` / `hash_info.rb`. Checked by hand
-against upstream source, not the `.pot`.
+Verified live:
 
-## Step 5 — proving it, including the one check that was never run
+```sh
+grep -l '#~ msgid "Hash Generator"' po/*.po | wc -l   # 39
+grep -l '#~ msgid "Check Hashes"'   po/*.po | wc -l   # 38
+grep -c '#~ msgid "Verifying that a file' po/fr.po    # 1 (the metainfo description, obsolete too)
+```
 
-Four of the skill's required checks, run live for this audit:
+`#~` is gettext's own marker for "this entry's source reference no longer
+appears in `POTFILES`, keep the translation on file but do not use it."
+Confirmed this is the mechanism, not a coincidence, by reading
+`po/POTFILES` on the port:
 
-1. **Key sets, computed from source, not the stale `.pot`**: 49/52 agree, 3
-   gaps named above. Not `parity: true` — 3 real gaps are open.
+```
+lib/collision/actions/about.rb
+lib/collision/actions/hash_info.rb
+lib/collision/checksum.rb
+lib/collision/feedback.rb
+lib/collision/hash_row.rb
+lib/collision/primary_menu.rb
+lib/collision/shortcuts_dialog.rb
+lib/collision/toggle_hash_functions_dialog.rb
+lib/collision/window.rb
+```
+
+Upstream's `po/POTFILES` additionally lists `data/dev.geopjr.Collision.desktop.in`,
+`data/dev.geopjr.Collision.metainfo.xml.in`, and three `.ui` files. The port's
+`po/POTFILES` was written in commit `21d7f5c` ("Port the translations"),
+*before* `aab6951` added the desktop/metainfo/nautilus files, and `aab6951`
+never added them to `po/POTFILES`. Whatever regenerated the port's `.po`
+files against that incomplete file list (the diff against upstream's `fr.po`
+shows a full re-merge: new `Report-Msgid-Bugs-To`/`POT-Creation-Date`
+headers, new entries for `lib/`-only strings, and the desktop/metainfo/
+nautilus entries pushed to the obsolete section) ran `msgmerge` scoped to
+only those 9 files, so every msgid whose only source line was in a file
+outside that list got moved to `#~`, taking its translation out of use —
+even though the translation itself, word for word, is still sitting in the
+file.
+
+**Proved by actually building the artifacts, not by reading `.po` files:**
+
+```sh
+nix develop --command bash -c "rake desktop:build && rake metainfo:build"
+grep 'GenericName\[' data/dev.geopjr.Collision.desktop   # 0 matches
+grep 'Keywords\['     data/dev.geopjr.Collision.desktop   # 0 matches
+grep -c '<description xml:lang' data/dev.geopjr.Collision.metainfo.xml   # 0
+grep -c '<p xml:lang'            data/dev.geopjr.Collision.metainfo.xml   # 0
+```
+
+`Name[xx]=` lines are present for all 41 languages (that msgid has its own
+line in `application.ui`/the window and was never orphaned). `<summary
+xml:lang="...">` lines are present (shared msgid with `window.rb`'s status
+page — in-scope). `GenericName`, `Keywords`, and the entire AppStream
+`<description>` are English-only in the built output, in every locale,
+because their translations are the ones marked obsolete.
+
+The Nautilus extension's `"Check Hashes"` has the same obsolete-entry
+problem, plus a second, independent problem: it is read through the
+*system* gettext locale directory (`textdomain('dev.geopjr.Collision')` at
+runtime, not `po/*.po` read directly the way `lib/collision/i18n.rb` does
+for the main app). Nothing in this repository — not `rakelib/packaging.rake`,
+not `Rakefile` — compiles `po/*.po` to `.mo` and installs it where system
+gettext would find it. Even if the obsolete-entry problem were fixed, the
+Nautilus menu item would still read in English on every real install of
+this gem, because no `.mo` ever reaches `/usr/share/locale/`.
+
+## Revised key-set count
+
+Prior pass: 49/52 (3 gaps, files missing). This pass: the msgid count from
+source is the same (upstream's 52, confirmed again by hand against
+`about.cr`/`collision.cr`/`application.ui`/the now-added `desktop.in` and
+`metainfo.xml.in`/`collision-extension.py`), and the port's `.rb`/`.in`/`.py`
+source now carries all 52 msgids verbatim — **0 gaps at the source-text
+level**. But 3 of those 52 — `Hash Generator`, the `Keywords` string, `Check
+Hashes` — are undeliverable in the built artifacts for every one of the 41
+shipped languages, because their translations are present-but-disabled
+(desktop/metainfo) or present-but-unreachable (Nautilus, no `.mo` path at
+all). The prior report's "gap" label was correct; only the *mechanism* of
+the gap changed, from "missing text" to "present text the build silently
+discards."
+
+```
+52/52 msgids in source · 41/41 languages shipped · 3/52 msgids produce
+English output in every built artifact, in every locale, regardless of
+translator effort already on file.
+```
+
+## Why this matters for the next pass, not just this one
+
+There is no task anywhere in `Rakefile`/`rakelib/` that regenerates
+`po/POTFILES` or re-runs `msgmerge`/`xgettext` against the port's own
+source tree. The next file anyone adds with a translatable string — in
+`lib/`, in a future `.in` template, anywhere — will go through the exact
+same silent path: the string shows correctly in English, the component
+"exists," and its translation quietly becomes `#~` the next time anyone
+regenerates the catalogues, with no test anywhere in the 44-example spec
+suite or the 33-check drive script positioned to catch it (`test-parity.md`).
+
+## Step 5 checklist (skill-required)
+
+1. **Key sets**: 52/52 at the source-text level; 3/52 undeliverable in the
+   built artifacts. Not `parity: true`.
 2. **Languages**: 41/41, file lists identical.
-3. **`.mo` compilation / delivery**: the port reads `.po` at runtime (not
-   `.mo` via `msgfmt`) — confirmed by `lib/collision/i18n.rb`'s own PO reader
-   and the dedicated `spec/i18n_spec.rb` suite (24 examples, all passing).
-   That satisfies *delivery*, per the skill's text — but see finding 4, which
-   is where "the catalogue reads" and "the catalogue reads under the
-   condition a real deployment hits" diverge.
-4. **The app actually shows translated text under a non-English locale — run
-   live, not skipped:**
-
-   ```
-   nix develop --command xvfb-run -a env LANGUAGE=fr LC_ALL= LC_MESSAGES= LANG= \
-     ruby -e 'require_relative "lib/collision/i18n"; puts Collision::I18n._("Pending")'
-   ```
-
-   Result: **crashes**, not "falls back to English":
-
-   ```
-   lib/collision/i18n.rb:143:in 'String#strip': invalid byte sequence in US-ASCII (Encoding::CompatibilityError)
-   ```
-
-   **This is a real bug, not a harness artifact.** `lib/collision/i18n.rb:116`
-   calls `File.read(path)` with no explicit encoding. When a process boots
-   with `LANG`/`LC_ALL`/`LC_MESSAGES` all unset — a real condition: minimal
-   containers, some systemd services, some Flatpak sandboxes —
-   `Encoding.default_external` is `US-ASCII` (confirmed separately:
-   `ruby -e 'puts Encoding.default_external'` under the same env prints
-   `US-ASCII`, vs. `UTF-8` under this shell's normal environment), and
-   `File.read` on any `.po` file containing a non-ASCII translator name or
-   accented character raises before a single string is read.
-
-   **`spec/i18n_spec.rb`'s `with_environment` helper does not catch this**,
-   and that is worth stating plainly rather than leaving implied: it mutates
-   `ENV["LANG"]` etc. *after* the RSpec process has already booted and fixed
-   its own `Encoding.default_external` to `UTF-8`. Every one of the 24
-   examples in that file therefore runs under an encoding the real failure
-   mode never has. A green spec suite here is not evidence this path works —
-   it is evidence the suite's own fixture never exercises the condition that
-   breaks it. This is exactly the "last check is not optional" scenario the
-   skill names: the check was never run before this audit, and running it
-   found a crash, not a pass.
+3. **Delivery — main app**: `.po` read directly by `lib/collision/i18n.rb`,
+   confirmed working (and the crash fixed). **Delivery — desktop/metainfo**:
+   built live, 2 of 3 translatable facets dead on arrival (above).
+   **Delivery — Nautilus**: no delivery mechanism exists in this repo at all.
+4. **Non-English locale, run live, not skipped**: re-ran the exact repro
+   from the prior pass; the crash is gone. Ran the *new* check this pass
+   adds — actually building `desktop`/`metainfo` and grepping the output —
+   and that is where this round's finding comes from. "The suite passes" and
+   "the artifact a user's shell actually shows is translated" are still two
+   different claims; this pass is the one that checked the second for these
+   three strings specifically, and it fails.
 
 ## Summary
 
 ```
-49/52 messages (3 gaps: 2 desktop-file strings, 1 Nautilus string, both files
-entirely unported) · 41/41 languages · catalogue reader confirmed broken on an
-unset locale, which is the condition the only real on-screen check exercises.
+Crash: fixed, confirmed. 3 msgid gaps from the last pass: files added, but
+all 3 translations are present-in-.po-and-unused (obsolete entries) or
+present-and-unreachable (no .mo delivery) — 0 of the 3 original gaps are
+actually closed for a non-English user. No regeneration path exists to
+prevent the next added string from landing in the same state.
 ```
 
-Not clean. The two desktop/Nautilus gaps are also open `component-parity.md`
-rows (a file that does not exist cannot carry a message), and the encoding
-crash is a correctness defect independent of any missing file.
+Not clean.

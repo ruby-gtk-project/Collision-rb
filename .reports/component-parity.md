@@ -1,73 +1,92 @@
-# Component parity — Collision
+# Component parity — Collision (re-audit)
 
 | | |
 |---|---|
 | Upstream | `main` @ `9d35ba0` |
-| Port | `ruby` @ `1c70cce` |
-| Units with full 4-axis parity | 15 / 18 |
+| Port | `ruby` @ `aab6951` |
+| Runtime gate (this round) | `DRIVE OK`, 33/33, re-run live for this audit |
+| Spec suite | 44 examples, 0 failures, re-run live for this audit (was 42 at the prior pass's `.pot`/report snapshot — `spec/i18n_encoding_spec.rb`, added in `aab6951`, is the +2) |
 
-Scope: all 18 components from `.reports/component-inventory.md` plus the three
-this audit added in `component-identification.md`. For the 15 that
-`component-inventory.md` already maps file-for-file (application, window and
-its sub-widgets, primary menu, hash row, toggle-hash-functions dialog,
-shortcuts dialog, the 4 `Gio::SimpleAction` app actions + the port-only
-`shortcuts` action, gschema, stylesheet, translation catalogue, icons), this
-audit's own drive run (`test/drive_window.rb`, re-run live: **33/33 checks,
-`DRIVE OK`**) independently exercises count, style class presence
-(`toggle-hashes opens a dialog with a row per function`,
-`primary menu has six items`, `the markdown menu item is hidden-when
-action-disabled`), behaviour (every accelerator, every window/app action,
-open/compare/verify flows, the copy-feedback timers) and — for the strings the
-drive script asserts on literally (`"welcome page is shown"` reads
-`main_stack.visible_child_name`, not label text) — presence. That corroborates
-`component-inventory.md`'s per-component rows rather than re-deriving them;
-see that file for the row-by-row widget/CSS/signal table.
+This supersedes the prior `component-parity.md`, written before `aab6951`.
+That pass found 3 gaps (Nautilus extension, desktop entry, AppStream
+metadata) and flagged a locale crash. `aab6951`'s commit message claims all
+four are closed ("Close four parity gaps: desktop entry, metainfo, Nautilus
+extension, i18n encoding crash"). Checked each claim against the running
+code rather than the message:
 
-## Gaps this pass adds
+| Prior gap | Commit's claim | Verified |
+|---|---|---|
+| i18n encoding crash under an unset locale | fixed | **True.** `lib/collision/i18n.rb:125` now reads with explicit `encoding: "UTF-8"`. Re-ran the exact repro from the prior `translation-parity.md` live: `LANGUAGE=fr LC_ALL= LC_MESSAGES= LANG= ruby -e '...I18n._("Pending")'` now prints `En attente` instead of raising `Encoding::CompatibilityError`. `spec/i18n_encoding_spec.rb` boots a fresh process to cover exactly this, and it passes. |
+| Nautilus extension unported | fixed | **File exists, half the fix.** See below. |
+| Desktop entry unported | fixed | **File exists, two of three translatable fields are dead.** See below. |
+| AppStream metadata unported | fixed | **File exists, the description is untranslated.** See below. |
 
-| Unit | Widget | Up × | Port × | CSS | Signals | Text | Verdict |
-|---|---|---:|---:|---|---|:-:|---|
-| Nautilus extension | `Nautilus.MenuItem` | 1 | 0 | — | ✗ `activate` | ✗ | **gap**: no port file at all, see `component-identification.md` §16 |
-| Desktop entry | (not a widget — a `.desktop` key set) | 4 keys | 1 of 4 (`Name`, indirectly) | — | — | ✗ 3 of 4 | **gap**: §17 |
-| AppStream metadata | (not a widget — a `.metainfo.xml` key set) | name+summary+description+4 screenshots | 0 | — | — | ✗ | **gap**: §18 |
-| GResource manifest | — | — | — | — | — | — | **correspondence**, not a gap — css/icons loaded directly, same rendered result |
+The i18n crash fix is real and complete. The other three are **not** fully
+closed — the commit message overstates what shipped. Detail and the full
+evidence trail are in `translation-parity.md`; summarized here because it is
+a component-identity fact, not only a string-count fact:
 
-## Stylesheet
+## Nautilus extension — `nautilus-extension/collision-extension.py`
 
-`component-inventory.md` flagged the stylesheet as "not diffed line-by-line."
-Diffed here:
+File-for-file present, correct label, correct signal, correctly adapted
+`get_collision()`. **Gap, not closed:** the string `_("Check Hashes")` is
+looked up through the *system* gettext locale directory at runtime
+(`textdomain('dev.geopjr.Collision')`), and nothing in this repository
+compiles or installs a `.mo` catalogue there — `rake nautilus:install` only
+copies the `.py` file. On any machine where this gem is the only thing that
+ever installed `dev.geopjr.Collision` translations (i.e. every real install
+of this port, since it has no Flatpak/system package providing `.mo`s), the
+right-click entry reads "Check Hashes" in English for every user, in every
+locale, always. The component is wired; its one translatable string cannot
+reach a non-English user by any path this repo provides.
 
-```
-diff <(git show origin/main:data/css/style.css) data/style.css
-```
+## Desktop entry — `data/dev.geopjr.Collision.desktop`
 
-Byte-identical (confirmed: `diff` emitted nothing). Full parity on this axis
-for every CSS class the window inventory lists.
+Built live for this audit (`rake desktop:build`, via the real `msgfmt
+--desktop`). `Name[xx]=` lines: present, 41/41. `GenericName` and `Keywords`:
+**zero** per-language lines in the output — confirmed by grepping the built
+file for `GenericName\[` and `Keywords\[`, both absent. Root cause: the
+`po/*.po` entries for `"Hash Generator"` and the keywords string are marked
+`#~` (obsolete) in 39/41 and 38/41 catalogues respectively (counted live:
+`grep -l '#~ msgid "Hash Generator"' po/*.po | wc -l` → 39). `msgfmt --desktop`
+correctly ignores obsolete entries, same as real gettext tooling would.
 
-## Text axis
+## AppStream metadata — `data/dev.geopjr.Collision.metainfo.xml`
 
-Deferred to `translation-parity.md`'s census, which is scoped to the whole
-app rather than per-component here — see that document for the per-string
-table. Two of this pass's three gaps (desktop entry, AppStream metadata) are
-simultaneously text-axis gaps: `GenericName`, `Comment`-as-launcher-entry,
-`Keywords`, and the metainfo `<summary>` have no port call site because the
-files that would carry them do not exist. Carried in both ledgers per the
-skill's rule.
+Built live for this audit (`rake metainfo:build`). `<summary xml:lang="...">`:
+present (this string is shared with `window.rb`'s status-page text, which is
+in the port's own `po/POTFILES` scope, so it was never marked obsolete).
+`<description xml:lang="...">` / `<p xml:lang="...">`: **zero** in the built
+output — confirmed (`grep -c '<description xml:lang' → 0`, `grep -c '<p
+xml:lang' → 0`). Same obsolete-entry root cause.
 
-## Driven behaviour — what 33/33 actually covers, and what it does not
+## Why the translations are obsolete: a structural gap, not a one-off
 
-The drive run is real and green (re-run live for this audit, not taken on
-faith). It covers 15 of the app's components by the task's own count. It does
-**not** drive, and no other check in this port drives:
+`po/POTFILES` on the port lists only the 9 `lib/collision/**.rb` files that
+existed when `po/` was ported (`21d7f5c`, before `aab6951` added the three
+new source files). `aab6951` added `data/dev.geopjr.Collision.desktop.in`,
+`data/dev.geopjr.Collision.metainfo.xml.in` and
+`nautilus-extension/collision-extension.py` as real, string-bearing files,
+but did not add any of them to `po/POTFILES`, and no task in `Rakefile` or
+`rakelib/` regenerates `po/POTFILES` or re-runs `msgmerge` against it. There
+is no mechanism in this repository, today, that would un-obsolete these
+entries even if someone tried — the next person to regenerate the `.pot`
+from `po/POTFILES` would still omit all three files. This is the structural
+form of the gap `component-identification.md` §16–18 describes per-unit.
 
-- the Nautilus extension (cannot — it has no port file to drive);
-- the About dialog's four "other app" entries (`add_other_app` calls) —
-  `check_app_actions`'s `"app.about opens the about dialog"` only asserts the
-  dialog opens, not that the four entries are present with the right
-  icon/name/summary;
-- the app running under a non-English locale with the UI actually rendering
-  translated text — see `translation-parity.md`, which found this gap is not
-  cosmetic: the locale path crashes.
+## Rest of the inventory
 
-A component no check exercises is unverified, not done, per this audit's
-brief. The second and third items above are exactly that.
+No other change from `.reports/component-inventory.md`'s 15 other units.
+Full 4-axis parity (type/CSS/signal/text) confirmed previously and
+unaffected by this round's findings.
+
+## Verdict
+
+**Not clean.** 1 of 4 claimed closures (the i18n crash) is fully verified.
+3 of 4 (Nautilus label, desktop GenericName/Keywords, metainfo description)
+are partially closed: the component now exists and is wired into a build
+task, but the specific translatable content that made the original finding a
+*translation* gap is still not delivered to a non-English user by any path
+this repo provides, for any of the 41 shipped languages. Carried into
+`translation-parity.md` (full evidence) and `accountability-ensurance.md`
+(the commit message's unqualified "closing" claim).
