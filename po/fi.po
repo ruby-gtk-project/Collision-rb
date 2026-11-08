@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: dev.geopjr.Collision\n"
 "Report-Msgid-Bugs-To: https://github.com/ruby-gtk-project/Collision-rb/"
 "issues\n"
-"POT-Creation-Date: 2026-11-02 23:11+0000\n"
+"POT-Creation-Date: 2026-11-08 01:13+0000\n"
 "PO-Revision-Date: 2026-03-28 04:57+0000\n"
 "Last-Translator: artnay <artnay@noreply.codeberg.org>\n"
 "Language-Team: Finnish <https://translate.codeberg.org/projects/collision/"
@@ -56,8 +56,8 @@ msgstr ""
 msgid "translator-credits"
 msgstr "Jiri Grönroos"
 
-#: ../lib/collision/actions/about.rb:49 ../lib/collision/window.rb:70
-#: ../lib/collision/window.rb:387
+#: ../lib/collision/actions/about.rb:49 ../lib/collision/window.rb:67
+#: ../lib/collision/window.rb:384
 msgid "Collision"
 msgstr "Collision"
 
@@ -67,7 +67,7 @@ msgid ""
 msgstr ""
 "https://en.wikipedia.org/wiki/Comparison_of_cryptographic_hash_functions"
 
-#: ../lib/collision/checksum.rb:55
+#: ../lib/collision/checksum.rb:53
 msgid "%d of %d hashes calculated"
 msgstr "%d/%d tiivistettä laskettu"
 
@@ -146,116 +146,125 @@ msgstr "Valitse mikä tiivistefunktio lasketaan."
 msgid "Wait for all ongoing operations to finish"
 msgstr "Odota kunnes kaikki käynnissä olevat toimenpiteet valmistuvat"
 
-#: ../lib/collision/window.rb:43
+#: ../lib/collision/window.rb:40
 #, fuzzy
 #| msgid "MD5,SHA-1,SHA-256,SHA-512,Blake3,CRC32 or Adler32 Hash"
-msgid "MD5,SHA-1,SHA-256,SHA-512,CRC32 or Adler32 Hash"
+msgid "MD5,SHA-1,SHA-256,SHA-512,Blake3,CRC32 or Adler32 Hash"
 msgstr "MD5-, SHA-1-, SHA-256-, SHA-512-, Blake3-, CRC32- tai Adler32-tiiviste"
 
-#: ../lib/collision/window.rb:44
+#: ../lib/collision/window.rb:41
 #, fuzzy
 #| msgid "Insert a MD5/SHA-1/SHA-256/SHA-512/Blake3/CRC32/Adler32 Hash"
-msgid "Insert a MD5/SHA-1/SHA-256/SHA-512/CRC32/Adler32 Hash"
+msgid "Insert a MD5/SHA-1/SHA-256/SHA-512/Blake3/CRC32/Adler32 Hash"
 msgstr "Syötä MD5-/SHA-1-/SHA-256-/SHA-512-/Blake3-/CRC32-/Adler32-tiiviste"
 
-#: ../lib/collision/window.rb:45
+#: ../lib/collision/window.rb:42
 msgid "Choose File…"
 msgstr "Valitse tiedosto…"
 
-#: ../lib/collision/window.rb:130
+#: ../lib/collision/window.rb:127
 msgid "Hash"
 msgstr "Tiiviste"
 
-#: ../lib/collision/window.rb:136
+#: ../lib/collision/window.rb:133
 msgid "Verify"
 msgstr "Vahvista"
 
-#: ../lib/collision/window.rb:224 ../lib/collision/window.rb:419
+#: ../lib/collision/window.rb:221 ../lib/collision/window.rb:416
 msgid "Pending"
 msgstr "Odottaa"
 
-#: ../lib/collision/window.rb:323
+#: ../lib/collision/window.rb:320
 msgid "Drop to hash"
 msgstr "Pudota laskeaksesi tiivisteen"
 
-#: ../lib/collision/window.rb:348
+#: ../lib/collision/window.rb:345
 msgid "_Open"
 msgstr "_Avaa"
 
-#: ../lib/collision/window.rb:349
+#: ../lib/collision/window.rb:346
 msgid "Open…"
 msgstr "Avaa…"
 
-#: ../lib/collision/window.rb:364
+#: ../lib/collision/window.rb:361
 #, fuzzy
 #| msgid "Menu"
 msgid "Main Menu"
 msgstr "Valikko"
 
-#: ../lib/collision/window.rb:388
+#: ../lib/collision/window.rb:385
 msgid "Check hashes for your files"
 msgstr "Tarkista tiedostojesi tiivisteet"
 
-#: ../lib/collision/window.rb:396
+#: ../lib/collision/window.rb:393
 msgid "_Open a File"
 msgstr "_Avaa tiedosto"
 
-#: ../lib/collision/window.rb:405
+#: ../lib/collision/window.rb:402
 msgid "Calculating Hashes"
 msgstr "Lasketaan tiivisteitä"
 
-#: ../lib/collision/window.rb:406
+#: ../lib/collision/window.rb:403
 msgid "This might take a while"
 msgstr "Tämä saattaa kestää hetken"
 
-#: ../lib/collision/window.rb:463
+#: ../lib/collision/window.rb:460
 msgid "Checksum"
 msgstr "Tarkistussumma"
 
-#: ../lib/collision/window.rb:464
+#: ../lib/collision/window.rb:461
 msgid "File"
 msgstr "Tiedosto"
 
-#: ../lib/collision/window.rb:530
+#: ../lib/collision/window.rb:527
 msgid "Select Another File to Check Against"
 msgstr "Valitse toinen tiedosto vertailtavaksi"
 
-#: ../lib/collision/window.rb:792
+#: ../lib/collision/window.rb:789
 msgid "Choose a File"
 msgstr "Valitse tiedosto"
 
-#~ msgid "Hash Generator"
-#~ msgstr "Tiivisteen muodostaja"
+#: data/dev.geopjr.Collision.desktop.in:7
+msgid "Hash Generator"
+msgstr "Tiivisteen muodostaja"
 
-#~ msgid "md5;sha1;sha256;sha512;blake3;crc32;adler32;hash;"
-#~ msgstr "md5;sha1;sha256;sha512;blake3;crc32;adler32;hash;tiiviste;tarkistussumma;"
+#: data/dev.geopjr.Collision.desktop.in:12
+msgid "md5;sha1;sha256;sha512;blake3;crc32;adler32;hash;"
+msgstr "md5;sha1;sha256;sha512;blake3;crc32;adler32;hash;tiiviste;tarkistussumma;"
 
-#~ msgid ""
-#~ "Verifying that a file you downloaded or received is actually the one you "
-#~ "were expecting is often overlooked or too time-consuming to do. At the "
-#~ "same time, it has become very easy to get your hands on a file that has "
-#~ "been tampered with, due to the mass increase of malicious webpages and "
-#~ "other actors."
-#~ msgstr ""
-#~ "Lataamasi tai vastaanottamasi tiedoston vahvistaminen, että se todella on "
-#~ "mitä sen oletat olevan, jää usein huomiotta tai vie liian paljon aikaa. "
-#~ "Samanaikaisesti peukaloitujen tiedostojen leviäminen haitallisten "
-#~ "verkkosivustojen ja muiden pahantahtoisten toimijoiden toimesta on "
-#~ "aiempaa yleisempää."
+#. developer_name tag deprecated with Appstream 1.0
+#: data/dev.geopjr.Collision.metainfo.xml.in:7
+msgid "Evangelos \"GeopJr\" Paterakis"
+msgstr ""
 
-#~ msgid ""
-#~ "This tool aims to solve that. Collision comes with a simple &amp; clean "
-#~ "UI, allowing anyone, from any age and experience group, to generate, "
-#~ "compare and verify MD5, SHA-256, SHA-512, SHA-1, Blake3, CRC32 and "
-#~ "Adler32 hashes."
-#~ msgstr ""
-#~ "Tämän työnkalun on tarkoitus vastata haasteeseen. Collision tarjoaa "
-#~ "yksinkertaisen ja selkeän käyttöliittymän, joka mahdollistaa kenen "
-#~ "tahansa ikään tai kokemukseen katsomatta, vertailla ja vahvistaa MD5-, "
-#~ "SHA-256-, SHA-512-, SHA-1-, Blake3-, CRC32- ja Adler32-tiivisteitä."
+#: data/dev.geopjr.Collision.metainfo.xml.in:20
+msgid ""
+"Verifying that a file you downloaded or received is actually the one you "
+"were expecting is often overlooked or too time-consuming to do. At the same "
+"time, it has become very easy to get your hands on a file that has been "
+"tampered with, due to the mass increase of malicious webpages and other "
+"actors."
+msgstr ""
+"Lataamasi tai vastaanottamasi tiedoston vahvistaminen, että se todella on "
+"mitä sen oletat olevan, jää usein huomiotta tai vie liian paljon aikaa. "
+"Samanaikaisesti peukaloitujen tiedostojen leviäminen haitallisten "
+"verkkosivustojen ja muiden pahantahtoisten toimijoiden toimesta on aiempaa "
+"yleisempää."
 
-#~ msgid "Check Hashes"
-#~ msgstr "Tarkista tiivisteet"
+#: data/dev.geopjr.Collision.metainfo.xml.in:26
+msgid ""
+"This tool aims to solve that. Collision comes with a simple & clean UI, "
+"allowing anyone, from any age and experience group, to generate, compare and "
+"verify MD5, SHA-256, SHA-512, SHA-1, Blake3, CRC32 and Adler32 hashes."
+msgstr ""
+"Tämän työnkalun on tarkoitus vastata haasteeseen. Collision tarjoaa "
+"yksinkertaisen ja selkeän käyttöliittymän, joka mahdollistaa kenen tahansa "
+"ikään tai kokemukseen katsomatta, vertailla ja vahvistaa MD5-, SHA-256-, "
+"SHA-512-, SHA-1-, Blake3-, CRC32- ja Adler32-tiivisteitä."
+
+#: nautilus-extension/collision-extension.py:76
+msgid "Check Hashes"
+msgstr "Tarkista tiivisteet"
 
 #~ msgid "md5;sha1;sha256;sha512;hash;"
 #~ msgstr "md5;sha1;sha256;sha512;hash;tiiviste;tarkistussumma;"

@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: dev.geopjr.Collision\n"
 "Report-Msgid-Bugs-To: https://github.com/ruby-gtk-project/Collision-rb/"
 "issues\n"
-"POT-Creation-Date: 2026-11-02 23:11+0000\n"
+"POT-Creation-Date: 2026-11-08 01:13+0000\n"
 "PO-Revision-Date: 2026-03-26 21:13+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/collision/"
@@ -62,8 +62,8 @@ msgstr ""
 "Himmel\n"
 "Sibuya Kaz <sibuyakazokuu@gmail.com>"
 
-#: ../lib/collision/actions/about.rb:49 ../lib/collision/window.rb:70
-#: ../lib/collision/window.rb:387
+#: ../lib/collision/actions/about.rb:49 ../lib/collision/window.rb:67
+#: ../lib/collision/window.rb:384
 msgid "Collision"
 msgstr "Collision"
 
@@ -73,7 +73,7 @@ msgid ""
 msgstr ""
 "https://en.wikipedia.org/wiki/Comparison_of_cryptographic_hash_functions"
 
-#: ../lib/collision/checksum.rb:55
+#: ../lib/collision/checksum.rb:53
 msgid "%d of %d hashes calculated"
 msgstr "%d個のうち%d個のハッシュが計算されました"
 
@@ -150,114 +150,123 @@ msgstr ""
 msgid "Wait for all ongoing operations to finish"
 msgstr ""
 
-#: ../lib/collision/window.rb:43
+#: ../lib/collision/window.rb:40
 #, fuzzy
 #| msgid "MD5,SHA-1,SHA-256,SHA-512,Blake3,CRC32 or Adler32 Hash"
-msgid "MD5,SHA-1,SHA-256,SHA-512,CRC32 or Adler32 Hash"
+msgid "MD5,SHA-1,SHA-256,SHA-512,Blake3,CRC32 or Adler32 Hash"
 msgstr "MD5、SHA-1、SHA-256、SHA-512、Blake3、CRC32 または Adler32 ハッシュ"
 
-#: ../lib/collision/window.rb:44
+#: ../lib/collision/window.rb:41
 #, fuzzy
 #| msgid "Insert a MD5/SHA-1/SHA-256/SHA-512/Blake3/CRC32/Adler32 Hash"
-msgid "Insert a MD5/SHA-1/SHA-256/SHA-512/CRC32/Adler32 Hash"
+msgid "Insert a MD5/SHA-1/SHA-256/SHA-512/Blake3/CRC32/Adler32 Hash"
 msgstr "MD 5/SHA-1/SHA-256/SHA-512/Blake 3/CRC 32/Adler 32 ハッシュを挿入する"
 
-#: ../lib/collision/window.rb:45
+#: ../lib/collision/window.rb:42
 msgid "Choose File…"
 msgstr "ファイルを選択…"
 
-#: ../lib/collision/window.rb:130
+#: ../lib/collision/window.rb:127
 msgid "Hash"
 msgstr "ハッシュ"
 
-#: ../lib/collision/window.rb:136
+#: ../lib/collision/window.rb:133
 msgid "Verify"
 msgstr "検証"
 
-#: ../lib/collision/window.rb:224 ../lib/collision/window.rb:419
+#: ../lib/collision/window.rb:221 ../lib/collision/window.rb:416
 msgid "Pending"
 msgstr "保留中"
 
-#: ../lib/collision/window.rb:323
+#: ../lib/collision/window.rb:320
 msgid "Drop to hash"
 msgstr "ハッシュにする"
 
-#: ../lib/collision/window.rb:348
+#: ../lib/collision/window.rb:345
 msgid "_Open"
 msgstr "開く(_O)"
 
-#: ../lib/collision/window.rb:349
+#: ../lib/collision/window.rb:346
 msgid "Open…"
 msgstr "開く…"
 
-#: ../lib/collision/window.rb:364
+#: ../lib/collision/window.rb:361
 #, fuzzy
 #| msgid "Menu"
 msgid "Main Menu"
 msgstr "メニュー"
 
-#: ../lib/collision/window.rb:388
+#: ../lib/collision/window.rb:385
 msgid "Check hashes for your files"
 msgstr "ファイルのハッシュを確認する"
 
-#: ../lib/collision/window.rb:396
+#: ../lib/collision/window.rb:393
 msgid "_Open a File"
 msgstr "ファイルを開く(_O)"
 
-#: ../lib/collision/window.rb:405
+#: ../lib/collision/window.rb:402
 msgid "Calculating Hashes"
 msgstr "ハッシュの計算"
 
-#: ../lib/collision/window.rb:406
+#: ../lib/collision/window.rb:403
 msgid "This might take a while"
 msgstr "いましばらくお待ち下さい"
 
-#: ../lib/collision/window.rb:463
+#: ../lib/collision/window.rb:460
 msgid "Checksum"
 msgstr "チェックサム"
 
-#: ../lib/collision/window.rb:464
+#: ../lib/collision/window.rb:461
 msgid "File"
 msgstr "ファイル"
 
-#: ../lib/collision/window.rb:530
+#: ../lib/collision/window.rb:527
 msgid "Select Another File to Check Against"
 msgstr "照合する他のファイルを選択"
 
-#: ../lib/collision/window.rb:792
+#: ../lib/collision/window.rb:789
 msgid "Choose a File"
 msgstr "ファイルを選択"
 
-#~ msgid "Hash Generator"
-#~ msgstr "ハッシュジェネレーター"
+#: data/dev.geopjr.Collision.desktop.in:7
+msgid "Hash Generator"
+msgstr "ハッシュジェネレーター"
 
-#~ msgid "md5;sha1;sha256;sha512;blake3;crc32;adler32;hash;"
-#~ msgstr "md5;sha1;sha256;sha512;blake3;crc32;adler32;hash;"
+#: data/dev.geopjr.Collision.desktop.in:12
+msgid "md5;sha1;sha256;sha512;blake3;crc32;adler32;hash;"
+msgstr "md5;sha1;sha256;sha512;blake3;crc32;adler32;hash;"
 
-#~ msgid ""
-#~ "Verifying that a file you downloaded or received is actually the one you "
-#~ "were expecting is often overlooked or too time-consuming to do. At the "
-#~ "same time, it has become very easy to get your hands on a file that has "
-#~ "been tampered with, due to the mass increase of malicious webpages and "
-#~ "other actors."
-#~ msgstr ""
-#~ "あなたがダウンロードした、または受信したファイルが本当に意図したものである"
-#~ "かを検証するには、しばしば見逃してしまったり、時間がかかりすぎたりすること"
-#~ "があります。一方、悪意のあるウェブページや他の攻撃者の急増により、改竄され"
-#~ "たファイルを入手することは珍しくありません。"
+#. developer_name tag deprecated with Appstream 1.0
+#: data/dev.geopjr.Collision.metainfo.xml.in:7
+msgid "Evangelos \"GeopJr\" Paterakis"
+msgstr ""
 
-#~ msgid ""
-#~ "This tool aims to solve that. Collision comes with a simple &amp; clean "
-#~ "UI, allowing anyone, from any age and experience group, to generate, "
-#~ "compare and verify MD5, SHA-256, SHA-512, SHA-1, Blake3, CRC32 and "
-#~ "Adler32 hashes."
-#~ msgstr ""
-#~ "このツールはこうした問題を解決することを目的としています。Collision はシン"
-#~ "プル・クリーンな UI で、誰でも簡単に MD5、SHA-256、SHA-512、SHA-1、"
-#~ "Blake3、CRC32、Adler32 ハッシュを生成、比較、検証することができます。"
+#: data/dev.geopjr.Collision.metainfo.xml.in:20
+msgid ""
+"Verifying that a file you downloaded or received is actually the one you "
+"were expecting is often overlooked or too time-consuming to do. At the same "
+"time, it has become very easy to get your hands on a file that has been "
+"tampered with, due to the mass increase of malicious webpages and other "
+"actors."
+msgstr ""
+"あなたがダウンロードした、または受信したファイルが本当に意図したものであるか"
+"を検証するには、しばしば見逃してしまったり、時間がかかりすぎたりすることがあ"
+"ります。一方、悪意のあるウェブページや他の攻撃者の急増により、改竄されたファ"
+"イルを入手することは珍しくありません。"
 
-#~ msgid "Check Hashes"
-#~ msgstr "ハッシュの確認"
+#: data/dev.geopjr.Collision.metainfo.xml.in:26
+msgid ""
+"This tool aims to solve that. Collision comes with a simple & clean UI, "
+"allowing anyone, from any age and experience group, to generate, compare and "
+"verify MD5, SHA-256, SHA-512, SHA-1, Blake3, CRC32 and Adler32 hashes."
+msgstr ""
+"このツールはこうした問題を解決することを目的としています。Collision はシンプ"
+"ル・クリーンな UI で、誰でも簡単に MD5、SHA-256、SHA-512、SHA-1、Blake3、"
+"CRC32、Adler32 ハッシュを生成、比較、検証することができます。"
+
+#: nautilus-extension/collision-extension.py:76
+msgid "Check Hashes"
+msgstr "ハッシュの確認"
 
 #~ msgid ""
 #~ "This tool aims to solve that. Collision comes with a simple &amp; clean "

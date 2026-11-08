@@ -7,3 +7,6 @@ lib/collision/primary_menu.rb
 lib/collision/shortcuts_dialog.rb
 lib/collision/toggle_hash_functions_dialog.rb
 lib/collision/window.rb
+data/dev.geopjr.Collision.desktop.in
+data/dev.geopjr.Collision.metainfo.xml.in
+nautilus-extension/collision-extension.py

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: dev.geopjr.Collision\n"
 "Report-Msgid-Bugs-To: https://github.com/ruby-gtk-project/Collision-rb/"
 "issues\n"
-"POT-Creation-Date: 2026-11-02 23:11+0000\n"
+"POT-Creation-Date: 2026-11-08 01:13+0000\n"
 "PO-Revision-Date: 2026-04-21 18:57+0000\n"
 "Last-Translator: butterflyoffire <butterflyoffire@noreply.codeberg.org>\n"
 "Language-Team: Berber <https://translate.codeberg.org/projects/collision/"
@@ -56,8 +56,8 @@ msgstr ""
 msgid "translator-credits"
 msgstr ""
 
-#: ../lib/collision/actions/about.rb:49 ../lib/collision/window.rb:70
-#: ../lib/collision/window.rb:387
+#: ../lib/collision/actions/about.rb:49 ../lib/collision/window.rb:67
+#: ../lib/collision/window.rb:384
 msgid "Collision"
 msgstr ""
 
@@ -66,7 +66,7 @@ msgid ""
 "https://en.wikipedia.org/wiki/Comparison_of_cryptographic_hash_functions"
 msgstr ""
 
-#: ../lib/collision/checksum.rb:55
+#: ../lib/collision/checksum.rb:53
 msgid "%d of %d hashes calculated"
 msgstr ""
 
@@ -145,83 +145,117 @@ msgstr ""
 msgid "Wait for all ongoing operations to finish"
 msgstr ""
 
-#: ../lib/collision/window.rb:43
+#: ../lib/collision/window.rb:40
 #, fuzzy
 #| msgid "Insert a MD5/SHA-1/SHA-256/SHA-512 Hash"
-msgid "MD5,SHA-1,SHA-256,SHA-512,CRC32 or Adler32 Hash"
+msgid "MD5,SHA-1,SHA-256,SHA-512,Blake3,CRC32 or Adler32 Hash"
 msgstr "sekcem yiwen MD5/SHA-1/SHA-256/SHA-512 Hash"
 
-#: ../lib/collision/window.rb:44
+#: ../lib/collision/window.rb:41
 #, fuzzy
 #| msgid "Insert a MD5/SHA-1/SHA-256/SHA-512 Hash"
-msgid "Insert a MD5/SHA-1/SHA-256/SHA-512/CRC32/Adler32 Hash"
+msgid "Insert a MD5/SHA-1/SHA-256/SHA-512/Blake3/CRC32/Adler32 Hash"
 msgstr "sekcem yiwen MD5/SHA-1/SHA-256/SHA-512 Hash"
 
-#: ../lib/collision/window.rb:45
+#: ../lib/collision/window.rb:42
 #, fuzzy
 msgid "Choose File…"
 msgstr "xttired yiwen fichier…"
 
-#: ../lib/collision/window.rb:130
+#: ../lib/collision/window.rb:127
 msgid "Hash"
 msgstr ""
 
-#: ../lib/collision/window.rb:136
+#: ../lib/collision/window.rb:133
 msgid "Verify"
 msgstr ""
 
-#: ../lib/collision/window.rb:224 ../lib/collision/window.rb:419
+#: ../lib/collision/window.rb:221 ../lib/collision/window.rb:416
 msgid "Pending"
 msgstr ""
 
-#: ../lib/collision/window.rb:323
+#: ../lib/collision/window.rb:320
 msgid "Drop to hash"
 msgstr ""
 
-#: ../lib/collision/window.rb:348
+#: ../lib/collision/window.rb:345
 msgid "_Open"
 msgstr ""
 
-#: ../lib/collision/window.rb:349
+#: ../lib/collision/window.rb:346
 msgid "Open…"
 msgstr ""
 
-#: ../lib/collision/window.rb:364
+#: ../lib/collision/window.rb:361
 msgid "Main Menu"
 msgstr ""
 
-#: ../lib/collision/window.rb:388
+#: ../lib/collision/window.rb:385
 msgid "Check hashes for your files"
 msgstr ""
 
-#: ../lib/collision/window.rb:396
+#: ../lib/collision/window.rb:393
 #, fuzzy
 msgid "_Open a File"
 msgstr "_liḍ a fichier"
 
-#: ../lib/collision/window.rb:405
+#: ../lib/collision/window.rb:402
 msgid "Calculating Hashes"
 msgstr ""
 
-#: ../lib/collision/window.rb:406
+#: ../lib/collision/window.rb:403
 msgid "This might take a while"
 msgstr ""
 
-#: ../lib/collision/window.rb:463
+#: ../lib/collision/window.rb:460
 #, fuzzy
 msgid "Checksum"
 msgstr "Checksum"
 
-#: ../lib/collision/window.rb:464
+#: ../lib/collision/window.rb:461
 msgid "File"
 msgstr ""
 
-#: ../lib/collision/window.rb:530
+#: ../lib/collision/window.rb:527
 #, fuzzy
 msgid "Select Another File to Check Against"
 msgstr "dmed a fichier niden iwaken anwali ma kifkif-iten"
 
-#: ../lib/collision/window.rb:792
+#: ../lib/collision/window.rb:789
 #, fuzzy
 msgid "Choose a File"
 msgstr "dmed yiwen fichier"
+
+#: data/dev.geopjr.Collision.desktop.in:7
+msgid "Hash Generator"
+msgstr ""
+
+#: data/dev.geopjr.Collision.desktop.in:12
+msgid "md5;sha1;sha256;sha512;blake3;crc32;adler32;hash;"
+msgstr ""
+
+#. developer_name tag deprecated with Appstream 1.0
+#: data/dev.geopjr.Collision.metainfo.xml.in:7
+msgid "Evangelos \"GeopJr\" Paterakis"
+msgstr ""
+
+#: data/dev.geopjr.Collision.metainfo.xml.in:20
+msgid ""
+"Verifying that a file you downloaded or received is actually the one you "
+"were expecting is often overlooked or too time-consuming to do. At the same "
+"time, it has become very easy to get your hands on a file that has been "
+"tampered with, due to the mass increase of malicious webpages and other "
+"actors."
+msgstr ""
+
+#: data/dev.geopjr.Collision.metainfo.xml.in:26
+msgid ""
+"This tool aims to solve that. Collision comes with a simple & clean UI, "
+"allowing anyone, from any age and experience group, to generate, compare and "
+"verify MD5, SHA-256, SHA-512, SHA-1, Blake3, CRC32 and Adler32 hashes."
+msgstr ""
+
+#: nautilus-extension/collision-extension.py:76
+#, fuzzy
+msgid "Check Hashes"
+msgstr "Checksum"
