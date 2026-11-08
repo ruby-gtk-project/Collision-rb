@@ -1,96 +1,88 @@
-# Test parity — Collision (re-audit)
+# Test parity — Collision (re-audit, round 3)
 
 | | |
 |---|---|
 | Upstream | `main` @ `9d35ba0` |
-| Port | `ruby` @ `aab6951` |
+| Port | `ruby` @ `633c9e0` |
 | Upstream tests | 5 |
 | Ported | 5 |
 | Gaps | 0 |
 | Spec command | `nix develop --command xvfb-run -a ruby -e 'require "rspec/core"; exit RSpec::Core::Runner.run(["--format", "progress", "--require", "spec_helper", "spec"])'` — run live for this audit |
 | Drive command | `nix develop --command xvfb-run -a ruby test/drive_window.rb` — run live for this audit |
 
-Both commands were actually executed in this re-audit, not taken on the
-prior report's word or the runtime gate's number alone:
+Both commands were executed live for this re-audit:
 
 ```
-44 examples, 0 failures            # spec suite
+47 examples, 0 failures            # spec suite
 33 of 33 checks passed, DRIVE OK   # test/drive_window.rb
 ```
 
 The runtime gate handed to this round (33 passed / 0 failed, 8 components)
-matches the drive number exactly. The spec count (44) is **not** what the
-prior `test-parity.md` recorded (42) — the difference is
-`spec/i18n_encoding_spec.rb`, added in commit `aab6951` after the prior pass
-ran, with 2 examples. This report updates the count; the bijection below is
-otherwise unchanged from the prior pass, independently re-checked.
+matches the drive number exactly. The spec count (47) is up from the prior
+pass's 44 — the difference is `spec/packaging_spec.rb`, added in `633c9e0`,
+3 examples.
 
-## Census — upstream's 5 tests, by hand, both sides read
+## Census — upstream's 5 tests, unchanged from the prior pass, re-confirmed by hand
 
 ### Suite: spec/compare_spec.cr (1 test)
 
-| # | Upstream test | Purpose | Port test | State |
-|---|---|---|---|---|
-| 1 | `compare_spec.cr` "returns whether the file contains one of the hashes" | `FileUtils.compare_content` finds a known hash in a file's text | `spec/compare_spec.rb#"returns whether the file contains one of the hashes"` | ported |
+| # | Upstream test | Port test | State |
+|---|---|---|---|
+| 1 | "returns whether the file contains one of the hashes" | `spec/compare_spec.rb` | ported |
 
 ### Suite: spec/feedback_spec.cr (2 tests)
 
-| # | Upstream test | Purpose | Port test | State |
-|---|---|---|---|---|
-| 2 | `feedback_spec.cr` "returns the correct symbolic icon..." | `Feedback.icon(success)` picks pass/cross symbolic icon | `spec/feedback_spec.rb#".icon"` | ported |
-| 3 | `feedback_spec.cr` "returns the correct class to add and remove..." | `Feedback.class(success)` returns add/remove CSS class pair | `spec/feedback_spec.rb#".css_classes"` (renamed — `class` on a Ruby module shadows `Object#class`, documented in the file's header) | ported |
+| # | Upstream test | Port test | State |
+|---|---|---|---|
+| 2 | "returns the correct symbolic icon..." | `spec/feedback_spec.rb#".icon"` | ported |
+| 3 | "returns the correct class to add and remove..." | `spec/feedback_spec.rb#".css_classes"` (renamed, documented) | ported |
 
 ### Suite: spec/hash_generator_spec.cr (2 tests)
 
-| # | Upstream test | Purpose | Port test | State |
-|---|---|---|---|---|
-| 4 | `hash_generator_spec.cr` "gets hashes from file" | every `CLIPBOARD_HASH` function over the fixture matches the known digest | `spec/hash_generator_spec.rb#"#calculate" "gets hashes from file"` | ported |
-| 5 | `hash_generator_spec.cr` "splits strings by 4" | `split_by_4` re-inserts spaces every 4 chars | `spec/hash_generator_spec.rb#".split_by_4" "splits strings by 4"` | ported |
+| # | Upstream test | Port test | State |
+|---|---|---|---|
+| 4 | "gets hashes from file" | `spec/hash_generator_spec.rb` | ported |
+| 5 | "splits strings by 4" | `spec/hash_generator_spec.rb` | ported |
 
-**5/5, bijection re-confirmed by hand-reading both sides this pass** — no
-upstream test maps to two Ruby tests, no Ruby test covers two upstream
-properties at once.
+**5/5, bijection re-confirmed this pass.** No upstream test maps to two Ruby
+tests, no Ruby test covers two upstream properties at once.
 
-## Extra — not parity work, listed because the skill requires it
+## The gap the prior two rounds flagged is now closed
 
-Port's suite is 44 examples against upstream's 5; 39 are extra:
+Prior rounds (`aab6951` and before) found `rakelib/packaging.rake`'s two
+build tasks had zero spec coverage — the exact mechanism that let the
+obsolete-translation defect go undetected through two "parity reports"
+commits. `633c9e0` adds `spec/packaging_spec.rb`, which:
 
-- `spec/compare_spec.rb` — 8 extra: `.file?` (3), `.real_path` (3, including
-  Flatpak document-portal branches upstream never tests), 2 more
-  `.compare_content` cases.
-- `spec/feedback_spec.rb` — 1 extra: `.title`, no upstream counterpart.
-- `spec/hash_generator_spec.rb` — 6 extra: `HASH_FUNCTIONS` key-set, the
-  `ArgumentError` on an unknown function, `#enabled_hash_functions`,
-  `#generate` ×3, `.split_by_4`'s short-string case.
-- `spec/i18n_spec.rb` — 24 extra, entirely outside the 5/5 count (upstream
-  delegates to C gettext, no file to port against).
-- `spec/i18n_encoding_spec.rb` — **new since the prior pass**, 2 examples.
-  Boots a brand-new Ruby process with no `LANG`/`LC_ALL`/`LC_MESSAGES` set
-  and asserts the catalogue loader does not crash. This is the regression
-  test for the bug the prior `translation-parity.md` found and `aab6951`
-  fixed — re-run live, both examples pass, and the fix was independently
-  re-verified against the running code in `component-parity.md`, not just
-  this spec.
-- `test/drive_window.rb` — 33 UI-level checks, no upstream counterpart.
+- runs `desktop:build` and asserts `GenericName[xx]=`/`Keywords[xx]=` lines
+  exist for a 3-locale sample (not merely that the file exists),
+- runs `metainfo:build` and asserts translated `<name>`/`<summary>`/`<p>`
+  lines for the same sample,
+- runs `nautilus:mo` against a throwaway locale directory and **decompiles
+  the resulting `.mo` with `msgunfmt`** to assert the catalogue actually
+  translates `"Check Hashes"`, not just that a file was written.
 
-## What this suite still does not run — the gap this pass adds
+Re-run live for this audit (part of the 47-example total above): all 3
+examples pass. This is a real regression test, not a vacuous one — it reads
+the built content's string, not just the exit code, in every one of its
+three examples.
 
-Neither the spec suite nor `test/drive_window.rb` ever builds
-`data/dev.geopjr.Collision.desktop` or `data/dev.geopjr.Collision.metainfo.xml`
-from their `.in` templates, so nothing in the suite would have caught this
-round's finding (`translation-parity.md`, `component-parity.md`): that
-`rake desktop:build` and `rake metainfo:build` silently drop the
-`GenericName`/`Keywords`/`<description>` translations. `rakelib/packaging.rake`
-has no spec coverage at all — it is driven only by hand, as this audit did.
-A task with no test is unverified by this suite's own 33/33 and 44/0
-numbers, which is exactly the runtime-gate caveat this round's brief calls
-out: 8 components covered by the gate, and packaging is not one of them.
+## What still has no coverage — named rather than left silent
+
+No automated check runs `rake nautilus:install` itself (which copies the
+`.py` file to `~/.local/share/nautilus-python/extensions/` and asks a running
+Nautilus to reload) or exercises an actual running Nautilus process picking
+up the extension end-to-end. `packaging_spec.rb` covers the `.mo`-compiling
+half of that path, not the file-copy-and-reload half. This is a real,
+disclosed gap, consistent with this round's brief ("a component no check
+exercises is unverified, not done") — flagged here rather than counted as
+closed, since nothing in the 47/33 numbers above exercises it.
 
 ## Rules check
 
 - Suite was run, not assumed: confirmed above, this pass, both commands, live.
-- No row left without a named port test or a stated gap: none open, 0 gaps
-  in the 5/5 bijection.
-- No upstream test lowered to pass: all 5 assert the identical property.
-- A component no check exercises is flagged as unverified, not credited as
-  done: `rakelib/packaging.rake`'s two build tasks, named above.
+- No row left without a named port test or a stated gap: none open in the
+  5/5 upstream bijection.
+- No upstream test lowered to pass.
+- A component no check exercises is flagged, not credited: `rake
+  nautilus:install`'s file-copy-and-Nautilus-reload path, named above.

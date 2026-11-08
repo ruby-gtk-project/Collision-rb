@@ -1,107 +1,99 @@
-# Accountability ensurance — Collision (re-audit)
+# Accountability ensurance — Collision (re-audit, round 3)
 
-Scanned: `lib/`, `exe/`, `nautilus-extension/`, `rakelib/`, `.reports/` (the
-only prose on this branch — no `PORTING.md`, `FINDINGS.md`, `TODO`;
-`AGENTS.md`/`CLAUDE.md`/`README.md`/`CHANGELOG.md` checked too, no excuse
-language found in any of them). No `TODO`, `FIXME`, "not implemented", "for
-now", "in a future", or similar string anywhere in the scanned trees —
-confirmed again this pass, same result as the prior audit.
+Scanned: `lib/`, `exe/`, `nautilus-extension/`, `rakelib/`, `.reports/`
+(still the only prose on this branch — no `PORTING.md`; `AGENTS.md`,
+`CLAUDE.md`, `README.md`, `CHANGELOG.md` checked too). No `TODO`, `FIXME`,
+"not implemented", "for now", "in a future", "not yet", "unimplemented", or
+"stub" anywhere in `lib/`, `exe/`, `rakelib/`, or `nautilus-extension/` this
+round — confirmed by grep, not by memory of the last audit. The handful of
+matches the grep turns up are all inside `.reports/*.md` itself, quoting
+these exact strings as part of *describing* the search, not an excuse
+sitting in shipped code or docs.
 
-## Finding 1 — the prior pass's own false "no gap" was corrected, but the fix that corrected it introduced a new, unflagged false claim
+## Finding 1 — a stale-report window existed, undetected, until this round (same shape as round 2's Finding 2, happened again)
 
-The prior round's `accountability-ensurance.md` caught a real false green:
-`component-inventory.md` had classified the Nautilus extension and the
-desktop entry as "packaging-only... none of these define UI." That finding
-was accurate and is not repeated here — it did its job.
+Round 2's own accountability report caught this exact failure mode once
+already: reports committed before a fix landed, left un-reconciled with the
+fix, so a reader could not tell which document was current. That same shape
+recurred between this round and the one before it.
 
-The commit that acted on it, `aab6951`, titled **"Close four parity gaps:
-desktop entry, metainfo, Nautilus extension, i18n encoding crash,"** is
-itself a false green of the exact same shape the skill exists to catch: a
-title that reads as a settled, closed fact, written by the same session that
-would be graded on it, where one of the four claims is fully true and three
-are only partially true.
+Timeline, read from `git log`, not assumed:
 
-Checked each clause against the running code, not the message, this round
-(full evidence in `translation-parity.md` and `component-parity.md`):
+- `0c22f23` ("Parity reports") committed the round-2 reports, which say "Not
+  clean" / "3 of 4 claimed closures only partially true."
+- `633c9e0` ("Close the translation-parity gap...") landed immediately after,
+  in the same session, fixing exactly the gaps those reports described —
+  but did not touch `.reports/`.
+- Until this round's pass, `.reports/` sat at `HEAD` describing a "not
+  clean" state that no longer matched the code one commit later. A reader
+  opening `.reports/translation-parity.md` at `633c9e0` would have read "0
+  of the 3 original gaps are actually closed for a non-English user" about a
+  codebase where, by that same commit, all 3 were closed.
 
-| Clause in the commit title | What actually happened |
+This is not a false claim inside `633c9e0` itself — checked every clause of
+its commit message against the running code (see `component-parity.md`,
+`translation-parity.md`) and all of them verify true this round, unlike the
+prior round's commit. The failure here is structural, not a specific false
+sentence: the reports and the code were allowed to diverge for one full
+commit, again, with nothing in the repository (no hook, no CI check, no
+Rakefile task) that ties a `.reports/` update to the fix it is reporting on.
+Flagged per this round's brief: "a false green in a report is the most
+serious finding" — this was a soon-to-be-false report, caught before a third
+round had to catch it this time, but the underlying structural gap (no
+automatic reconciliation) is unaddressed and will produce the same situation
+again the next time a fix lands without a report update in the same
+breath.
+
+## Finding 2 — `633c9e0` checked, clause by clause, against the running code: no overclaim found
+
+Unlike `aab6951` (round 2's finding), this commit's own claims hold up:
+
+| Clause | Verified |
 |---|---|
-| "i18n encoding crash" closed | **True.** Verified live: the crash repro from the prior report no longer crashes, and a new spec (`spec/i18n_encoding_spec.rb`) covers it with a fresh process boot. |
-| "desktop entry" closed | **Half true.** The file exists and builds. 2 of its 3 translatable fields (`GenericName`, `Keywords`) are English-only in the built artifact, in every one of the 41 shipped languages, because `aab6951` never added `data/dev.geopjr.Collision.desktop.in` to `po/POTFILES`, so the pre-existing translations for those two strings are sitting in every `.po` file marked obsolete (`#~`) and `msgfmt --desktop` correctly ignores them. |
-| "metainfo" closed | **Half true.** Same mechanism: the file exists, `<summary>` translates (its msgid happens to be shared with an already-in-scope Ruby string), the entire `<description>` does not, in any language. |
-| "Nautilus extension" closed | **Half true.** The file is a correct, complete port of the Python extension. Its one string is read through system gettext at runtime, and nothing in this repository compiles or installs a `.mo` catalogue anywhere a real install of this gem would put one — so even leaving the obsolete-entry problem aside, this component cannot show a translated label on any machine this port alone sets up. |
+| "resurrect the three orphaned msgids" | **True.** `grep -l '#~ msgid "Hash Generator"' po/*.po` → 0 (was 39). |
+| "wire \[nautilus:mo\] into `nautilus:install`" | **True.** Read `rakelib/packaging.rake`: `task install: :mo`. |
+| "Add spec/packaging_spec.rb, covering desktop:build, metainfo:build and nautilus:mo end to end" | **True.** All three tasks have a spec; the `nautilus:mo` spec decompiles the built `.mo` with `msgunfmt` rather than only checking the file exists — a check that actually exercises the claim, not a vacuous one. |
+| "Fix one... real data bug... po/sk.po's translation... had a raw, unescaped &" | **True.** `po/sk.po:257` now reads `&amp;`; `metainfo:build` runs clean where it would have crashed before (confirmed by temporarily reverting the escape and re-running — see verification note below). |
 
-None of this is a claim that `aab6951` acted in bad faith — the file-level
-work (desktop/metainfo content, the Python port, the encoding fix, the new
-spec) is real, careful, and verified correct on its own terms. The failure
-this skill is named for is specifically in the **title**: "closed" is a word
-that invites the next reader — this audit, or the one after it — to move on
-without opening `po/*.po` or actually running `rake desktop:build`. This
-audit is the first pass to run those two build tasks and grep their output;
-every fact in the table above came from doing that, not from reading the
-diff.
+Re-verification method for the last row: reverted `po/sk.po`'s `&amp;` back
+to a bare `&` in a scratch copy and re-ran `metainfo:build` against it to
+confirm it does crash without the fix, then restored the real file — this is
+the one claim in the table that a passing build alone cannot distinguish
+from "never would have broken," so it was checked both ways.
 
-Rewrite, per the skill's format:
+## Finding 3 — a disclosed, not hidden, limitation: `nautilus:mo`/`nautilus:install` may need `sudo`
 
-> I wrote a commit title that said four parity gaps closed when the
-> translation half of three of them was not checked, because I verified the
-> files existed and the strings compiled into Ruby/Python source without
-> checking whether the string that source points at would actually render
-> translated anywhere a user's locale differs from English.
-> Evidence: `po/*.po` carries the pre-existing French/German/etc.
-> translations for `"Hash Generator"`, the desktop `Keywords` string, and
-> `"Check Hashes"` as `#~` (obsolete) entries in 38–39 of 41 catalogues;
-> `rake desktop:build`/`rake metainfo:build`, run live, confirm the built
-> files contain zero per-language lines for `GenericName`, `Keywords`, or
-> `<description>`.
+`rakelib/packaging.rake`'s `nautilus:mo` task catches `SystemCallError`/
+`RuntimeError` per-language and warns rather than raising when it cannot
+write to the locale directory (a system-wide `sys.base_prefix`, typically
+needing root). This is named, in `po/README.md`, as needing
+`sudo rake nautilus:mo` on such a system. Checked that this is not papering
+over a failure the task should actually report: the warning path is only
+reached per-language inside the loop, so one unwritable language does not
+silently swallow the rest failing too — each gets its own warning. Not an
+excuse; a real permission boundary, named where a reader would look for it.
 
-## Finding 2 — the previous round's reports are stale documents left uncorrected until now
+## Finding 4 — `rake nautilus:install`'s file-copy-and-reload half is still untested (carried forward, not new)
 
-`.reports/component-parity.md`, `.reports/test-parity.md`,
-`.reports/translation-parity.md`, as committed in `a97cf96` ("Parity
-reports"), describe the state of the repo *before* `aab6951`. They were
-never updated after `aab6951` landed in the same working session, so until
-this pass, the committed record of "3 gaps, 1 crash" sat alongside a commit
-claiming all four were fixed, with nothing in the repo reconciling the two.
-A reader opening `.reports/` after `aab6951` without re-running anything
-would see a stale "not clean" report and a green commit title and have no
-way to tell which one is current. This is the structural version of the
-skill's warning about a claim that rests on something never executed: the
-something here is "re-check the reports after the fix that was supposed to
-satisfy them," and it was never done until this round. This pass's rewritten
-`component-parity.md`/`test-parity.md`/`translation-parity.md` close that
-gap by being dated against `aab6951` and citing what was re-run live.
-
-## Finding 3 — a correctly-labelled gap, not an excuse: `rakelib/packaging.rake` has zero test coverage
-
-Not a violation — flagged because it is exactly the condition this round's
-brief calls a gap in its own right: "a component no check exercises is
-unverified, not done." Neither `spec/` nor `test/drive_window.rb` invokes
-`rake desktop:build`, `rake metainfo:build`, or `rake nautilus:install`.
-Every fact in Finding 1's table came from running those tasks by hand, for
-this audit; nothing in the committed suite would have caught the obsolete-
-translation defect, before or after `aab6951`. No report anywhere claims
-this coverage exists, so this is not a false green — it is a real,
-previously-unflagged hole, named here per the brief's instruction to treat
-an unexercised component as a gap rather than silence.
+Named in `test-parity.md` this round too, repeated here because it is
+exactly the brief's "a component no check exercises is unverified, not
+done" condition: `packaging_spec.rb` covers `nautilus:mo` (the `.mo`
+compile) but nothing runs `nautilus:install` itself end to end (copying the
+`.py` file, asking a live Nautilus to reload). Not a false claim anywhere —
+no report claims this is covered — but flagged as a real, open gap per this
+round's brief, not silence.
 
 ## What this audit did not find
 
-No excuse language in code or prose. No test deleted, weakened, or skipped
-to make a number look better — `test-parity.md`'s 5/5 bijection and the
-44-example/33-check counts are all real, re-run live. The failure this round
-is entirely in how far a "closed"/"fixed" claim was allowed to travel
-without the one check (build the artifact, read the output) that would have
-caught it — the same failure mode the skill is named for, one layer further
-in: last round caught a false green in a report; this round caught one in
-the commit that was supposed to fix what the report found.
+No excuse language in code or prose. No test deleted, weakened, or skipped.
+No claim in `633c9e0`'s own commit message that did not check out against
+the running code — a different result from round 2's audit of `aab6951`,
+and reached the same way: by rebuilding the artifacts and decompiling the
+`.mo`, not by reading the diff.
 
 ## Rule check on this report itself
 
-Every finding names the behaviour (which string, which build task, which
-grep), cites both sides (upstream translation present vs. obsolete-marked in
-the port, or claim vs. live-run output), and attributes the gap to a
-specific commit and a specific missing step (POTFILES never updated, no `.mo`
-pipeline) rather than to circumstance. No finding here is phrased as "by
-design" or "out of scope" without the check that would justify it being
-named alongside the claim.
+Every finding names the specific commit, grep, or build command that proves
+it, and distinguishes a verified-true claim (Finding 2) from a structural
+process gap (Finding 1) from a disclosed limitation (Finding 3) from an open
+gap (Finding 4), rather than collapsing them into one verdict.
