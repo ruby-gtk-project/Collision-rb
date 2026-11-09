@@ -43,16 +43,6 @@
     };
     version = "4.3.9";
   };
-  digest-blake3 = {
-    groups = ["default"];
-    platforms = [];
-    source = {
-      remotes = ["https://rubygems.org"];
-      sha256 = "1iqaqw3f5gd2bsg3dcd9qshanr8mxccq147zxip6i8i84cc2yci2";
-      type = "gem";
-    };
-    version = "1.5.2.0";
-  };
   fiddle = {
     groups = ["default"];
     platforms = [];

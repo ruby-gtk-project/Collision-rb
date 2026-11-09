@@ -77,3 +77,8 @@ RSpec.configure do |config|
     c.syntax = :expect
   end
 end
+# `kettle/test/rspec` installs harness helpers documented in spec/README.md.
+
+# This library
+require "collision/rb"
+

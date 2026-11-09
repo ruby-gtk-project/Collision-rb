@@ -13,7 +13,6 @@ GEM
     cairo-gobject (4.3.9)
       cairo (>= 1.16.2)
       glib2 (= 4.3.9)
-    digest-blake3 (1.5.2.0)
     fiddle (1.1.8)
     gdk4 (4.3.9)
       cairo-gobject (= 4.3.9)
@@ -58,8 +57,7 @@ PLATFORMS
 
 DEPENDENCIES
   adwaita
-  digest-blake3
   gtk4
 
 BUNDLED WITH
-   2.7.2
+   2.6.9
